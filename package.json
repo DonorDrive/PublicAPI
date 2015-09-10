@@ -1,0 +1,15 @@
+{
+  "name": "extra-life-web-scrape",
+  "version": "0.0.1",
+  "description": "Scrape donation goals and info from Extra Life pages",
+  "main": "server.js",
+  "author": "Alex muench",
+  "dependencies": {
+    "cheerio": "latest",
+    "express": "latest",
+    "jquery": "^2.1.4",
+    "jsonp": "^0.2.0",
+    "request": "latest",
+    "step": "0.0.6"
+  }
+}
