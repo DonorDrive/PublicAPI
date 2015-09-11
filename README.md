@@ -82,3 +82,7 @@ License
 ------
 This content is released under the [MIT License](https://opensource.org/licenses/MIT)
 
+Shamless Plug
+------
+If you like this work, donate to my Extra Life page at:
+http://www.extra-life.org/index.cfm?fuseaction=donordrive.participant&participantID=144846
