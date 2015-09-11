@@ -1,0 +1,98 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'e:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'e:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'publish',
+1 verbose cli   '.' ]
+2 info using npm@2.14.2
+3 info using node@v4.0.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: 'E:\\Documents\\Web Projects\\extra-life-scraper',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory C:\Users\Alex Muench\AppData\Roaming\npm-cache\extra-life-api\0.1.0\package.tgz not in flight; packing
+9 verbose tar pack [ 'C:\\Users\\Alex Muench\\AppData\\Roaming\\npm-cache\\extra-life-api\\0.1.0\\package.tgz',
+9 verbose tar pack   'E:\\Documents\\Web Projects\\extra-life-scraper' ]
+10 verbose tarball C:\Users\Alex Muench\AppData\Roaming\npm-cache\extra-life-api\0.1.0\package.tgz
+11 verbose folder E:\Documents\Web Projects\extra-life-scraper
+12 info prepublish extra-life-api@0.1.0
+13 verbose addLocalTarball adding from inside cache C:\Users\Alex Muench\AppData\Roaming\npm-cache\extra-life-api\0.1.0\package.tgz
+14 silly cache afterAdd extra-life-api@0.1.0
+15 verbose afterAdd C:\Users\Alex Muench\AppData\Roaming\npm-cache\extra-life-api\0.1.0\package\package.json not in flight; writing
+16 verbose afterAdd C:\Users\Alex Muench\AppData\Roaming\npm-cache\extra-life-api\0.1.0\package\package.json written
+17 silly publish { name: 'extra-life-api',
+17 silly publish   version: '0.1.0',
+17 silly publish   description: 'Scrape donation goals and info from Extra Life pages',
+17 silly publish   main: 'server.js',
+17 silly publish   author: { name: 'Alex Muench' },
+17 silly publish   dependencies: { cheerio: 'latest', express: 'latest', request: 'latest' },
+17 silly publish   scripts: { start: 'node server.js' },
+17 silly publish   devDependencies: {},
+17 silly publish   repository:
+17 silly publish    { type: 'git',
+17 silly publish      url: 'git+https://github.com/ammuench/extra-life-api.git' },
+17 silly publish   keywords: [ 'extra', 'life', 'api', 'express', 'extralife', 'extra-life' ],
+17 silly publish   license: 'MIT',
+17 silly publish   bugs: { url: 'https://github.com/ammuench/extra-life-api/issues' },
+17 silly publish   homepage: 'https://github.com/ammuench/extra-life-api',
+17 silly publish   readme: '# extra-life-api\r\nA simple API based on Express and Cheerio for showing donations, goals, and team from Extra-Life.org\r\n\r\nWhy?\r\n------\r\nI\'ve ran a custom website for our Extra Life team last year, and we had a ton of success with it (we raised over $1700 dollars)!  However, one of the most difficult things was constantly updating donations and other info while we were doing it (which started to fall apart once we hit th 20 hour mark or so).  As a result, I decided to make a web scraper that does the job for you!!\r\n\r\nInstallation\r\n------\r\nSimply download this package and deploy on a web server running node.  To start the server simply type:\r\n```javascript\r\nnode server\r\n```\r\nAnd you\'re good to go!  The app should default to port 8081.\r\n\r\nI\'m gonna get this up on NPM soon for stupid easy deployment\r\n\r\n\r\nAPI\r\n------\r\nThere are 3 endpoints which can be accessed once the express server is up and running.  Each endpoint must be passed the individual\'s \'Participant ID\'.  This can be found by going to your public page, and checking the end of the URL:\r\n\r\n\r\nhttp://www.extra-life.org/index.cfm?fuseaction=donordrive.participant&participantID= **ID HERE**\r\n\r\n\r\n* **/usergoals/[userid]**\r\n  * Provides a json object with the current donation amoutn and donation goal\r\n  * Returns the response:\r\n  \r\n    ```javascript\r\n    {\r\n      "goal":0,\r\n      "raised":0\r\n    }\r\n    ```\r\n    \r\n* **/userinfo/[userid]**\r\n  * Provides a json object with current user name, picture URL, donate URL, team name, and team URL\r\n  * Returns the response:\r\n  \r\n    ```javascript\r\n    {\r\n      "name":"",\r\n      "image":"",\r\n      "donateURL":"",\r\n      "team":"",\r\n      "teamURL":""\r\n    }\r\n    ```\r\n    \r\n* **/recentDonations/[userid]**\r\n  * Provides a json object with an array of your most recent donations (includes name, date, and message from donor)\r\n  * Returns the response:\r\n  \r\n    ```javascript\r\n    {\r\n      "recentDonations":[\r\n        {\r\n          "name":"",\r\n          "date":"",\r\n          "message":""\r\n        },{\r\n          "name":"",\r\n          "date":"",\r\n          "message":""\r\n        },{\r\n          "name":"",\r\n          "date":"",\r\n          "message":""\r\n        }\r\n      ]\r\n    }\r\n    ```\r\n    \r\n######License\r\nI\'m just putting this here...\r\n\r\nThis content is released under the [MIT License](https://opensource.org/licenses/MIT)\r\n\r\n',
+17 silly publish   readmeFilename: 'README.md',
+17 silly publish   gitHead: '3d88010ef276f86a9d689ecc70dce6f158fc4ee3',
+17 silly publish   _id: 'extra-life-api@0.1.0',
+17 silly publish   _shasum: '46f68eb07671c97fd66839871ebe6a1903990d69',
+17 silly publish   _from: '.' }
+18 verbose getPublishConfig undefined
+19 silly mapToRegistry name extra-life-api
+20 silly mapToRegistry using default registry
+21 silly mapToRegistry registry https://registry.npmjs.org/
+22 silly mapToRegistry uri https://registry.npmjs.org/extra-life-api
+23 verbose publish registryBase https://registry.npmjs.org/
+24 silly publish uploading C:\Users\Alex Muench\AppData\Roaming\npm-cache\extra-life-api\0.1.0\package.tgz
+25 verbose request uri https://registry.npmjs.org/extra-life-api
+26 verbose request sending authorization for write operation
+27 info attempt registry request try #1 at 9:23:08 PM
+28 verbose request using bearer token for auth
+29 verbose request id 96f221dd85110d96
+30 http request PUT https://registry.npmjs.org/extra-life-api
+31 http 403 https://registry.npmjs.org/extra-life-api
+32 verbose headers { 'content-type': 'application/json',
+32 verbose headers   'cache-control': 'max-age=60',
+32 verbose headers   'content-length': '95',
+32 verbose headers   'accept-ranges': 'bytes',
+32 verbose headers   date: 'Fri, 11 Sep 2015 02:23:18 GMT',
+32 verbose headers   via: '1.1 varnish',
+32 verbose headers   connection: 'keep-alive',
+32 verbose headers   'x-served-by': 'cache-dfw1833-DFW',
+32 verbose headers   'x-cache': 'MISS',
+32 verbose headers   'x-cache-hits': '0',
+32 verbose headers   'x-timer': 'S1441938197.703893,VS0,VE906' }
+33 verbose request invalidating C:\Users\Alex Muench\AppData\Roaming\npm-cache\registry.npmjs.org\extra-life-api on PUT
+34 error publish Failed PUT 403
+35 verbose stack Error: "You cannot publish over the previously published version 0.1.0." : extra-life-api
+35 verbose stack     at makeError (e:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:263:12)
+35 verbose stack     at CachingRegistryClient.<anonymous> (e:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:251:14)
+35 verbose stack     at Request._callback (e:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:171:14)
+35 verbose stack     at Request.self.callback (e:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:198:22)
+35 verbose stack     at emitTwo (events.js:87:13)
+35 verbose stack     at Request.emit (events.js:172:7)
+35 verbose stack     at Request.<anonymous> (e:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1073:14)
+35 verbose stack     at emitOne (events.js:82:20)
+35 verbose stack     at Request.emit (events.js:169:7)
+35 verbose stack     at IncomingMessage.<anonymous> (e:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1019:12)
+36 verbose statusCode 403
+37 verbose pkgid extra-life-api
+38 verbose cwd E:\Documents\Web Projects\extra-life-scraper
+39 error Windows_NT 6.3.9600
+40 error argv "e:\\Program Files\\nodejs\\node.exe" "e:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish" "."
+41 error node v4.0.0
+42 error npm  v2.14.2
+43 error code E403
+44 error "You cannot publish over the previously published version 0.1.0." : extra-life-api
+45 error If you need help, you may report this error at:
+45 error     <https://github.com/npm/npm/issues>
+46 verbose exit [ 1, true ]
