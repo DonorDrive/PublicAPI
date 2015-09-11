@@ -1,5 +1,6 @@
 # extra-life-api
 A simple API based on Express and Cheerio for showing donations, goals, and team from Extra-Life.org
+Now up on NPM : https://www.npmjs.com/package/extra-life-api
 
 Why?
 ------
@@ -7,13 +8,17 @@ I've ran a custom website for our Extra Life team last year, and we had a ton of
 
 Installation
 ------
-Simply download this package and deploy on a web server running node.  To start the server simply type:
+Either locally or on a web-sever, either clone this package, or install from npm with:
+```javascript
+npm install extra-life-api
+```
+
+Once downloaded, move to the base module folder and simply run:
+
 ```javascript
 node server
 ```
 And you're good to go!  The app should default to port 8081.
-
-I'm gonna get this up on NPM soon for stupid easy deployment
 
 
 API
@@ -73,8 +78,7 @@ http://www.extra-life.org/index.cfm?fuseaction=donordrive.participant&participan
     }
     ```
     
-######License
-I'm just putting this here...
-
+License
+------
 This content is released under the [MIT License](https://opensource.org/licenses/MIT)
 
