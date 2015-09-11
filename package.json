@@ -1,15 +1,33 @@
 {
-  "name": "extra-life-web-scrape",
-  "version": "0.0.1",
+  "name": "extra-life-api",
+  "version": "0.1.0",
   "description": "Scrape donation goals and info from Extra Life pages",
   "main": "server.js",
-  "author": "Alex muench",
+  "author": "Alex Muench",
   "dependencies": {
     "cheerio": "latest",
     "express": "latest",
-    "jquery": "^2.1.4",
-    "jsonp": "^0.2.0",
-    "request": "latest",
-    "step": "0.0.6"
-  }
+    "request": "latest"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ammuench/extra-life-api.git"
+  },
+  "keywords": [
+    "extra",
+    "life",
+    "api",
+    "express",
+    "extralife",
+    "extra-life"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ammuench/extra-life-api/issues"
+  },
+  "homepage": "https://github.com/ammuench/extra-life-api"
 }
