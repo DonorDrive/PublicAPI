@@ -1,7 +1,7 @@
 {
   "name": "extra-life-api",
-  "version": "0.1.1",
-  "description": "Scrape donation goals and info from Extra Life pages",
+  "version": "0.1.4",
+  "description": "Fetch donation goals and info from Extra Life profiles!",
   "main": "server.js",
   "author": "Alex Muench",
   "dependencies": {
