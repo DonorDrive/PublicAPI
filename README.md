@@ -72,4 +72,9 @@ http://www.extra-life.org/index.cfm?fuseaction=donordrive.participant&participan
       ]
     }
     ```
+    
+######License
+I'm just putting this here...
+
+This content is released under the [MIT License](https://opensource.org/licenses/MIT)
 
