@@ -4,6 +4,16 @@ var request = require('request');
 var cheerio = require('cheerio');
 var app = express();
 
+app.all('*', function(req, res, next){
+  if (!req.get('Origin')) return next();
+  // use "*" here to accept any origin
+  res.set('Access-Control-Allow-Origin', '*');
+  res.set('Access-Control-Allow-Methods', 'GET, POST, PUT, OPTIONS');
+  res.set('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Authentication, AdminAccess');
+  if ('OPTIONS' == req.method) return res.send(200);
+  next();
+});
+
 app.get('/usergoal/:id', function(req, res){
 	var userGoalsJson = { goal : "", raised : ""};
 
