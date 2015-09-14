@@ -39,17 +39,18 @@ app.get('/usergoal/:id', function(req, res){
 			setKey('goal', goal);
 			res.send(userGoalsJson)
 		}else{
-			console.log('Error parsing goal URL');
+			console.log('Error parsing userGoal URL');
+			res.send({status: 500, message: "There was an error trying to make your request"});
 		}
 	});
 });
 
 app.get('/userinfo/:id', function(req, res){
-	var userInfoJson = { name : "", image : "", donateURL: "", team: "", teamURL: ""};
-
 	var profileId = req.params.id;
 
 	var profileUrl = 'http://www.extra-life.org/index.cfm?fuseaction=donordrive.participant&participantID=' + profileId;
+
+	var userInfoJson = { name : "", image : "", donateURL: "", team: "", teamURL: "", profileURL: profileUrl};
 
 	request(profileUrl, function(error, response, html){
 		if(!error){
@@ -59,27 +60,24 @@ app.get('/userinfo/:id', function(req, res){
 
 
 			$('#participant-name').filter(function(){
-				var data = $(this);
 
-				name = data.children('h1').text();
+				name = $(this).children('h1').text();
 
 				userInfoJson.name = name;
 
 			});
 
 			$('.avatar').filter(function(){
-				var data = $(this);
 
-				image = data.children('img.profile-img').attr('src');
+				image = $(this).children('img.profile-img').attr('src');
 
 				userInfoJson.image = image;
 
 			});
 
 			$('.btn-support-card').filter(function(){
-				var data = $(this);
 
-				donateURL = data.attr('href');
+				donateURL = $(this).attr('href');
 
 				userInfoJson.donateURL = donateURL;
 
@@ -98,7 +96,7 @@ app.get('/userinfo/:id', function(req, res){
 
 			res.send(userInfoJson);
 		}else{
-			console.log('Error parsing profile URL');
+			console.log('Error parsing userInfo URL');
 		}
 		
 	});
@@ -118,7 +116,7 @@ app.get('/recentDonations/:id', function(req, res){
 			$('.donor-detail').each(function(i, elem){
 				var data = $(this);
 				var donorObj ={};
-				donorObj.name = data.children('strong').text().split(' made')[0];
+				donorObj.name = data.children('strong').text();
 				donorObj.name = donorObj.name.replace(/(\r\n\t|\n|\r|\t)/gm,"");
 				donorObj.date = data.children('small').text();
 				donorObj.date = donorObj.date.replace(/(\r\n\t|\n|\r|\t)/gm,"");
@@ -132,11 +130,86 @@ app.get('/recentDonations/:id', function(req, res){
 
 			res.send(userDonationsJson);
 		}else{
-			console.log('Error parsing goal URL');
+			console.log('Error parsing recentDonations URL');
+			res.send({status: 500, message: "There was an error trying to make your request"});
 		}
 	});
 });
 
-app.listen('8081')
-console.log('Magic happens on port 8081');
+app.get('/teamgoal/:id', function(req, res){
+	var teamGoalsJson = { goal : "", raised : ""};
+
+	var setKey = function(key, value){
+		teamGoalsJson[key.toString()] = value;
+		// console.log(key + ': ' + teamGoalsJson[key.toString()]);
+		// console.log('set key value');
+	}
+
+	var teamId = req.params.id;
+
+	var teamGoalUrl = 'http://www.extra-life.org/index.cfm?fuseaction=widgets.ajaxWidgetCompileHTML&callback=jsonpCallback&language=en&teamid0=' + teamId + '&eventid0=525&type0=thermometer&currencyformat0=none&orientation0=horizontal';
+
+	request(teamGoalUrl, function(error, response){
+		if(!error){
+			var test = response.body.toString().split('jsonpCallback(')[1].split('}});')[0]
+			var raised = test.split('dd-thermo-raised')[1].split('<')[0].split(',').join('');
+			raised = parseInt(raised.split('$')[1].split('\\')[0]);
+			// console.log(raised);
+			setKey('raised', raised);
+			var goal = test.split('Goal: </span>')[1].split('</strong')[0];
+			goal = parseInt(goal.split('$')[1].split('\\')[0].split(',').join(''));
+			setKey('goal', goal);
+			res.send(teamGoalsJson)
+		}else{
+			console.log('Error parsing teamGoal URL');
+			res.send({status: 500, message: "There was an error trying to make your request"});
+		}
+	});
+});
+
+app.get('/teaminfo/:id', function(req, res){
+
+	var teamInfoId = req.params.id;
+
+	var teamInfoUrl = 'http://www.extra-life.org/index.cfm?fuseaction=donordrive.teamParticipants&teamID=' + teamInfoId;
+
+	var teamInfoJson = {name: "", teamURL: teamInfoUrl, teamImage: "", members:[]};
+
+	request(teamInfoUrl, function(error, response, html){
+		if(!error){
+			var $ = cheerio.load(html);
+
+			$('#team tbody tr').each(function(i, elem){
+				var data = $(this).children('td').children('a');
+				var memberObj ={name:"", raised: "", URL: "", pID: "", image: ""};
+				memberObj.name = data.children('span').children('strong.block').text();
+				memberObj.name = memberObj.name.replace(/(\r\n\t|\n|\r|\t)/gm,"");
+				memberObj.raised = data.children('span').children('.gray').children('small:first-child').children('strong').text();
+				var memberURL = data.attr('href');
+				memberObj.URL = memberURL;
+				memberObj.pID = memberURL.split('participantID=')[1];
+				memberObj.image = 'http:' + data.children('span').children('.member-avatar').attr('src');
+				teamInfoJson.members.push(memberObj);
+			});
+
+			$('#team-name').filter(function(){
+				teamInfoJson.name = $(this).children('h1').text();
+			})
+
+			$('.profile-img').filter(function(){
+				teamInfoJson.teamImage = 'http:' + $(this).attr('src');
+			})
+
+			res.send(teamInfoJson);
+		}else{
+			console.log('Error parsing teamInfo URL');
+			res.send({status: 500, message: "There was an error trying to make your request"});
+		}
+	});
+});
+
+var port = process.env.PORT || 8081;
+
+app.listen(port);
+console.log('Extra-Life API running on port ' + port);
 exports = module.exports = app;
