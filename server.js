@@ -151,15 +151,20 @@ app.get('/teamgoal/:id', function(req, res){
 
 	request(teamGoalUrl, function(error, response){
 		if(!error){
-			var test = response.body.toString().split('jsonpCallback(')[1].split('}});')[0]
-			var raised = test.split('dd-thermo-raised')[1].split('<')[0].split(',').join('');
-			raised = parseInt(raised.split('$')[1].split('\\')[0]);
-			// console.log(raised);
-			setKey('raised', raised);
-			var goal = test.split('Goal: </span>')[1].split('</strong')[0];
-			goal = parseInt(goal.split('$')[1].split('\\')[0].split(',').join(''));
-			setKey('goal', goal);
-			res.send(teamGoalsJson)
+			if(response.body){
+				if(response.body.toString().split('jsonpCallback(').length>1)
+				{
+					var test = response.body.toString().split('jsonpCallback(')[1].split('}});')[0]
+					var raised = test.split('dd-thermo-raised')[1].split('<')[0].split(',').join('');
+					raised = parseInt(raised.split('$')[1].split('\\')[0]);
+					// console.log(raised);
+					setKey('raised', raised);
+					var goal = test.split('Goal: </span>')[1].split('</strong')[0];
+					goal = parseInt(goal.split('$')[1].split('\\')[0].split(',').join(''));
+					setKey('goal', goal);
+					res.send(teamGoalsJson)
+				}
+			}
 		}else{
 			console.log('Error parsing teamGoal URL');
 			res.send({status: 500, message: "There was an error trying to make your request"});
