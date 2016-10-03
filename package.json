@@ -1,16 +1,16 @@
 {
   "name": "extra-life-api",
   "version": "0.2.0",
-  "description": "Fetch donation goals and info from Extra Life profiles!",
-  "main": "server.js",
+  "description": "A node-based API module to get extended Extra Life info for Users and Teams!",
+  "main": "./server.js",
   "author": "Alex Muench",
   "dependencies": {
-    "cheerio": "latest",
-    "express": "latest",
-    "request": "latest"
+    "cheerio": "~0.19.0",
+    "request": "~2.61.0"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "demo" : "node demo.js"
   },
   "devDependencies": {},
   "repository": {

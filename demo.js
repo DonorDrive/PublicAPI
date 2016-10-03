@@ -1,17 +1,21 @@
 var elAPI = require('./server.js');
 
-// elAPI.getUserInfo(219449, function(data){
+//edit these values to see some data
+var userId = 219449;
+var teamId = 29451;
+
+// elAPI.getUserInfo(userId, function(data){
 // 	console.log(data);
 // })
 
-// elAPI.getRecentDonations(196186, function(data){
+// elAPI.getRecentDonations(userId, function(data){
 // 	console.log(data);
 // })
 
-// elAPI.getTeamInfo(29978, function(data){
+// elAPI.getTeamInfo(teamId, function(data){
 // 	console.log(data);
 // })
 
-elAPI.getTeamDonations(27381, function(data){
+elAPI.getTeamDonations(teamId, function(data){
 	console.log(data);
 })
