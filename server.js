@@ -60,23 +60,11 @@ module.exports = {
 
 		var donationsId = id;
 
-		var donationsUrl = 'http://www.extra-life.org/index.cfm?fuseaction=donorDrive.participantDonations&participantID=' + donationsId;
+		var donationsUrl = 'http://www.extra-life.org/index.cfm?fuseaction=donorDrive.participantDonations&participantID=' + donationsId + '&format=json';
 
-		request(donationsUrl, function (error, response, html) {
+		request(donationsUrl, function (error, response) {
 			if (!error) {
-				var $ = cheerio.load(html);
-
-				$('.donor-detail').each(function (i, elem) {
-					var data = $(this);
-					var donorObj = {};
-					donorObj.name = data.children('strong').text();
-					donorObj.name = donorObj.name.replace(/(\r\n\t|\n|\r|\t)/gm, "");
-					donorObj.date = data.children('small').text();
-					donorObj.date = donorObj.date.replace(/(\r\n\t|\n|\r|\t)/gm, "");
-					donorObj.message = data.children('em').text();
-					donorObj.message = donorObj.message.replace(/(\r\n\t|\n|\r|\t)/gm, "");
-					userDonationsJson.recentDonations.push(donorObj);
-				});
+				userDonationsJson = JSON.parse(response.body);
 
 				callback(userDonationsJson);
 			} else {
@@ -110,17 +98,17 @@ module.exports = {
 
 					$('#team tbody tr').each(function (i, elem) {
 						var data = $(this).children('td').children('a');
-						var memberObj = { name: "", teamCaptain: false, raised: "", URL: "", pID: "", image: "" };
+						var memberObj = { name: "", isTeamCaptain: false, raised: "", URL: "", pID: "", image: "" };
 						memberObj.name = data.children('span').children('strong.block').text();
 						memberObj.name = memberObj.name.replace(/(\r\n\t|\n|\r|\t)/gm, "").trim();
-						if(memberObj.name.indexOf('Team Captain') > -1){
+						if (memberObj.name.indexOf('Team Captain') > -1) {
 							memberObj.name = memberObj.name.split('Team Captain')[0].trim();
-							memberObj.teamCaptain = true;
+							memberObj.isTeamCaptain = true;
 						}
-						memberObj.raised = data.children('span').children('.gray').children('small:first-child').children('strong').text();
+						memberObj.raised = parseFloat(data.children('span').children('.gray').children('small:first-child').children('strong').text().split('$')[1]);
 						var memberURL = data.attr('href');
 						memberObj.URL = memberURL;
-						memberObj.pID = memberURL.split('participantID=')[1];
+						memberObj.pID = parseInt(memberURL.split('participantID=')[1]);
 						memberObj.image = 'http:' + data.children('span').children('.member-avatar').attr('src');
 						teamInfoJson.members.push(memberObj);
 					});
@@ -131,6 +119,40 @@ module.exports = {
 					callback({ status: 500, message: "There was an error trying to make your request" });
 				}
 			});
+		})
+	},
+
+	getTeamDonations: function (id, callback) {
+		var teamId = id;
+
+		var teamRosterURL = 'http://www.extra-life.org/index.cfm?fuseaction=donorDrive.teamParticipants&teamID=' + teamId + '&format=json';
+
+		var donations = [];
+
+		request(teamRosterURL, function (error, response) {
+			var rosterList = JSON.parse(response.body);
+			for (var i = 0, len = rosterList.length; i < len; i++) {
+				var userName = rosterList[i].displayName;
+				var donationUrl = 'http://www.extra-life.org/index.cfm?fuseaction=donorDrive.participantDonations&participantID=' + rosterList[i].participantID + '&format=json';
+				request(donationUrl, function (error, response) {
+					var userDonations = JSON.parse(response.body);
+					for (var j = 0, len = userDonations.length; j < len; j++) {
+						userDonations[j].donatedTo = userName;
+						donations.push(userDonations[j]);
+					}
+
+					var sortByDate = function (a, b){
+						if(a.createdOn < b.createdOn){
+							return 1
+						}
+						if(a.createdOn > b.createdOn){
+							return -1
+						}
+						return 0;
+					}
+					callback(donations.sort(sortByDate));
+				});
+			}
 		})
 	}
 }
