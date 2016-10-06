@@ -1,6 +1,6 @@
 {
   "name": "extra-life-api",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A node-based API module to get extended Extra Life info for Users and Teams!",
   "main": "./server.js",
   "author": "Alex Muench",
