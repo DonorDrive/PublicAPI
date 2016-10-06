@@ -121,40 +121,63 @@ module.exports = {
 				}
 			});
 		})
-	},
-
-	getTeamDonations: function (id, callback) {
-		var teamId = id;
-
-		var teamRosterURL = 'http://www.extra-life.org/index.cfm?fuseaction=donorDrive.teamParticipants&teamID=' + teamId + '&format=json';
-
-		var donations = [];
-
-		request(teamRosterURL, function (error, response) {
-			var rosterList = JSON.parse(response.body);
-			for (var i = 0, len = rosterList.length; i < len; i++) {
-				var userName = rosterList[i].displayName;
-				var donationUrl = 'http://www.extra-life.org/index.cfm?fuseaction=donorDrive.participantDonations&participantID=' + rosterList[i].participantID + '&format=json';
-				request(donationUrl, function (error, response) {
-					var userDonations = JSON.parse(response.body);
-					for (var j = 0, len = userDonations.length; j < len; j++) {
-						userDonations[j].donatedTo = userName;
-						donations.push(userDonations[j]);
-					}
-				});
-			}
-			var sortByDate = function (a, b) {
-				if (a.createdOn < b.createdOn) {
-					return 1
-				}
-				if (a.createdOn > b.createdOn) {
-					return -1
-				}
-				return 0;
-			}
-			callback(donations.sort(sortByDate));
-		})
 	}
+
+	// getTeamDonations: function (id, callback) {
+	// 	var teamId = id;
+
+	// 	var teamRosterURL = 'http://www.extra-life.org/index.cfm?fuseaction=donorDrive.teamParticipants&teamID=' + teamId + '&format=json';
+
+	// 	var donations = [];
+
+	// 	request(teamRosterURL, function (error, response) {
+	// 		var rosterList = JSON.parse(response.body);
+	// 		for (var i = 0, rosterLen = rosterList.length; i < rosterLen; i++) {
+	// 			var userName = rosterList[i].displayName;
+	// 			var donationUrl = 'http://www.extra-life.org/index.cfm?fuseaction=donorDrive.participantDonations&participantID=' + rosterList[i].participantID + '&format=json';
+
+	// 			console.log(i, rosterList.length);
+
+	// 			request(donationUrl, function (error, response) {
+	// 				var userDonations = JSON.parse(response.body);
+	// 				// var j = 0, donateLength = userDonations.length;
+	// 				var donationsCount = 0;
+	// 				for (var j = 0, len = userDonations.length; j < len; j++) {
+	// 					userDonations[j].donatedTo = userName;
+	// 					donations.push(userDonations[j]);
+
+	// 					donationsCount = donations.length;
+
+	// 					//Bit of a janky fix, but since we can have a TON of calls running async here, 
+	// 					//we check to see if the donations length has checked every 50ms.  Once they
+	// 					//have shown to be equal, we send the callback data
+	// 					timeout = setTimeout(function () {
+	// 						if (donationsCount === donations.length) {
+	// 							console.log('they are equal')
+	// 							var sortByDate = function (a, b) {
+	// 								if (a.createdOn < b.createdOn) {
+	// 									return 1
+	// 								}
+	// 								if (a.createdOn > b.createdOn) {
+	// 									return -1
+	// 								}
+	// 								return 0;
+	// 							}
+	// 							clearTimeout
+	// 							return callback(donations.sort(sortByDate));
+							
+	// 						}else{
+	// 							console.log('notequal');
+	// 						}
+	// 					}, 500)
+	// 				}
+	// 			});
+
+	// 		}
+
+
+	// 	})
+	// }
 }
 
 
