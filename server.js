@@ -141,19 +141,18 @@ module.exports = {
 						userDonations[j].donatedTo = userName;
 						donations.push(userDonations[j]);
 					}
-
-					var sortByDate = function (a, b){
-						if(a.createdOn < b.createdOn){
-							return 1
-						}
-						if(a.createdOn > b.createdOn){
-							return -1
-						}
-						return 0;
-					}
-					callback(donations.sort(sortByDate));
 				});
 			}
+			var sortByDate = function (a, b) {
+				if (a.createdOn < b.createdOn) {
+					return 1
+				}
+				if (a.createdOn > b.createdOn) {
+					return -1
+				}
+				return 0;
+			}
+			callback(donations.sort(sortByDate));
 		})
 	}
 }
