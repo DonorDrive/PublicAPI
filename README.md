@@ -49,6 +49,7 @@ extra-life.org/index.cfm?fuseaction=donorDrive.team&teamID=**[TEAM ID HERE]**
 * **extralifeapi.getUserInfo( participantId, callback( data ) )**
   * Takes participantId as a parameter
   * Has a callback that contains basic user info & their current goal info passed as the following JSON object:  
+  
     ```javascript
     {
       displayName: 'Alex Muench',                                                                                                          
