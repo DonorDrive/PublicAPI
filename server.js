@@ -106,7 +106,7 @@ module.exports = {
 							memberObj.name = memberObj.name.split('Team Captain')[0].trim();
 							memberObj.isTeamCaptain = true;
 						}
-						memberObj.raised = parseFloat(data.children('span').children('.gray').children('small:first-child').children('strong').text().split('$')[1]);
+						memberObj.raised = parseFloat(data.children('span').children('.gray').children('small:first-child').children('strong').text().split('$')[1].replace(/,/g, ''));
 						var memberURL = data.attr('href');
 						memberObj.URL = memberURL;
 						memberObj.pID = parseInt(memberURL.split('participantID=')[1]);
