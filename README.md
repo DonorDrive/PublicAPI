@@ -28,8 +28,8 @@ var elAPI = require('extra-life-api');
 
 and then use it in your app as needed:
 ```javascript
-extralifeapi.getUserInfo(userId, function(data){
-	console.log(data);
+elApi.getUserInfo(userId, function(data){
+    console.log(data);
 });
 ```
 
@@ -115,32 +115,6 @@ extra-life.org/index.cfm?fuseaction=donorDrive.team&teamID=**[TEAM ID HERE]**
       ] 
     }
     ```
-* **extralifeapi.getRecentDonations( participantId, callback( data ) )**
-  * Takes teamId as a parameter
-  * Returns a callback that contains a JSON object containing an array of ALL team donations in the following format:
-    * Donations sorted by most recent first
-    ```javascript
-    [
-      {
-        message: "Great job raising money!",
-        createdOn: "2016-09-18T10:50:21-0400",
-        donorName: "Joe Smith",
-        avatarImageURL: "//static.donordrive.com/clients/extralife/img/avatar-constituent-default.gif",
-        donationAmount: 100,
-        donatedTo: "Alex Muench"
-      },
-      {
-        message: "Earlier Donation",
-        createdOn: "2016-09-16T10:50:21-0400",
-        donorName: "Joe Smith",
-        avatarImageURL: "//static.donordrive.com/clients/extralife/img/avatar-constituent-default.gif",
-        donationAmount: 75,
-        donatedTo: "Alex Muench 2"
-      },
-    
-    ]
-    ```
-
     
 License
 ------
@@ -168,6 +142,6 @@ THE SOFTWARE.
 
 Shamless Plug
 ------
-If you like this work, you can [donate to my Extra Life page here](https://www.extra-life.org/index.cfm?fuseaction=donate.participant&participantID=219449).
+If you like this work, you can [donate to my Extra Life page here](https://www.extra-life.org/index.cfm?fuseaction=donorDrive.participant&participantID=275385).
 
-Also, if you'd like to see our custom Extra-Life Campaign page (which uses this middleware as our API service!), [please check us out here](http://alexmuench.net/extralife)
+Also, if you'd like to see our custom Extra-Life Campaign page (which uses this middleware as our API service!), [please check us out here](http://alexmuen.ch/extralife)
