@@ -86,6 +86,11 @@ module.exports = {
 		var teamInfoJson = {};
 
 		request(teamJsonURL, function (error, response) {
+			if(error) {
+				console.log('Error obtaining team info');
+				callback({ status: 500, message: "There was an error trying to make your request" });
+			}
+
 			teamInfoJson = JSON.parse(response.body);
 			teamInfoJson.avatarImageURL = 'http:' + teamInfoJson.avatarImageURL;
 			teamInfoJson.teamURL = teamUrl;
