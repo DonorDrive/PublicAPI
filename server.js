@@ -2,7 +2,6 @@
  * extra-life-api
  * A node-based API module to get extended Extra Life info for Users and Teams!
  * @author Alex Muench (https://github.com/ammuench)
- * @version 1.0.0
  */
 
 var request = require('request');
