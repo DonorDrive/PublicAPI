@@ -19,12 +19,12 @@ module.exports = {
 		var userInfoJson = {};
 
 		request(jsonUrl, function (error, response) {
-			if (!error && reponse) {
+			if (!error && response) {
 				userInfoJson = JSON.parse(response.body);
 				userInfoJson.avatarImageURL = 'http:' + userInfoJson.avatarImageURL;
 
 				request(profileUrl, function (error, response, html) {
-					if (!error && reponse) {
+					if (!error && response) {
 						var $ = cheerio.load(html);
 						var name, image, donateURL, team, teamURL;
 
@@ -60,7 +60,7 @@ module.exports = {
 		var donationsUrl = 'http://www.extra-life.org/index.cfm?fuseaction=donorDrive.participantDonations&participantID=' + donationsId + '&format=json';
 
 		request(donationsUrl, function (error, response) {
-			if (!error && reponse) {
+			if (!error && response) {
 				userDonationsJson = JSON.parse(response.body);
 
 				callback(userDonationsJson);
@@ -82,7 +82,7 @@ module.exports = {
 		var teamInfoJson = {};
 
 		request(teamJsonURL, function (error, response) {
-			if(error || !reponse) {
+			if(error || !response) {
 				console.log('Error obtaining team info');
 				callback({ status: 500, message: "There was an error trying to make your request" });
 			}
@@ -92,7 +92,7 @@ module.exports = {
 			teamInfoJson.teamURL = teamUrl;
 
 			request(teamRosterUrl, function (error, response, html) {
-				if (!error && reponse) {
+				if (!error && response) {
 					var $ = cheerio.load(html);
 
 					//push array to members key for use in following each function
