@@ -19,12 +19,12 @@ module.exports = {
 		var userInfoJson = {};
 
 		request(jsonUrl, function (error, response) {
-			if (!error) {
+			if (!error && reponse) {
 				userInfoJson = JSON.parse(response.body);
 				userInfoJson.avatarImageURL = 'http:' + userInfoJson.avatarImageURL;
 
 				request(profileUrl, function (error, response, html) {
-					if (!error) {
+					if (!error && reponse) {
 						var $ = cheerio.load(html);
 						var name, image, donateURL, team, teamURL;
 
@@ -42,7 +42,6 @@ module.exports = {
 						});
 
 						callback(userInfoJson);
-
 					} else {
 						console.log('Error parsing userInfo URL');
 						callback({ status: 500, message: "There was an error trying to make your request" });
@@ -57,13 +56,11 @@ module.exports = {
 
 	getRecentDonations: function (id, callback) {
 		var userDonationsJson = { recentDonations: [] };
-
 		var donationsId = id;
-
 		var donationsUrl = 'http://www.extra-life.org/index.cfm?fuseaction=donorDrive.participantDonations&participantID=' + donationsId + '&format=json';
 
 		request(donationsUrl, function (error, response) {
-			if (!error) {
+			if (!error && reponse) {
 				userDonationsJson = JSON.parse(response.body);
 
 				callback(userDonationsJson);
@@ -85,7 +82,7 @@ module.exports = {
 		var teamInfoJson = {};
 
 		request(teamJsonURL, function (error, response) {
-			if(error) {
+			if(error || !reponse) {
 				console.log('Error obtaining team info');
 				callback({ status: 500, message: "There was an error trying to make your request" });
 			}
@@ -95,7 +92,7 @@ module.exports = {
 			teamInfoJson.teamURL = teamUrl;
 
 			request(teamRosterUrl, function (error, response, html) {
-				if (!error) {
+				if (!error && reponse) {
 					var $ = cheerio.load(html);
 
 					//push array to members key for use in following each function
