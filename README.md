@@ -23,12 +23,19 @@ npm i extra-life-api
 
 Once installed, you can require the package like any other standard node-module
 ```javascript
-var elAPI = require('extra-life-api');
+const elAPI = require('extra-life-api');
 ```
 
 and then use it in your app as needed:
 ```javascript
-elApi.getUserInfo(userId, function(data){
+elApi.getUserInfo(userId).then((data) => {
+    console.log(data);
+});
+```
+
+or ES6:
+```javascript
+elApi.getUserInfo(userId).then((data) => {
     console.log(data);
 });
 ```
@@ -46,30 +53,47 @@ extra-life.org/index.cfm?fuseaction=donordrive.participant&participantID=**[PART
 extra-life.org/index.cfm?fuseaction=donorDrive.team&teamID=**[TEAM ID HERE]**
 
 
-* **extralifeapi.getUserInfo( participantId, callback( data ) )**
+* **extralifeapi.getUserInfo( participantId )**
   * Takes participantId as a parameter
-  * Has a callback that contains basic user info & their current goal info passed as the following JSON object:  
-  
+  * Has a promise that contains basic user info & their current goal info passed as the following object:  
+    
+  **Example**
+    ```javascript
+      const extraLifeApi = require('extra-life-api');
+      extraLifeApi.getUserInfo(participantId).then(data => {
+        console.log(data);
+      });
+    ```
+
+  **Returned object**
     ```javascript
     {
-      displayName: 'Alex Muench',                                                                                                          
-      totalRaisedAmount: 0,                                                                                                                
-      fundraisingGoal: 500,                                                                                                                
-      participantID: 219449,                                                                                                               
-      createdOn: '2016-09-12T15:46:50-0400',                                                                                               
-      avatarImageURL: 'http://assets.donordrive.com/extralife/images/$avatars$/constituent_0C07ECD7-C293-34EB-45A3F7B77F8BA043.jpg',       
-      teamID: 29978,                                                                                                                       
-      isTeamCaptain: true,                                                                                                                 
-      donateURL: 'https://www.extra-life.org/index.cfm?fuseaction=donate.participant&participantID=219449',                                
-      teamName: 'Dreem Teem',                                                                                                              
-      teamURL: 'http://www.extra-life.org/index.cfm?fuseaction=donordrive.team&teamID=29978' 
+      "displayName": "RockerDude",
+      "totalRaisedAmount": 137.00,
+      "fundraisingGoal": 500.00,
+      "participantID": 281667,
+      "createdOn": "2017-10-18T14:36:46-0400",
+      "avatarImageURL": "//assets.donordrive.com/extralife/images/$avatars$/constituent_3343D338-E2D8-98E1-7939C29D535071EB.jpg",
+      "teamID": 33451,
+      "isTeamCaptain": false,
+      "donateURL": "https://www.extra-life.org/index.cfm?fuseaction=donordrive.participant&participantID=281667&format=json",
+      "teamURL": "http://www.extra-life.org/index.cfm?fuseaction=donordrive.team&teamID=33451"
     }
     ```
     
-* **extralifeapi.getRecentDonations( participantId, callback( data ) )**
+* **extralifeapi.getRecentDonations( participantId )**
   * Takes participantId as a parameter
-  * Returns a callback that contains a JSON object which contains an array of donation objects in the following format:
+  * Returns a promise that contains an object which contains an array of donation objects in the following format:
   
+  **Example**
+    ```javascript
+      const extraLifeApi = require('extra-life-api');
+      extraLifeApi.getRecentDonations(participantId).then(data => {
+        console.log(data);
+      });
+    ```
+
+  **Returned object**
     ```javascript
     [{
       message: "Great job raising money!",
@@ -80,12 +104,29 @@ extra-life.org/index.cfm?fuseaction=donorDrive.team&teamID=**[TEAM ID HERE]**
     }]
     ```
     
-* **extralifeapi.getTeamInfo( teamId, callback( data ) )**
+* **extralifeapi.getTeamInfo( teamId )**
   * Takes teamId as a parameter
-  * Returns a callback that contains a JSON object with the following info about a team, it's goals, and it's roster
+  * Returns a promise that contains an object with the following info about a team, it's goals, and it's roster
     * *Roster only shows team members listed on first page at the moment*
   
+  **Example**
     ```javascript
+      const extraLifeApi = require('extra-life-api');
+      extraLifeApi.getTeamInfo(teamId).then(data => {
+        console.log(data);
+      });
+    ```
+
+  **Returned object**
+    ```javascript
+    {
+      "totalRaisedAmount": 502.28,
+      "fundraisingGoal": 10000.00,
+      "createdOn": "2017-01-13T16:57:51-0500",
+      "avatarImageURL": "//assets.donordrive.com/extralife/images/$event534$/avatar_team_33451.jpg",
+      "teamID": 33451,
+      "name": "Guardians of the Little Lights"
+    },
     { 
       totalRaisedAmount: 0,                                                                                                                
       fundraisingGoal: 3000,                                                                                                               
@@ -95,27 +136,70 @@ extra-life.org/index.cfm?fuseaction=donorDrive.team&teamID=**[TEAM ID HERE]**
       name: 'Dreem Teem',                                                                                                                  
       teamURL: 'http://www.extra-life.org/index.cfm?fuseaction=donorDrive.team&teamID=29978',                                              
       members:                                                                                                                             
-      [   
-        { 
-          name: 'Alex Muench',                                                                                                            
-          isTeamCaptain: true,                                                                                                            
-          raised: 0,                                                                                                                      
-          URL: 'http://www.extra-life.org/index.cfm?fuseaction=donorDrive.participant&participantID=219449',                              
-          pID: 219449,                                                                                                                    
-          image: 'http://assets.donordrive.com/extralife/images/$avatars$/constituent_0C07ECD7-C293-34EB-45A3F7B77F8BA043.jpg' 
-        },         
-        { 
-          name: 'Alex Muench 2',                                                                                                            
-          isTeamCaptain: false,                                                                                                            
-          raised: 0,                                                                                                                      
-          URL: 'http://www.extra-life.org/index.cfm?fuseaction=donorDrive.participant&participantID=219449',                              
-          pID: 219449,                                                                                                                    
-          image: 'http://assets.donordrive.com/extralife/images/$avatars$/constituent_0C07ECD7-C293-34EB-45A3F7B77F8BA043.jpg'
-        } 
+      [
+        {
+          "displayName": "ThirdEchelon",
+          "participantID": 248268,
+          "createdOn": "2017-01-13T16:57:51-0500",
+          "URL": 'http://www.extra-life.org/index.cfm?fuseaction=donorDrive.participant&participantID=248268',
+          "avatarImageURL": "//assets.donordrive.com/extralife/images/$avatars$/constituent_CEA4E0A6-9C88-D90F-FE1983C6B9B65B65.jpg",
+          "isTeamCaptain": true
+        },
+        {
+          "displayName": "Alex Muench",
+          "participantID": 219449,
+          "createdOn": "2017-01-13T16:57:51-0500",
+          "URL": 'http://www.extra-life.org/index.cfm?fuseaction=donorDrive.participant&participantID=219449',
+          "avatarImageURL": "//assets.donordrive.com/extralife/images/$avatars$/constituent_CEA4E0A6-9C88-D90F-FE1983C6B9B65B65.jpg",
+          "isTeamCaptain": true
+        }
       ] 
     }
     ```
-    
+* **extralifeapi.getTeamDonations( teamId )**
+  * Takes teamId as a parameter
+  * Returns a promise that resolves with an object with the following info about the donations made to the team.  A sorted array (newest to oldest) donation array is returned each object containing a donation message, time it was created, donor name, avatar image url, and donation amount.
+
+  **Example**
+    ```javascript
+      const extraLifeApi = require('extra-life-api');
+      extraLifeApi.getTeamDonations(teamId).then((data) => {
+        console.log(data);
+      });
+    ```
+
+  **Returned object**
+    ```javascript
+    [
+      { 
+        message: 'matching the $100 i said I would, thanks for the support',
+        createdOn: '2017-10-28T18:10:18-0400',
+        donorName: 'RockerDude',
+        avatarImageURL: '//assets.donordrive.com/extralife/images/$avatars$/constituent_3343D338-E2D8-98E1-7939C29D535071EB.jpg',
+        donationAmount: 100 
+      },
+      { 
+        message: null,
+        createdOn: '2017-10-26T10:24:44-0400',
+        donorName: null,
+        avatarImageURL: '//assets.donordrive.com/clients/extralife/img/avatar-constituent-default.gif',
+        donationAmount: 100 
+      },
+      { 
+        message: null,
+        createdOn: '2017-10-26T10:11:40-0400',
+        donorName: 'Adam MacLeod',
+        avatarImageURL: '//assets.donordrive.com/clients/extralife/img/avatar-constituent-default.gif',
+        donationAmount: 25 },
+      { 
+        message: 'Good thing you’re doing bro!',
+        createdOn: '2017-10-26T10:05:25-0400',
+        donorName: 'William Bennett',
+        avatarImageURL: '//assets.donordrive.com/clients/extralife/img/avatar-constituent-default.gif',
+        donationAmount: 10 
+      }
+    ]
+    ```
 License
 ------
 [The MIT License (MIT)](https://tldrlegal.com/license/mit-license)
@@ -139,6 +223,18 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+
+
+Thank Yous
+-----
+I'd like to reach out and thank the following devs for their contributions to the project:
+
+* [EasyAsABC123](https://github.com/EasyAsABC123)
+* [timmixell](https://github.com/timmixell)
+* [DrGodCarl](https://github.com/DrGodCarl)
+* [samph](https://github.com/samph)
+
+
 
 Shamless Plug
 ------
