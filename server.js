@@ -51,14 +51,14 @@ module.exports = {
 
               resolve(userInfoJson);
             }).catch((reason) => {
-              reject(reason);
+              return reject(reason);
             });
           } else {
             resolve(userInfoJson);
           }
         } else {
           console.log('Error parsing userInfo URL');
-          reject(new Error('There was an error trying to make your request'));
+          return reject(new Error('There was an error trying to make your request'));
         }
       });
     });
@@ -83,7 +83,7 @@ module.exports = {
           resolve(userDonationsJson);
         } else {
           console.log('Error parsing recentDonations URL');
-          reject(new Error('There was an error trying to make your request'));
+          return reject(new Error('There was an error trying to make your request'));
         }
       });
     });
@@ -112,15 +112,14 @@ module.exports = {
 
               resolve(teamInfoJson);
             }).catch((reason) => {
-              reject(reason);
+              return reject(reason);
             });
           } else {
             resolve(teamInfoJson);
-
           }
         } else {
           console.log('Error obtaining team info');
-          reject(new Error('There was an error trying to make your request'));
+          return reject(new Error('There was an error trying to make your request'));
         }
       });
     });
@@ -145,7 +144,7 @@ module.exports = {
           resolve(teamDonationsJson);
         } else {
           console.log('Error parsing teamDonations URL');
-          reject(new Error('There was an error trying to make your request'));
+          return reject(new Error('There was an error trying to make your request'));
         }
       });
     });
@@ -175,7 +174,7 @@ module.exports = {
           resolve(teamRosterJson);
         } else {
           console.log('Error parsing teamRoster URL');
-          reject(new Error('There was an error trying to make your request'));
+          return reject(new Error('There was an error trying to make your request'));
         }
       });
     });
