@@ -58,7 +58,7 @@ module.exports = {
           }
         } else {
           console.log('Error parsing userInfo URL');
-          return reject(new Error('There was an error trying to make your request'));
+          return reject('There was an error trying to make your request');
         }
       });
     });
@@ -83,7 +83,7 @@ module.exports = {
           resolve(userDonationsJson);
         } else {
           console.log('Error parsing recentDonations URL');
-          return reject(new Error('There was an error trying to make your request'));
+          return reject('There was an error trying to make your request');
         }
       });
     });
@@ -119,7 +119,7 @@ module.exports = {
           }
         } else {
           console.log('Error obtaining team info');
-          return reject(new Error('There was an error trying to make your request'));
+          return reject('There was an error trying to make your request');
         }
       });
     });
@@ -144,7 +144,7 @@ module.exports = {
           resolve(teamDonationsJson);
         } else {
           console.log('Error parsing teamDonations URL');
-          return reject(new Error('There was an error trying to make your request'));
+          return reject('There was an error trying to make your request');
         }
       });
     });
@@ -174,7 +174,7 @@ module.exports = {
           resolve(teamRosterJson);
         } else {
           console.log('Error parsing teamRoster URL');
-          return reject(new Error('There was an error trying to make your request'));
+          return reject('There was an error trying to make your request');
         }
       });
     });
