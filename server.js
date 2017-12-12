@@ -40,7 +40,11 @@ module.exports = {
 
       request(url, (error, response) => {
         if (!error && response) {
-          userInfoJson = JSON.parse(response.body);
+          try {
+            userInfoJson = JSON.parse(response.body);
+          } catch (e) {
+            return reject(e);
+          }
           userInfoJson.avatarImageURL = 'https:' + userInfoJson.avatarImageURL;
           userInfoJson.donateURL = domain + 'index.cfm?fuseaction=donate.participant&participantID=' + id;
 
@@ -51,14 +55,14 @@ module.exports = {
 
               resolve(userInfoJson);
             }).catch((reason) => {
-              reject(reason);
+              return reject(reason);
             });
           } else {
             resolve(userInfoJson);
           }
         } else {
           console.log('Error parsing userInfo URL');
-          reject(new Error('There was an error trying to make your request'));
+          return reject('There was an error trying to make your request');
         }
       });
     });
@@ -78,12 +82,16 @@ module.exports = {
         if (!error && response) {
           userDonationsJson.countDonations = response.headers['x-total-records'] || 0;
           userDonationsJson.countPages = Math.ceil(userDonationsJson.countDonations / 100);
-          userDonationsJson.recentDonations = JSON.parse(response.body);
+          try {
+            userDonationsJson.recentDonations = JSON.parse(response.body);
+          } catch (e) {
+            return reject(e);
+          }
 
           resolve(userDonationsJson);
         } else {
           console.log('Error parsing recentDonations URL');
-          reject(new Error('There was an error trying to make your request'));
+          return reject('There was an error trying to make your request');
         }
       });
     });
@@ -100,7 +108,11 @@ module.exports = {
 
       request(url, (error, response) => {
         if (!error && response) {
-          teamInfoJson = JSON.parse(response.body);
+          try {
+            teamInfoJson = JSON.parse(response.body);
+          } catch (e) {
+            return reject(e);
+          }
           teamInfoJson.avatarImageURL = 'http:' + teamInfoJson.avatarImageURL;
           teamInfoJson.teamURL = domain + 'index.cfm?fuseaction=donorDrive.team&teamID=' + id;
           if (roster) {
@@ -112,15 +124,14 @@ module.exports = {
 
               resolve(teamInfoJson);
             }).catch((reason) => {
-              reject(reason);
+              return reject(reason);
             });
           } else {
             resolve(teamInfoJson);
-
           }
         } else {
           console.log('Error obtaining team info');
-          reject(new Error('There was an error trying to make your request'));
+          return reject('There was an error trying to make your request');
         }
       });
     });
@@ -140,12 +151,16 @@ module.exports = {
         if (!error && response) {
           teamDonationsJson.countDonations = response.headers['x-total-records'] || 0;
           teamDonationsJson.countPages = Math.ceil(teamDonationsJson.countDonations / 100);
-          teamDonationsJson.recentDonations = JSON.parse(response.body);
+          try {
+            teamDonationsJson.recentDonations = JSON.parse(response.body);
+          } catch (e) {
+            return reject(e);
+          }
 
           resolve(teamDonationsJson);
         } else {
           console.log('Error parsing teamDonations URL');
-          reject(new Error('There was an error trying to make your request'));
+          return reject('There was an error trying to make your request');
         }
       });
     });
@@ -165,7 +180,11 @@ module.exports = {
         if (!error && response) {
           teamRosterJson.countMembers = response.headers['x-total-records'] || 0;
           teamRosterJson.countPages = Math.ceil(teamRosterJson.countMembers / 100);
-          teamRosterJson.recentMembers = JSON.parse(response.body);
+          try {
+            teamRosterJson.recentMembers = JSON.parse(response.body);
+          } catch (e) {
+            return reject(e);
+          }
 
           for (let i = 0; i < teamRosterJson.recentMembers.length; i++) {
             teamRosterJson.recentMembers[i].avatarImageURL = 'https:' + teamRosterJson.recentMembers[i].avatarImageURL;
@@ -175,7 +194,7 @@ module.exports = {
           resolve(teamRosterJson);
         } else {
           console.log('Error parsing teamRoster URL');
-          reject(new Error('There was an error trying to make your request'));
+          return reject('There was an error trying to make your request');
         }
       });
     });
