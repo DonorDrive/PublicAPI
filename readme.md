@@ -5,14 +5,14 @@ Requests to the DonorDrive API follow the Restful scheme. Data is retrieved usin
 ### DonorDrive Team ID, Participant ID, and Event ID
 | Command | Description | Example |
 | --- | --- | --- |
-| teamID | A unique string identifying a specific team that persists across events. Can be obtained via frontend from the URL or admin dashboard. | 39065 |
-| participantID | A unique string identifying a single participant/constituent. Can be obtained via frontend from the URL or admin dashboard. | 302374 |
-| eventID |  A unique string identifying an event. Can be obtained via frontend from the URL or admin dashboard. | 539 |
+| teamID | A unique string identifying a specific team that persists across events. Can be obtained via frontend from the URL. | 39065 |
+| participantID | A unique string identifying a single participant/constituent. Can be obtained via frontend from the URL. | 302374 |
+| eventID |  A unique string identifying an event. Can be obtained via frontend from the URL. | 539 |
 ### Pagination
 ### Response
 All data is returned as a JSON object.
 ### Timestamps
-Timestamps are returned in the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format using [Coordinated Universal Time (UTC)](https://en.wikipedia.org/wiki/ISO_8601#Coordinated_Universal_Time_(UTC)) as a designator. The format returned is `yyyy-mm-ddThh:mm:ss.nnnnnn+|-hh:mm` with a zero offset.
+Timestamps are returned in the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format using [Coordinated Universal Time (UTC)](https://en.wikipedia.org/wiki/ISO_8601#Coordinated_Universal_Time_(UTC)) as a designator. The format returned is `yyyy-mm-ddThh:mm:ss.nnnnnn+hh:mm` with a zero offset.
 ### Response Status Codes
 | Status Code | Description |
 | --- | --- |
