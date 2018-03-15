@@ -12,7 +12,7 @@ Requests to the DonorDrive API follow the Restful scheme. Data is retrieved usin
 ### Response
 All data is returned as a JSON object.
 ### Timestamps
-Timestamps are returned in the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format using [Coordinated Universal Time (UTC)](https://en.wikipedia.org/wiki/ISO_8601#Coordinated_Universal_Time_(UTC)) as a designator. The format returned is 'yyyy-mm-ddThh:mm:ss.nnnnnn+|-hh:mm' with a zero offset.
+Timestamps are returned in the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format using [Coordinated Universal Time (UTC)](https://en.wikipedia.org/wiki/ISO_8601#Coordinated_Universal_Time_(UTC)) as a designator. The format returned is `yyyy-mm-ddThh:mm:ss.nnnnnn+|-hh:mm` with a zero offset.
 ### Response Status Codes
 | Status Code | Description |
 | --- | --- |
