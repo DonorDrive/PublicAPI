@@ -25,6 +25,39 @@ Timestamps are returned in the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601
 | 429 | Too Many Requests - Please wait for existing request to process before trying again |
 | 500 | Internal Server Error; Technical support has been notified |
 | 503 | Service Unavailable - The Request resource is not currently cached. |
+## URL Parameters
+All URL Parameters need to be URL encoded.
+Un-encoded URL
+```
+/events/{eventID}/participants&where=displayName = 'bob individual1'
+```
+Properly Encoded URL
+```
+/events/{eventID}/participants&where=displayName%20%3D%20'bob%20individual1'
+```
+#### All Endpoints
+| Query Parameter | Description |
+| --- | --- |
+| callback | The value provided will wrap the payload as a JSON-P-formatted response. |
+| select | The list of fields provided will be returned as the payload. If not provided, all fields are assumed. |
+| version | The response format of the specified version will be used (if it is still available), otherwise, default to the oldest supported version. |
+
+Example:
+```
+/events/{eventID}/participants?callback=json&version=1.0&select=displayName,eventName,createdDateUTC
+```
+#### Multiple Records
+| Query Parameter | Description |
+| --- | --- |
+| where | Value provided will follow the rules of a [SQL Where clause](https://www.w3schools.com/sql/sql_where.asp). |
+| orderBy | The specified fields will be used to create the sort-order of the response payload |
+| limit | The result set will be restricted by the value defined. Default and max is set to 100. Any value above 100 will return a 400 error. |
+| offset | The result set returned will start at the index furnished by offset (i.e. when working with a working set larger than the limit of 100, offset may be furnished to paginate through results). |
+
+Example:
+```
+/events/{eventID}/participants?limit=5&orderBy=displayName&where=displayName%20%3D%20'bob%20individual1'
+```
 ## API Endpoint Reference
 #### Get Participants In A Team
 ```
@@ -62,41 +95,11 @@ Timestamps are returned in the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601
 ```
 /events/{eventID}/participants
 ```
-## URL Parameters
-All URL Parameters need to be URL encoded.
-Un-encoded URL
-```
-/events/{eventID}/participants&where=displayName = 'bob individual1'
-```
-Properly Encoded URL
-```
-/events/{eventID}/participants&where=displayName%20%3D%20'bob%20individual1'
-```
-#### All Endpoints
-| Query Parameter | Description |
-| --- | --- |
-| callback | The value provided will wrap the payload as a JSON-P-formatted response. |
-| select | The list of fields provided will be returned as the payload. If not provided, all fields are assumed. |
-| version | The response format of the specified version will be used (if it is still available), otherwise, default to the oldest supported version. |
-Example:
-```
-/events/{eventID}/participants?callback=json&version=1.0&select=displayName,eventName,createdDateUTC
-```
-#### Multiple Records
-| Query Parameter | Description |
-| --- | --- |
-| where | Value provided will follow the rules of a [SQL Where clause](https://www.w3schools.com/sql/sql_where.asp). |
-| orderBy | The specified fields will be used to create the sort-order of the response payload |
-| limit | The result set will be restricted by the value defined. Default and max is set to 100. Any value above 100 will return a 400 error. |
-| offset | The result set returned will start at the index furnished by offset (i.e. when working with a working set larger than the limit of 100, offset may be furnished to paginate through results). |
 
-Example:
-```
-/events/{eventID}/participants?limit=5&orderBy=displayName&where=displayName%20%3D%20'bob%20individual1'
-```
 ## Response Headers
 | Header | Description |
 | --- | --- |
+| Status Code | Status of returned response. |
 | API-Version | The version of the API used to fulfill the request. |
 | Cache-Control | TBA |
 | Last-Modified | For a single record, refers to the _cacheModifiedDateUTC of that record. If multiple records are returned, refers to the _cacheModifiedDateUTC of the most recently modified record within the working set. |
