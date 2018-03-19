@@ -26,44 +26,53 @@ Timestamps are returned in the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601
 | 500 | Internal Server Error; Technical support has been notified |
 | 503 | Service Unavailable - The Request resource is not currently cached. |
 ## API Endpoint Reference
-### Get Participants In A Team
+#### Get Participants In A Team
 ```
 /teams/{teamID}/participants
 ```
-### Get Donations In A Team
+#### Get Donations In A Team
 ```
 /teams/{teamID}/donations
 ```
-### Get Team
+#### Get Team
 ```
 /teams/{teamID}
 ```
-### Get Teams
+#### Get Teams
 ```
 /teams
 ```
-### Get Participant Donations
+#### Get Participant Donations
 ```
 /participants/{participantID}/donations
 ```
-### Get Participant
+#### Get Participant
 ```
 /participants/{participantID}
 ```
-### Get Participants
+#### Get Participants
 ```
 /participants
 ```
-### Get Event Teams
+#### Get Event Teams
 ```
 /events/{eventID}/teams
 ```
-### Get Event Participants
+#### Get Event Participants
 ```
 /events/{eventID}/participants
 ```
 ## URL Parameters
-### All Endpoints
+All URL Parameters need to be URL encoded.
+Un-encoded URL
+```
+/events/{eventID}/participants&where=displayName = 'bob individual1'
+```
+Properly Encoded URL
+```
+/events/{eventID}/participants&where=displayName%20%3D%20'bob%20individual1'
+```
+#### All Endpoints
 | Query Parameter | Description |
 | --- | --- |
 | callback | The value provided will wrap the payload as a JSON-P-formatted response. |
@@ -71,17 +80,19 @@ Timestamps are returned in the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601
 | version | The response format of the specified version will be used (if it is still available), otherwise, default to the oldest supported version. |
 Example:
 ```
-
+/events/{eventID}/participants?callback=json&version=1.0&select=displayName,eventName,createdDateUTC
 ```
-### Multiple Records
+#### Multiple Records
 | Query Parameter | Description |
 | --- | --- |
 | where | Value provided will follow the rules of a [SQL Where clause](https://www.w3schools.com/sql/sql_where.asp). |
 | orderBy | The specified fields will be used to create the sort-order of the response payload |
 | limit | The result set will be restricted by the value defined. Default and max is set to 100. Any value above 100 will return a 400 error. |
 | offset | The result set returned will start at the index furnished by offset (i.e. when working with a working set larger than the limit of 100, offset may be furnished to paginate through results). |
+
 Example:
 ```
+/events/{eventID}/participants?limit=5&orderBy=displayName&where=displayName%20%3D%20'bob%20individual1'
 ```
 ## Response Headers
 | Header | Description |
