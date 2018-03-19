@@ -27,6 +27,7 @@ Timestamps are returned in the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601
 | 503 | Service Unavailable - The Request resource is not currently cached. |
 ## URL Parameters
 All URL Parameters need to be URL encoded.
+
 Un-encoded URL
 ```
 /events/{eventID}/participants&where=displayName = 'bob individual1'
