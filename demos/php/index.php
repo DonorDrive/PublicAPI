@@ -25,7 +25,7 @@
           curl_setopt_array($curl, array(
               CURLOPT_RETURNTRANSFER => 1,
               // CURLOPT_HEADER => 1,
-              CURLOPT_URL => 'http://www.donordrive.com/api/events/500/participants/?limit=9&offset=1',
+              CURLOPT_URL => 'https://{ DONORDRIVE URL HERE }/api/events/{ EVENT ID }/participants/?limit=9&offset=1',
               CURLOPT_CONNECTTIMEOUT => $timeout
           ));
 
@@ -34,13 +34,13 @@
           curl_close($curl);
 
           if($jsonResponse) {
-            foreach($jsonResponse as $event) {
+            foreach($jsonResponse as $participant) {
               echo '<div class="uk-width-1-3@m">
                       <div>
                         <div class="uk-card uk-card-default uk-card-body uk-margin">
-                            <h3 class="uk-card-title">' . $event['displayName'] . '</h3>
-                            <p>' . $event['createdDateUTC'] . '</p>
-                            <p>' . $event['eventName'] . '</p>
+                            <h3 class="uk-card-title">' . $participant['displayName'] . '</h3>
+                            <p>' . $participant['createdDateUTC'] . '</p>
+                            <p>' . $participant['eventName'] . '</p>
                         </div>
                       </div>
                     </div>';
