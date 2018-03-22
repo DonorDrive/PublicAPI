@@ -12,6 +12,7 @@ Visit the DonorDrive instance you wish to integrate with. Make note of the domai
 ### Status Codes
 A 200 Status Code will return for successful API calls. Meaningful codes + messaging will be furnished in the event of an error. Some responses errors are below.
 |Status Code|Description|
+|---|---|---|
 |204|No Content - The pagination offset is out of range.|
 |400|Bad Request - The request could not be interpreted.|
 |404|Not Found - The request could not be found for the ID or URL provided.|
@@ -22,6 +23,7 @@ A 200 Status Code will return for successful API calls. Meaningful codes + messa
 ### Response Headers
 Some custom Response Headers are included to facilitate the handling of data.
 |Header|Description|
+|---|---|
 |API-Version|The version of the API used to fulfill the request.|
 |Cache-Control|TBA|
 |Last-Modified|Can be used to compare when a record was last updated. Useful when comparing if your data is still valid.|
@@ -33,6 +35,7 @@ All Query Parameters need to be URL encoded. For example ```&where=displayName =
 
 #### All Endpoints
 |Query Parameter|Description|
+|---|---|
 |callback|The value provided will wrap the payload as a JSONP-formatted response.|
 |select|The list of fields provided will be returned as the payload. If not provided, all fields are assumed.|
 |version|The version of the API desired. If no version parameter is provided, the API will default to the oldest supported version.|
@@ -51,6 +54,7 @@ Individual fundraisers participating in an active Registration Event or Personal
 
 #### Fields
 |Field|Description|
+|---|---|
 |```avatarImageURL```|The URL associated with the Participant|
 |```campaignDate```|(Personal Campaigns-only) The date of the Personal Campaign|
 |```campaignName```|(Personal Campaigns-only) The name of the Personal Campaign|
@@ -68,6 +72,7 @@ Individual fundraisers participating in an active Registration Event or Personal
 
 #### Endpoints
 |Path|Description|
+|---|---|
 |```/api/participants```|An Array of Participants|
 |```/api/participants/{participantID}```|A Participant Object (To find ```{participantID}```, visit your Participant's Fundraising Page. Look for the ```&participantID=``` URL parameter.)|
 |```/api/events/{eventID}/participants```|An Array of Participants associated to the Event (To find ```{eventID}```, visit your Event's Fundraising Page. Look for the ```&eventID=``` URL parameter.)|
@@ -77,6 +82,8 @@ Individual fundraisers participating in an active Registration Event or Personal
 Teams participating in an active Registration Event
 
 #### Fields
+|Field|Description|
+|---|---|
 |```avatarImageURL```|The URL associated with the Team|
 |```createdDateUTC```|The ISO-8601-formatted date (in UTC) this Team was created|
 |```eventID```|The ID of the Event this Team is associated with|
@@ -97,6 +104,8 @@ Teams participating in an active Registration Event
 Donors supporting Participants or Teams
 
 #### Fields
+|Field|Description|
+|---|---|
 |```amount```|The amount donated by this Donor|
 |```avatarImageURL```|The URL associated with the Donor|
 |```createdDateUTC```|The ISO-8601-formatted date (in UTC) this Donor was created|
