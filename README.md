@@ -11,8 +11,9 @@ Visit the DonorDrive instance you wish to integrate with. Make note of the domai
 
 ### Status Codes
 A 200 Status Code will return for successful API calls. Meaningful codes + messaging will be furnished in the event of an error. Some responses errors are below.
+
 |Status Code|Description|
-|---|---|---|
+|---|---|
 |204|No Content - The pagination offset is out of range.|
 |400|Bad Request - The request could not be interpreted.|
 |404|Not Found - The request could not be found for the ID or URL provided.|
@@ -22,6 +23,7 @@ A 200 Status Code will return for successful API calls. Meaningful codes + messa
 
 ### Response Headers
 Some custom Response Headers are included to facilitate the handling of data.
+
 |Header|Description|
 |---|---|
 |API-Version|The version of the API used to fulfill the request.|
@@ -34,18 +36,21 @@ Some custom Response Headers are included to facilitate the handling of data.
 All Query Parameters need to be URL encoded. For example ```&where=displayName = 'bob individual1'``` would become ```&where=displayName%20%3D%20'bob%20individual1'```.
 
 #### All Endpoints
+
 |Query Parameter|Description|
 |---|---|
-|callback|The value provided will wrap the payload as a JSONP-formatted response.|
-|select|The list of fields provided will be returned as the payload. If not provided, all fields are assumed.|
-|version|The version of the API desired. If no version parameter is provided, the API will default to the oldest supported version.|
+|```callback```|The value provided will wrap the payload as a JSONP-formatted response.|
+|```select```|The list of fields provided will be returned as the payload. If not provided, all fields are assumed.|
+|```version```|The version of the API desired. If no version parameter is provided, the API will default to the oldest supported version.|
 
 #### Array-based Endpoints
+
 |Query Parameter|Description|
-|limit|The result set will be restricted by the value defined. Default and max is set to 100. Any value above 100 will return a 400 error.|
-|where|Value provided will follow the rules of a [SQL Where clause](https://www.w3schools.com/sql/sql_where.asp).|
-|offset|The result set returned will start at the index furnished by offset (i.e. when working with a working set larger than the limit of 100, offset may be furnished to paginate through results).|
-|orderBy|The specified fields will be used to create the sort-order of the response payload|
+|---|---|
+|```limit```|The result set will be restricted by the value defined. Default and max is set to 100. Any value above 100 will return a 400 error.|
+|```where```|Value provided will follow the rules of a [SQL Where clause](https://www.w3schools.com/sql/sql_where.asp).|
+|```offset```|The result set returned will start at the index furnished by offset (i.e. when working with a working set larger than the limit of 100, offset may be furnished to paginate through results).|
+|```orderBy```|The specified fields will be used to create the sort-order of the response payload|
 
 ## Entities
 
@@ -53,6 +58,7 @@ All Query Parameters need to be URL encoded. For example ```&where=displayName =
 Individual fundraisers participating in an active Registration Event or Personal Campaign.
 
 #### Fields
+
 |Field|Description|
 |---|---|
 |```avatarImageURL```|The URL associated with the Participant|
@@ -71,6 +77,7 @@ Individual fundraisers participating in an active Registration Event or Personal
 |```teamName```|(Team Participants-only) The name of the Team this Participant is associated with|
 
 #### Endpoints
+
 |Path|Description|
 |---|---|
 |```/api/participants```|An Array of Participants|
@@ -82,6 +89,7 @@ Individual fundraisers participating in an active Registration Event or Personal
 Teams participating in an active Registration Event
 
 #### Fields
+
 |Field|Description|
 |---|---|
 |```avatarImageURL```|The URL associated with the Team|
@@ -95,7 +103,9 @@ Teams participating in an active Registration Event
 |```teamID```|The unique ID of the Team|
 
 #### Endpoints
+
 |Path|Description|
+|---|---|
 |```/api/teams```|An Array of Teams|
 |```/api/teams/{teamID}```|A Team Object (To find ```{teamID}```, visit your Team's Fundraising Page. Look for the ```&teamID=``` URL parameter.)|
 |```/api/events/{eventID}/teams```|An Array of Teams associated to the Event (To find ```{eventID}```, visit your Event's Fundraising Page. Look for the ```&eventID=``` URL parameter.)|
@@ -104,6 +114,7 @@ Teams participating in an active Registration Event
 Donors supporting Participants or Teams
 
 #### Fields
+
 |Field|Description|
 |---|---|
 |```amount```|The amount donated by this Donor|
@@ -116,6 +127,8 @@ Donors supporting Participants or Teams
 |```teamID```|(Team and Team-Participant Donors-only) The ID of the Team this Donor is associated with|
 
 #### Endpoints
-|```/api/participants/{participantID}/donations```|An Array of Donors associated to the Participant (To find ```{participantID}```, visit your Participant's Fundraising Page. Look for the ```&participantID=``` URL parameter.)|
+
 |Path|Description|
+|---|---|
+|```/api/participants/{participantID}/donations```|An Array of Donors associated to the Participant (To find ```{participantID}```, visit your Participant's Fundraising Page. Look for the ```&participantID=``` URL parameter.)|
 |```/api/teams/{teamID}/donations```|An Array of Donors associated to the Team (To find ```{teamID}```, visit your Team's Fundraising Page. Look for the ```&teamID=``` URL parameter.)|
