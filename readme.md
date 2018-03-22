@@ -12,7 +12,7 @@ Visit the DonorDrive instance you wish to integrate with. Make note of the domai
 ### Status Codes
 A 200 Status Code will return for successful API calls. Meaningful codes + messaging will be furnished in the event of an error. Some responses errors are below.
 |Status Code|Description|
-|---|---|---|
+|---|---|
 |204|No Content - The pagination offset is out of range.|
 |400|Bad Request - The request could not be interpreted.|
 |404|Not Found - The request could not be found for the ID or URL provided.|
@@ -42,6 +42,7 @@ All Query Parameters need to be URL encoded. For example ```&where=displayName =
 
 #### Array-based Endpoints
 |Query Parameter|Description|
+|---|---|
 |limit|The result set will be restricted by the value defined. Default and max is set to 100. Any value above 100 will return a 400 error.|
 |where|Value provided will follow the rules of a [SQL Where clause](https://www.w3schools.com/sql/sql_where.asp).|
 |offset|The result set returned will start at the index furnished by offset (i.e. when working with a working set larger than the limit of 100, offset may be furnished to paginate through results).|
@@ -120,5 +121,4 @@ Donors supporting Participants or Teams
 |Path|Description|
 |---|---|
 |```/api/participants/{participantID}/donations```|An Array of Donors associated to the Participant (To find ```{participantID}```, visit your Participant's Fundraising Page. Look for the ```&participantID=``` URL parameter.)|
-|Path|Description|
 |```/api/teams/{teamID}/donations```|An Array of Donors associated to the Team (To find ```{teamID}```, visit your Team's Fundraising Page. Look for the ```&teamID=``` URL parameter.)|
