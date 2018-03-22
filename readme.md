@@ -96,6 +96,7 @@ Teams participating in an active Registration Event
 
 #### Endpoints
 |Path|Description|
+|---|---|
 |```/api/teams```|An Array of Teams|
 |```/api/teams/{teamID}```|A Team Object (To find ```{teamID}```, visit your Team's Fundraising Page. Look for the ```&teamID=``` URL parameter.)|
 |```/api/events/{eventID}/teams```|An Array of Teams associated to the Event (To find ```{eventID}```, visit your Event's Fundraising Page. Look for the ```&eventID=``` URL parameter.)|
@@ -116,6 +117,8 @@ Donors supporting Participants or Teams
 |```teamID```|(Team and Team-Participant Donors-only) The ID of the Team this Donor is associated with|
 
 #### Endpoints
+|Path|Description|
+|---|---|
 |```/api/participants/{participantID}/donations```|An Array of Donors associated to the Participant (To find ```{participantID}```, visit your Participant's Fundraising Page. Look for the ```&participantID=``` URL parameter.)|
 |Path|Description|
 |```/api/teams/{teamID}/donations```|An Array of Donors associated to the Team (To find ```{teamID}```, visit your Team's Fundraising Page. Look for the ```&teamID=``` URL parameter.)|
