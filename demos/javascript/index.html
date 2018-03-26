@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<title>JavaScript DonorDrive API Demo</title>
+
+		<style>
+			.endpoint {
+				float: right;
+			}
+			.pointer {
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container" style="margin-top: 20px; margin-bottom: 30px;">
+			<h1>
+				DonorDrive API
+			</h1>
+			<hr />
+			<form>
+				<legend>
+					Settings
+				</legend>
+				<div class="form-group row">
+					<label for="instancedomain" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Instance Domain</label>
+					<div class="col-sm-8 col-md-9 col-lg-10">
+						<input id="instancedomain" type="text" name="instanceDomain" class="form-control" />
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="select" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Select</label>
+					<div class="col-sm-8 col-md-9 col-lg-10">
+						<input id="select" type="text" name="select" class="form-control" />
+					</div>
+					<div class="col-sm-8 col-md-9 col-lg-10 offset-sm-4 offset-md-3 offset-lg-2">
+						<small class="form-text text-muted">
+							The list of fields provided will be returned as the payload. If none are provided, all fields will be returned.
+						</small>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="where" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Where</label>
+					<div class="col-sm-8 col-md-9 col-lg-10">
+						<input id="where" type="text" name="select" class="form-control" />
+					</div>
+					<div class="col-sm-8 col-md-9 col-lg-10 offset-sm-4 offset-md-3 offset-lg-2">
+						<small class="form-text text-muted">
+							The value provided will filter the data based on the rules of an SQL WHERE clause.
+						</small>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="orderby" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Order By</label>
+					<div class="col-sm-8 col-md-9 col-lg-10">
+						<input id="orderby" type="text" name="orderBy" class="form-control" />
+					</div>
+					<div class="col-sm-8 col-md-9 col-lg-10 offset-sm-4 offset-md-3 offset-lg-2">
+						<small class="form-text text-muted">
+							The specified fields will be used to create the sort-order of the response payload.
+						</small>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="limit" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Limit</label>
+					<div class="col-sm-8 col-md-9 col-lg-10">
+						<input id="limit" type="text" name="limit" class="form-control" />
+					</div>
+					<div class="col-sm-8 col-md-9 col-lg-10 offset-sm-4 offset-md-3 offset-lg-2">
+						<small class="form-text text-muted">
+							The result set will be restricted by the value defined. Default and max is set to 100. Any value above 100 will return a 400 error.
+						</small>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="offset" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Offset</label>
+					<div class="col-sm-8 col-md-9 col-lg-10">
+						<input id="offset" type="text" name="offset" class="form-control" />
+					</div>
+					<div class="col-sm-8 col-md-9 col-lg-10 offset-sm-4 offset-md-3 offset-lg-2">
+						<small class="form-text text-muted">
+							The result set returned will start at the index furnished by offset (i.e. when working with a working set larger than the limit of 100, offset may be furnished to paginate through results).
+						</small>
+					</div>
+				</div>
+				<legend>
+					Endpoints
+				</legend>
+				<div id="endpointaccordion">
+					<div class="card">
+						<div class="card-header">
+							<h5 class="mb-0 pointer" data-toggle="collapse" data-target="#eventparticipants">
+								Event Participants
+								<code class="endpoint">
+									/events/{eventID}/participants
+								</code>
+							</h5>
+						</div>
+						<div id="eventparticipants" class="collapse" data-parent="#endpointaccordion">
+							<div class="card-body">
+								<div class="form-group row">
+									<label for="participantseventid" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Event ID</label>
+									<div class="col-sm-8 col-md-9 col-lg-10">
+										<input id="participantseventid" type="text" name="participantsEventID" class="form-control" />
+									</div>
+								</div>
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#examplemodal" data-api-type="fetch">Generate Code Using fetch()</button>
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#examplemodal" data-api-type="XMLHttpRequest">Generate Code Using XMLHttpRequest()</button>
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#examplemodal">Run</button>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header">
+							<h5 class="mb-0 pointer" data-toggle="collapse" data-target="#eventteams">
+								Event Teams
+								<code class="endpoint">
+									/events/{eventID}/teams
+								</code>
+							</h5>
+						</div>
+						<div id="eventteams" class="collapse" data-parent="#endpointaccordion">
+							<div class="card-body">
+								<div class="form-group row">
+									<label for="teamseventid" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Event ID</label>
+									<div class="col-sm-8 col-md-9 col-lg-10">
+										<input id="teamseventid" type="text" name="teamsEventID" class="form-control" />
+									</div>
+								</div>
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#examplemodal" data-api-type="fetch">Generate Code Using fetch()</button>
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#examplemodal" data-api-type="XMLHttpRequest">Generate Code Using XMLHttpRequest()</button>
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#examplemodal">Run</button>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header">
+							<h5 class="mb-0 pointer" data-toggle="collapse" data-target="#participants">
+								Participants
+								<code class="endpoint">
+									/participants
+								</code>
+							</h5>
+						</div>
+						<div id="participants" class="collapse" data-parent="#endpointaccordion">
+							<div class="card-body">
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#examplemodal" data-api-type="fetch">Generate Code Using fetch()</button>
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#examplemodal" data-api-type="XMLHttpRequest">Generate Code Using XMLHttpRequest()</button>
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#examplemodal">Run</button>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header">
+							<h5 class="mb-0 pointer" data-toggle="collapse" data-target="#participant">
+								Participant
+								<code class="endpoint">
+									/participants/{participantID}
+								</code>
+							</h5>
+						</div>
+						<div id="participant" class="collapse" data-parent="#endpointaccordion">
+							<div class="card-body">
+								<div class="form-group row">
+									<label for="participantid" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Participant ID</label>
+									<div class="col-sm-8 col-md-9 col-lg-10">
+										<input id="participantid" type="text" name="participantID" class="form-control" />
+									</div>
+								</div>
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#examplemodal" data-api-type="fetch">Generate Code Using fetch()</button>
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#examplemodal" data-api-type="XMLHttpRequest">Generate Code Using XMLHttpRequest()</button>
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#examplemodal">Run</button>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header">
+							<h5 class="mb-0 pointer" data-toggle="collapse" data-target="#participantdonations">
+								Participant Donations
+								<code class="endpoint">
+									/participants/{participantID}/donations
+								</code>
+							</h5>
+						</div>
+						<div id="participantdonations" class="collapse" data-parent="#endpointaccordion">
+							<div class="card-body">
+								<div class="form-group row">
+									<label for="donationsparticipantid" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Participant ID</label>
+									<div class="col-sm-8 col-md-9 col-lg-10">
+										<input id="donationsparticipantid" type="text" name="donationsParticipantID" class="form-control" />
+									</div>
+								</div>
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#examplemodal" data-api-type="fetch">Generate Code Using fetch()</button>
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#examplemodal" data-api-type="XMLHttpRequest">Generate Code Using XMLHttpRequest()</button>
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#examplemodal">Run</button>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header">
+							<h5 class="mb-0 pointer" data-toggle="collapse" data-target="#teams">
+								Teams
+								<code class="endpoint">
+									/teams
+								</code>
+							</h5>
+						</div>
+						<div id="teams" class="collapse" data-parent="#endpointaccordion">
+							<div class="card-body">
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#examplemodal" data-api-type="fetch">Generate Code Using fetch()</button>
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#examplemodal" data-api-type="XMLHttpRequest">Generate Code Using XMLHttpRequest()</button>
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#examplemodal">Run</button>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header">
+							<h5 class="mb-0 pointer" data-toggle="collapse" data-target="#team">
+								Team
+								<code class="endpoint">
+									/teams/{teamID}
+								</code>
+							</h5>
+						</div>
+						<div id="team" class="collapse" data-parent="#endpointaccordion">
+							<div class="card-body">
+								<div class="form-group row">
+									<label for="teamid" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Team ID</label>
+									<div class="col-sm-8 col-md-9 col-lg-10">
+										<input id="teamid" type="text" name="participantID" class="form-control" />
+									</div>
+								</div>
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#examplemodal" data-api-type="fetch">Generate Code Using fetch()</button>
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#examplemodal" data-api-type="XMLHttpRequest">Generate Code Using XMLHttpRequest()</button>
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#examplemodal">Run</button>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header">
+							<h5 class="mb-0 pointer" data-toggle="collapse" data-target="#teamdonations">
+								Team Donations
+								<code class="endpoint">
+									/teams/{teamID}/donations
+								</code>
+							</h5>
+						</div>
+						<div id="teamdonations" class="collapse" data-parent="#endpointaccordion">
+							<div class="card-body">
+								<div class="form-group row">
+									<label for="donationsteamid" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Team ID</label>
+									<div class="col-sm-8 col-md-9 col-lg-10">
+										<input id="donationsteamid" type="text" name="donationsTeamID" class="form-control" />
+									</div>
+								</div>
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#examplemodal" data-api-type="fetch">Generate Code Using fetch()</button>
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#examplemodal" data-api-type="XMLHttpRequest">Generate Code Using XMLHttpRequest()</button>
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#examplemodal">Run</button>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header">
+							<h5 class="mb-0 pointer" data-toggle="collapse" data-target="#teamparticipants">
+								Team Participants
+								<code class="endpoint">
+									/teams/{teamID}/participants
+								</code>
+							</h5>
+						</div>
+						<div id="teamparticipants" class="collapse" data-parent="#endpointaccordion">
+							<div class="card-body">
+								<div class="form-group row">
+									<label for="participantsteamid" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Team ID</label>
+									<div class="col-sm-8 col-md-9 col-lg-10">
+										<input id="participantsteamid" type="text" name="participantsTeamID" class="form-control" />
+									</div>
+								</div>
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#examplemodal" data-api-type="fetch">Generate Code Using fetch()</button>
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#examplemodal" data-api-type="XMLHttpRequest">Generate Code Using XMLHttpRequest()</button>
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#examplemodal">Run</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div id="examplemodal" class="modal" tabindex="-1">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title"></h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body"><pre><code></code></pre></div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="examplemodal" class="modal" tabindex="-1">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title"></h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body"><pre><code></code></pre></div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--- JS for Bootstrap --->
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+		<script type="text/javascript">
+			// The key in the endpoints object must match the id of the associated div
+			var endpoints = {
+				eventparticipants: {endpoint: "/events/{eventID}/participants", name: "Event Participants"},
+				eventteams: {endpoint: "/events/{eventID}/teams", name: "Event Teams"},
+				participants: {endpoint: "/participants", name: "Participants"},
+				participant: {endpoint: "/participants/{participantID}", name: "Participant"},
+				participantdonations: {endpoint: "/participants/{participantID}/donations", name: "Participant Donations"},
+				teams: {endpoint: "/teams", name: "Teams"},
+				team: {endpoint: "/teams/{teamID}", name: "Team"},
+				teamdonations: {endpoint: "/teams/{teamID}/donations", name: "Team Donations"},
+				teamparticipants: {endpoint: "/teams/{teamID}/participants", name: "Team Participants"}
+			};
+
+			$('#examplemodal').on('show.bs.modal', function(event) {
+				var $button = $(event.relatedTarget),
+					$container = $button.closest('.collapse');
+				var endpointObject = endpoints[$container.attr('id')];
+				var endpointString = endpointObject.endpoint.replace('{eventID}', $container.find('input').val()).replace('{participantID}', $container.find('input').val()).replace('{teamID}', $container.find('input').val());
+				$(this).find('.modal-title').text(endpointObject.name);
+				if($button.data('apiType')) {
+					$(this).find('.modal-body').find('code').html(getFormattedCode($button.data('apiType'), endpointString, $('#instancedomain').val(), formatQueryString()));
+				} else {
+					var xhttp = new XMLHttpRequest();
+					xhttp.open("GET", "https://" + $('#instancedomain').val() + "/api" + endpointString + formatQueryString(), true);
+					xhttp.setRequestHeader("Content-type", "application/json");
+					xhttp.addEventListener("load", function() {
+						if(xhttp.status != 200) {
+							// TODO: Add error handling
+							throw Error(xhttp.statusText);
+						}
+						$('#examplemodal').find('.modal-body').find('code').html(JSON.stringify(JSON.parse(xhttp.responseText), null, 4));
+					});
+					xhttp.send();
+				}
+
+			});
+
+			function formatQueryString() {
+				var encodedURL = '',
+					separator = '?';
+				if($('#select').val().length > 0) {
+					encodedURL += separator & 'select=' + encodeURIComponent($('#select').val());
+					separator = '&';
+				}
+				if($('#where').val().length > 0) {
+					encodedURL += separator & 'where=' + encodeURIComponent($('#where').val());
+					separator = '&';
+				}
+				if($('#orderby').val().length > 0) {
+					encodedURL += separator & 'orderby=' + encodeURIComponent($('#orderby').val());
+					separator = '&';
+				}
+				if($('#offset').val().length > 0) {
+					encodedURL += separator & 'offset=' + encodeURIComponent($('#offset').val());
+					separator = '&';
+				}
+				return encodedURL;
+			}
+			function getFormattedCode(apiType, endpoint, instanceDomain, queryString) {
+				if(apiType == 'fetch') {
+					return 'fetch("https://' + instanceDomain + '/api' + endpoint + queryString + '")<br />'
+					+'	.then(handleResponse)<br />'
+					+'	.then((jsonData) => console.log(jsonData))<br />'
+					+'	.catch((error) => console.log(error));<br /><br />'
+
+					+'function handleResponse(response) {<br />'
+					+'	if (!response.ok) {<br />'
+					+'		throw Error(response.statusText);<br />'
+					+'	 }<br />'
+					+'	 return response.json();<br />'
+					+'}';
+				} else {
+					return 'var xhttp = new XMLHttpRequest();<br />'
+					+'xhttp.open("GET", "https://' + instanceDomain + '/api' + endpoint + queryString + '", true);<br />'
+					+'xhttp.setRequestHeader("Content-type", "application/json");<br />'
+					+'xhttp.addEventListener("load", handleResponse);<br />'
+					+'xhttp.send();<br /><br />'
+
+					+'function handleResponse() {<br />'
+					+'	if(xhttp.status != 200) {<br />'
+					+'		throw Error(xhttp.statusText);<br />'
+					+'	}<br />'
+					+'	console.log(JSON.parse(xhttp.responseText));<br />'
+					+'}';
+				}
+			}
+		</script>
+	</body>
+</html>
