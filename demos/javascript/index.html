@@ -304,24 +304,8 @@
 				</div>
 			</div>
 		</div>
-		<div id="examplemodal" class="modal" tabindex="-1">
-			<div class="modal-dialog modal-lg">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title"></h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body"><pre><code></code></pre></div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					</div>
-				</div>
-			</div>
-		</div>
 
-		<!--- JS for Bootstrap --->
+		<!-- JS for Bootstrap -->
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -340,54 +324,60 @@
 				teamparticipants: {endpoint: "/teams/{teamID}/participants", name: "Team Participants"}
 			};
 
-			$('#examplemodal').on('show.bs.modal', function(event) {
-				var $button = $(event.relatedTarget),
-					$container = $button.closest('.collapse');
-				var endpointObject = endpoints[$container.attr('id')];
-				var endpointString = endpointObject.endpoint.replace('{eventID}', $container.find('input').val()).replace('{participantID}', $container.find('input').val()).replace('{teamID}', $container.find('input').val());
-				$(this).find('.modal-title').text(endpointObject.name);
-				if($button.data('apiType')) {
-					$(this).find('.modal-body').find('code').html(getFormattedCode($button.data('apiType'), endpointString, $('#instancedomain').val(), formatQueryString()));
-				} else {
-					var xhttp = new XMLHttpRequest();
-					xhttp.open("GET", "https://" + $('#instancedomain').val() + "/api" + endpointString + formatQueryString(), true);
-					xhttp.setRequestHeader("Content-type", "application/json");
-					xhttp.addEventListener("load", function() {
-						if(xhttp.status != 200) {
-							// TODO: Add error handling
-							throw Error(xhttp.statusText);
-						}
-						$('#examplemodal').find('.modal-body').find('code').html(JSON.stringify(JSON.parse(xhttp.responseText), null, 4));
-					});
-					xhttp.send();
-				}
+			$('#examplemodal')
+				.on('show.bs.modal', function(event) {
+					$('#examplemodal').find('.modal-body').find('code').html('');
 
-			});
+					var $button = $(event.relatedTarget),
+						$container = $button.closest('.collapse');
+					var endpointObject = endpoints[$container.attr('id')];
+					var endpointString = endpointObject.endpoint.replace('{eventID}', $container.find('input').val()).replace('{participantID}', $container.find('input').val()).replace('{teamID}', $container.find('input').val());
+					$(this).find('.modal-title').text(endpointObject.name);
+					if($button.data('apiType')) {
+						$(this).find('.modal-body').find('code').html(getFormattedCode($button.data('apiType'), endpointString, $('#instancedomain').val(), formatQueryString()));
+					} else {
+						var callback = function() {
+							if(xhttp.status == 200) {
+								$('#examplemodal').find('.modal-body').find('code').html(JSON.stringify(JSON.parse(xhttp.responseText), null, 4));
+							} else {
+								$('#examplemodal').find('.modal-body').find('code').html(xhttp.statusText.length > 0 ? xhttp.statusText : 'Error! View Console for more details.');
+							}
+						};
+
+						var xhttp = new XMLHttpRequest();
+						xhttp.open("GET", "https://" + $('#instancedomain').val() + "/api" + endpointString + formatQueryString(), true);
+						xhttp.setRequestHeader("Content-type", "application/json");
+						xhttp.addEventListener("load", callback);
+						xhttp.addEventListener("error", callback);
+						xhttp.send();
+					}
+				});
 
 			function formatQueryString() {
 				var encodedURL = '',
 					separator = '?';
 				if($('#select').val().length > 0) {
-					encodedURL += separator & 'select=' + encodeURIComponent($('#select').val());
+					encodedURL += separator + 'select=' + encodeURIComponent($('#select').val());
 					separator = '&';
 				}
 				if($('#where').val().length > 0) {
-					encodedURL += separator & 'where=' + encodeURIComponent($('#where').val());
+					encodedURL += separator + 'where=' + encodeURIComponent($('#where').val());
 					separator = '&';
 				}
 				if($('#orderby').val().length > 0) {
-					encodedURL += separator & 'orderby=' + encodeURIComponent($('#orderby').val());
+					encodedURL += separator + 'orderby=' + encodeURIComponent($('#orderby').val());
 					separator = '&';
 				}
 				if($('#offset').val().length > 0) {
-					encodedURL += separator & 'offset=' + encodeURIComponent($('#offset').val());
+					encodedURL += separator + 'offset=' + encodeURIComponent($('#offset').val());
 					separator = '&';
 				}
 				return encodedURL;
 			}
+
 			function getFormattedCode(apiType, endpoint, instanceDomain, queryString) {
 				if(apiType == 'fetch') {
-					return 'fetch("https://' + instanceDomain + '/api' + endpoint + queryString + '")<br />'
+					return 'fetch("https://' + instanceDomain + '/api' + endpoint + queryString + '", { method: "GET" })<br />'
 					+'	.then(handleResponse)<br />'
 					+'	.then((jsonData) => console.log(jsonData))<br />'
 					+'	.catch((error) => console.log(error));<br /><br />'
