@@ -26,11 +26,11 @@ Some custom Response Headers are included to facilitate the handling of data.
 
 |Header|Description|
 |---|---|
-|API-Version|The version of the API used to fulfill the request.|
-|Cache-Control|TBA|
-|Last-Modified|Can be used to compare when a record was last updated. Useful when comparing if your data is still valid.|
-|Link|(For Array-based responses, see: http://www.rfc-editor.org/rfc/rfc5988.txt) First, Prev, Next, and Last values will be present, if applicable|
-|Num-Records|(For Array-based responses) The length of the entire result set.|
+|```API-Version```|The version of the API used to fulfill the request.|
+|```ETag```|see: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag for usage|
+|```Last-Modified```|Can be used to compare when a record was last updated. Useful when comparing if your data is still valid.|
+|```Link```|(For Array-based responses, see: http://www.rfc-editor.org/rfc/rfc5988.txt) First, Prev, Next, and Last values will be present, if applicable|
+|```Num-Records```|(For Array-based responses) The length of the entire result set.|
 
 ### Query Parameters
 All Query Parameters need to be URL encoded. For example ```&where=displayName = 'bob individual1'``` would become ```&where=displayName%20%3D%20'bob%20individual1'```.
