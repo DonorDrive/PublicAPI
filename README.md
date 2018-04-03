@@ -1,6 +1,6 @@
 # DonorDrive API
 
-The DonorDrive Public API is RESTful and read-only. Data is retrieved via GET requests and successful responses are returned in JSON format. The API is completely open to integrations using the interface in a responsible manner.
+The DonorDrive Public API makes it easy to build lightweight integrations using public event, participant, and team data. The Public API is RESTful and read-only. Data is retrieved via GET requests and successful responses are returned in JSON format. The API is completely open to integrations using the interface in a responsible manner.
 
 Please limit requests to one every 15 seconds. Please don't abuse the API, or we may be forced to rate-limit requests.
 
