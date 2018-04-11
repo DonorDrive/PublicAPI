@@ -71,7 +71,7 @@ Individual fundraisers participating in an active Participant Event or Personal 
 |```eventID```|The ID of the Event this Participant is associated with|
 |```eventName```|The name of the Event this Participant is associated with|
 |```fundraisingGoal```|The Participant's individual goal|
-|```isTeamCaptain```|(Team Members only) If (1), this Participant is the captain of the team|
+|```isTeamCaptain```|(Team Members only) If (true), this Participant is the captain of the team|
 |```numDonations```|The number of donations this Participant has received|
 |```participantID```|The unique ID of the Participant|
 |```sumDonations```|The total sum of donations this Participant has received|
