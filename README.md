@@ -63,7 +63,7 @@ Individual fundraisers participating in an active Participant Event or Personal 
 
 |Field|Description|
 |---|---|
-|`avatarImageURL` (string)|The URL associated with the Participant|
+|`avatarImageURL` (string)|The URL for the avatar image associated with the Participant|
 |`campaignDate` (string-formatted date)|(Personal Campaigns only) The date of the Personal Campaign|
 |`campaignName` (string)|(Personal Campaigns only) The name of the Personal Campaign|
 |`createdDateUTC` (string-formatted date)|The ISO-8601-formatted date (in UTC) this Participant was created|
@@ -96,7 +96,7 @@ Teams participating in an active Participant Event
 
 |Field|Description|
 |---|---|
-|`avatarImageURL` (string)|The URL associated with the Team|
+|`avatarImageURL` (string)|The URL for the avatar image associated with the Team|
 |`createdDateUTC` (string-formatted date)|The ISO-8601-formatted date (in UTC) this Team was created|
 |`eventID` (integer)|The ID of the Event this Team is associated with|
 |`eventName` (string)|The name of the Event this Team is associated with|
@@ -123,12 +123,12 @@ Donations attributed to Participants or Teams
 
 |Field|Description|
 |---|---|
-|`amount` (float)|The amount donated by this Donation|
-|`avatarImageURL` (string)|The URL associated with the Donation|
+|`amount` (float)|The amount of this Donation|
+|`avatarImageURL` (string)|The URL for the avatar image associated with the donor|
 |`createdDateUTC` (string-formatted date)|The ISO-8601-formatted date (in UTC) this Donation was created|
-|`displayName` (string)|The Donor's name|
+|`displayName` (string)|The donor's name|
 |`donorID` (string)|The unique ID of the Donation|
-|`message` (string)|A message from the Donor|
+|`message` (string)|A message from the donor|
 |`participantID` (integer)|(Team Participant Donations only) The ID of the Participant this Donation is associated with|
 |`teamID` (integer)|(Team and Team-Participant Donations only) The ID of the Team this Donation is associated with|
 
