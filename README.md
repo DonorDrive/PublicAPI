@@ -139,7 +139,6 @@ Donations attributed to Participants or Teams
 |Path|Description|
 |---|---|
 |`/api/participants/{participantID}/donations`|An Array of Donors associated to the Participant (To find `{participantID}`, visit your Participant's Fundraising Page. Look for the `&participantID=` URL parameter.)|
-|`/api/participants/{participantID}/donations/top`|A single object of the top donor for a Participant record (To find `{participantID}`, visit your Participant's Fundraising Page. Look for the `&participantID=` URL parameter.)|
+|`/api/participants/{participantID}/donors/top`|A single object of the top donor for a Participant record (To find `{participantID}`, visit your Participant's Fundraising Page. Look for the `&participantID=` URL parameter.)|
 |`/api/teams/{teamID}/donations`|An Array of Donors associated to the Team (To find `{teamID}`, visit your Team's Fundraising Page. Look for the `&teamID=` URL parameter.)|
-|`/api/teams/{teamID}/donations/top`|A single object of the top donor for a Team record (To find `{teamID}`, visit your Team's Fundraising Page. Look for the `&teamID=` URL parameter.)|
-
+|`/api/teams/{teamID}/donors/top`|A single object of the top donor for a Team record (To find `{teamID}`, visit your Team's Fundraising Page. Look for the `&teamID=` URL parameter.)|
