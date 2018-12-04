@@ -1,21 +1,21 @@
-### Get A Particiants Badges
-`/api/participants/{participantID}/badges`
-#### Supported Query Parameters
-|Query Parameter|Description|
-|---|---|
-|`callback`|The value provided will wrap the payload as a JSONP-formatted response.|
-|`version`|The version of the API desired. If no version parameter is provided, the API will default to the oldest supported version.|
-#### Path Parameters
-|Field|Description|
-|---|---|
-|`participantID`| The unique ID of the participant |
-#### Response format
-On a successful HTTP Call, `200` OK will be returned with an object whose body will contain a Participants Badges.
-#### Participant Badge Object
-|Field|Type|Description|
+### Badges
+Achievement Badges associated with a Participant or Team.
+
+#### Fields
+
+Fields in bold are guaranteed in the response payload.
+
+|Field|Type|Description|Notes|
+|---|---|---|---|
+|**`badgeCode`**|`string`|The code associated with this Badge||
+|**`badgeImageURL`**|`string`|The URL for the badge image associated with the Participant||
+|**`description`**|`string`|The description of this Badge|Honors `Accept-Language` header|
+|**`title`**|`string`|The title of this Badge|Honors `Accept-Language` header|
+|**`unlockedDateUTC`**|`date`|The date this Badge was unlocked by the Participant or Team||
+
+#### Endpoints
+
+|Path|Return Type|Notes|
 |---|---|---|
-|`badgeImageURL` |string|The URL for the avatar image associated with the badge|
-|`description` |string|The badges description|
-|`title` |string|The badges title|
-|`unlockedDateUTC` |string-formatted date|The ISO-8601-formatted date (in UTC) this badge was awarded|
-|`badgeClass` |string|The CSS class associated with the badge|
+|`/api/participants/{participantID}/badges`|`Array`|To find `{participantID}`, visit your Participant's Fundraising Page. Look for the `&participantID=` URL parameter.|
+|`/api/teams/{teamID}/badges`|`Array`|To find `{teamID}`, visit your Team's Fundraising Page. Look for the `&teamID=` URL parameter.|

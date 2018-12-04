@@ -1,22 +1,22 @@
-### Get A Particiants Activity
-`/api/participants/{participantID}/activity`
-#### Supported Query Parameters
-|Query Parameter|Description|
-|---|---|
-|`callback`|The value provided will wrap the payload as a JSONP-formatted response.|
-|`version`|The version of the API desired. If no version parameter is provided, the API will default to the oldest supported version.|
-#### Path Parameters
-|Field|Description|
-|---|---|
-|`participantID`| The unique ID of the participant |
-#### Response format
-On a successful HTTP Call, `200` OK will be returned with an object whose body will contain a Participants Activity.
-#### Participant Activity Object
-|Field|Type|Description|
+### Activity
+Recent Activity associated with a Participant or Team.
+
+#### Fields
+
+Fields in bold are guaranteed in the response payload.
+
+|Field|Type|Description|Notes|
+|---|---|---|---|
+|`amount`|`float`|The amount of this Donation Activity|For `donation` type Activity items|
+|**`createdDateUTC`**|`date`|The ISO-8601-formatted date (in UTC) this Activity item was created||
+|**`imageURL`**|`string`|The URL for the image associated with the Activity item||
+|`message`|`string`|The message associated with the Activity item||
+|`title`|`string`|The title associated with the Activity item||
+|**`type`**|`string`|The type of Activity item|`donation` or `participantBadge` or `teamBadge`||
+
+#### Endpoints
+
+|Path|Return Type|Notes|
 |---|---|---|
-|`amount` |float|The amount of the donation|
-|`createdDateUTC` |string-formatted date|The ISO-8601-formatted date (in UTC) this Participant was created|
-|`imageURL` |string|The URL for the avatar image associated with the donor|
-|`message` |string|A message from the donor|
-|`title` |string|The donors title|
-|`type` |string|The type of donation|
+|`/api/participants/{participantID}/activity`|`Array`|To find `{participantID}`, visit your Participant's Fundraising Page. Look for the `&participantID=` URL parameter.|
+|`/api/teams/{teamID}/activity`|`Array`|To find `{teamID}`, visit your Team's Fundraising Page. Look for the `&teamID=` URL parameter.|

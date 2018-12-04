@@ -9,7 +9,7 @@ Fields in bold are guaranteed in the response payload.
 |---|---|---|---|
 |**`avatarImageURL`**|`string`|The URL for the avatar image associated with the Team||
 |**`captainDisplayName`**|`string`|The captain Participant's name||
-|**`createdDateUTC`**|`string-formatted date`|The ISO-8601-formatted date (in UTC) this Team was created||
+|**`createdDateUTC`**|`date`|The ISO-8601-formatted date (in UTC) this Team was created||
 |**`eventID`**|`integer`|The ID of the Event this Team is associated with||
 |**`eventName`**|`string`|The name of the Event this Team is associated with||
 |**`fundraisingGoal`**|`float`|The Team's goal||

@@ -8,9 +8,9 @@ Fields in bold are guaranteed in the response payload.
 |Field|Type|Description|Notes|
 |---|---|---|---|
 |**`avatarImageURL`**|`string`|The URL for the avatar image associated with the Participant||
-|`campaignDate`|`string-formatted date`|The date of the Personal Campaign|Personal Campaigns only|
+|`campaignDate`|`date`|The date of the Personal Campaign|Personal Campaigns only|
 |`campaignName`|`string`|The name of the Personal Campaign|Personal Campaigns only|
-|**`createdDateUTC`**|`string formatted date`|The ISO-8601-formatted date (in UTC) this Participant was created||
+|**`createdDateUTC`**|`date`|The ISO-8601-formatted date (in UTC) this Participant was created||
 |**`displayName`**|`string`|The Participant's name||
 |**`eventID`**|`integer`|The ID of the Event this Participant is associated with||
 |**`eventName`**|`string`|The name of the Event this Participant is associated with||
