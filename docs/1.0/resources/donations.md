@@ -9,7 +9,7 @@ Fields in bold are guaranteed in the response payload.
 |---|---|---|---|
 |`amount`|`float`|The amount of this Donation|Dependent on privacy settings dictated by the Donor|
 |**`avatarImageURL`**|`string`|The URL for the avatar image associated with the Donor||
-|**`createdDateUTC`**|`date`|The ISO-8601-formatted date (in UTC) this Donation was created||
+|**`createdDateUTC`**|`date`|The date (in UTC) this Donation was created|ISO-8601 format|
 |`displayName`|`string`|The Donor's name|Dependent on privacy settings dictated by the Donor|
 |**`donationID`**|`string`|The unique ID of the Donation||
 |`donorID`|`string`|The unique ID of the Donor|Dependent on privacy settings dictated by the Donor|
@@ -18,6 +18,8 @@ Fields in bold are guaranteed in the response payload.
 |`teamID`|`integer`|The ID of the Team associated to this Donation|Team Participant Donations and Team Donations only|
 
 #### Endpoints
+
+Default `orderBy`: `createdDateUTC DESC`
 
 |Path|Return Type|Notes|
 |---|---|---|

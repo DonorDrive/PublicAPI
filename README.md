@@ -5,11 +5,6 @@ Please limit requests to one every 15 seconds. Please don't abuse the API, or we
 
 For general inquiries and requests for larger volume integrations, please email support@donordrive.com for assistance.
 
-## About DonorDrive
-The team at [DonorDrive](https://www.donordrive.com) has one central mission - to help nonprofits raise money & do good.
-
-We partner with hundreds of nonprofits that tackle the world’s biggest challenges - from providing access to clean water to funding medical care for children, helping the homeless, saving stray animals, and much more. Our clients power positive change & we’re proud to play a role in their work.
-
 ## Status Codes
 A 200 Status Code will return for successful API calls. Meaningful codes + messaging will be furnished in the event of an error. Here are some other responses you may encounter.
 
@@ -24,8 +19,17 @@ A 200 Status Code will return for successful API calls. Meaningful codes + messa
 |503|Service Unavailable - The API is unavailable or undergoing maintenance. Please try again later.|
 
 ## Versioning
-#### Latest Release Version
-Moving forward, the we will be supporting old versions of the API up until End of Life as noted below. When we sunset an API version, we will be fixing breaking bugs, but no additional features will be added for that version.
+The DonorDrive Public API will receive updates as the needs within the platform grow, and to accommodate feature requests from the community.
+
+Our versioning strategy is as follows:
+
+- Version formatting will follow a Major.Minor format (ex: Version `1.0`)
+- New Minor Versions will replace the response payload of a previous Minor Version
+-- New Minor Version features will be noted in the appropriate resource documentation
+- New Minor Versions will be backward compatible with previous Minor Versions within the same Major Version (ex: Version `1.1` will be backwards compatible with Version `1.0`)
+- Major Versions may introduce breaking changes that are not backward compatible with previous Major Versions
+
+**We will support previous Major Versions as long as reasonably possible, and do our best to notify the community well in advance of dropping support for a given Major Version.**
 
 |Version|Status|
 |---|---|

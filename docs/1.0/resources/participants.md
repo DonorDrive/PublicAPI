@@ -8,9 +8,9 @@ Fields in bold are guaranteed in the response payload.
 |Field|Type|Description|Notes|
 |---|---|---|---|
 |**`avatarImageURL`**|`string`|The URL for the avatar image associated with the Participant||
-|`campaignDate`|`date`|The date of the Personal Campaign|Personal Campaigns only|
+|`campaignDate`|`date`|The date of the Personal Campaign|Personal Campaigns only; ISO-8601 format|
 |`campaignName`|`string`|The name of the Personal Campaign|Personal Campaigns only|
-|**`createdDateUTC`**|`date`|The ISO-8601-formatted date (in UTC) this Participant was created||
+|**`createdDateUTC`**|`date`|The date (in UTC) this Participant was created|ISO-8601 format|
 |**`displayName`**|`string`|The Participant's name||
 |**`eventID`**|`integer`|The ID of the Event this Participant is associated with||
 |**`eventName`**|`string`|The name of the Event this Participant is associated with||
@@ -24,6 +24,8 @@ Fields in bold are guaranteed in the response payload.
 |`teamName`|`string`|The name of the Team this Participant is associated with|Team Participants only|
 
 #### Endpoints
+
+Default `orderBy`: `createdDateUTC DESC`
 
 |Path|Return Type|Notes|
 |---|---|---|

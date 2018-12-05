@@ -10,11 +10,13 @@ Fields in bold are guaranteed in the response payload.
 |**`avatarImageURL`**|`string`|The URL for the avatar image associated with the Donor||
 |**`displayName`**|`string`|The Donor's name||
 |**`donorID`**|`string`|The unique ID of the Donor||
-|**`modifiedDateUTC`**|`date`|The ISO-8601-formatted date (in UTC) this Donor last donated||
+|**`modifiedDateUTC`**|`date`|The date (in UTC) this Donor last donated|ISO-8601 format|
 |**`numDonations`**|`integer`|The number of Donations this Donor has made to the Participant or Team||
 |**`sumDonations`**|`float`|The sum total of Donations this Donor has made to the Participant or Team||
 
 #### Endpoints
+
+Default `orderBy`: `modifiedDateUTC DESC`
 
 |Path|Return Type|Notes|
 |---|---|---|

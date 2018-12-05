@@ -8,13 +8,15 @@ Fields in bold are guaranteed in the response payload.
 |Field|Type|Description|Notes|
 |---|---|---|---|
 |`amount`|`float`|The amount of this Donation Activity|For `donation` type Activity items|
-|**`createdDateUTC`**|`date`|The ISO-8601-formatted date (in UTC) this Activity item was created||
+|**`createdDateUTC`**|`date`|The date (in UTC) this Activity item was created|ISO-8601 format|
 |**`imageURL`**|`string`|The URL for the image associated with the Activity item||
 |`message`|`string`|The message associated with the Activity item||
 |`title`|`string`|The title associated with the Activity item||
 |**`type`**|`string`|The type of Activity item|`donation` or `participantBadge` or `teamBadge`||
 
 #### Endpoints
+
+Default `orderBy`: `createdDateUTC DESC`
 
 |Path|Return Type|Notes|
 |---|---|---|

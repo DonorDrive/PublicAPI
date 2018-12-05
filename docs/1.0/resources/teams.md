@@ -9,7 +9,7 @@ Fields in bold are guaranteed in the response payload.
 |---|---|---|---|
 |**`avatarImageURL`**|`string`|The URL for the avatar image associated with the Team||
 |**`captainDisplayName`**|`string`|The captain Participant's name||
-|**`createdDateUTC`**|`date`|The ISO-8601-formatted date (in UTC) this Team was created||
+|**`createdDateUTC`**|`date`|The date (in UTC) this Team was created|ISO-8601 format|
 |**`eventID`**|`integer`|The ID of the Event this Team is associated with||
 |**`eventName`**|`string`|The name of the Event this Team is associated with||
 |**`fundraisingGoal`**|`float`|The Team's goal||
@@ -20,6 +20,8 @@ Fields in bold are guaranteed in the response payload.
 |**`teamID`**|`integer`|The unique ID of the Team||
 
 #### Endpoints
+
+Default `orderBy`: `createdDateUTC DESC`
 
 |Path|Return Type|Notes|
 |---|---|---|
