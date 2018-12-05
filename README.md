@@ -32,4 +32,4 @@ Our versioning strategy is as follows:
 
 |Version|Status|
 |---|---|
-|[v1.0](https://github.com/DonorDrive/PublicAPI/blob/DD-13372-update-documentation/docs/1.0/README.md)|Current|
+|[v1.0](/docs/1.0/README.md)|Current|

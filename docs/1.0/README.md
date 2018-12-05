@@ -24,12 +24,12 @@ Some custom Response Headers are included to facilitate the handling of data.
 ## Table of Contents
 #### Donordrive API
 * Guides
-  * [Tutorial](https://github.com/DonorDrive/PublicAPI/blob/DD-13372-update-documentation/docs/1.0/tutorial.md)
-  * [Demos](https://github.com/DonorDrive/PublicAPI/blob/DD-13372-update-documentation/docs/1.0/demos.md)
+  * [Tutorial](/docs/1.0/tutorial.md)
+  * [Demos](/docs/1.0/demos.md)
 * Resource Reference
-  * [Activity](https://github.com/DonorDrive/PublicAPI/blob/DD-13372-update-documentation/docs/1.0/resources/activity.md)
-  * [Badges](https://github.com/DonorDrive/PublicAPI/blob/DD-13372-update-documentation/docs/1.0/resources/badges.md)
-  * [Donations](https://github.com/DonorDrive/PublicAPI/blob/DD-13372-update-documentation/docs/1.0/resources/donations.md)
-  * [Events](https://github.com/DonorDrive/PublicAPI/blob/DD-13372-update-documentation/docs/1.0/resources/events.md)
-  * [Participants](https://github.com/DonorDrive/PublicAPI/blob/DD-13372-update-documentation/docs/1.0/resources/participants.md)
-  * [Teams](https://github.com/DonorDrive/PublicAPI/blob/DD-13372-update-documentation/docs/1.0/resources/teams.md)
+  * [Activity](/docs/1.0/resources/activity.md)
+  * [Badges](/docs/1.0/resources/badges.md)
+  * [Donations](/docs/1.0/resources/donations.md)
+  * [Events](/docs/1.0/resources/events.md)
+  * [Participants](/docs/1.0/resources/participants.md)
+  * [Teams](/docs/1.0/resources/teams.md)
