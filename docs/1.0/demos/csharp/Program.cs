@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 public class Program
 {
     private const string URL = "https://try.donordrive.com/api/";
-    private static string urlParameters = "participants?orderBy=sumDonations%20DESC&limit=10";
+    private static string urlParameters = "participants?version=1.0&orderBy=sumDonations%20DESC&limit=10";
 
-    static void Main(string[] args)    
+    static void Main(string[] args)
         => new Program().MainAsync().GetAwaiter().GetResult();
 
     private async Task MainAsync()
@@ -29,7 +29,7 @@ public class Program
             else
             {
                 Console.WriteLine("{0} ({1})", (int)response.StatusCode, response.ReasonPhrase);
-            }  
+            }
         }
     }
 }

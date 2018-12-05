@@ -13,14 +13,33 @@
 	</head>
 	<body>
 		<script>
-			$.ajax('https://try.donordrive.com/api/participants?limit=10&orderBy=sumDonations%20DESC&offset=1&limit=9', {
+			$.ajax('https://try.donordrive.com/api/participants?&version=1.0&orderBy=sumDonations%20DESC&offset=1&limit=9', {
 				success: function(data) {
-					console.log(data);
+					for(participant in data){
+						progressBarWidth = data[participant].sumDonations / data[participant].fundraisingGoal * 100;
+						console.log(progressBarWidth);
+						var participantMarkup = '<div class="card" style="width:200px; float: left; margin:20px;">' +
+							'<img class="card-img-top" src="https://' + data[participant].avatarImageURL.replace(/\/\//g,'') + '" alt="participant image">' +
+							'<div class="card-title" style="padding:5px; text-align:center;">' + data[participant].displayName + '</div>' +
+							'<div class="card-text">' +
+							'<div class="progress"><div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:' + progressBarWidth + '%"></div></div>' +
+							'<p>Goal $' + data[participant].sumDonations + ' of $' + data[participant].fundraisingGoal + '</p>'
+							'</div>' +
+							'</div>';
+
+						$('#participant-container').append(participantMarkup);
+					}
 				},
 				error: function() {
-					console.log('ERROR');
+					alert('API ENDPOINT ERROR');
 				}
 			});
 		</script>
-		</body
+		<div class="container">
+			<h1>Top Participants Goals</h1>
+				<div id="participant-container">
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
