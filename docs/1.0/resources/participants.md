@@ -16,7 +16,7 @@ Fields in bold are guaranteed in the response payload.
 |**`eventName`**|`string`|The name of the Event this Participant is associated with||
 |**`fundraisingGoal`**|`float`|The Participant's individual goal||
 |`isTeamCaptain`|`boolean`|If (true), this Participant is the captain of the team|Team Participants only|
-|`links`|`object`|An object containing related resources|`stream`: The URL for the Live Fundraising(TM) stream associated with this Participant|
+|`links`|`object`|An object containing related resources|`donate`: The donation URL for this Participant<br />`page`: The URL for this Participant's Fundraising Page<br />`stream`: The URL for the Live Fundraising(TM) stream associated with this Participant|
 |**`numDonations`**|`integer`|The number of donations this Participant has received||
 |**`participantID`**|`integer`|The unique ID of the Participant||
 |`sumDonations`|`float`|The total sum of donations this Participant has received||

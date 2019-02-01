@@ -29,6 +29,7 @@ The following response headers are included to facilitate the handling of data.
   * [Activity](resources/activity.md)
   * [Badges](resources/badges.md)
   * [Donations](resources/donations.md)
+  * [Donors](resources/donors.md)
   * [Events](resources/events.md)
   * [Participants](resources/participants.md)
   * [Teams](resources/teams.md)

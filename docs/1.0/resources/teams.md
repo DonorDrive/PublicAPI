@@ -14,6 +14,7 @@ Fields in bold are guaranteed in the response payload.
 |**`eventName`**|`string`|The name of the Event this Team is associated with||
 |**`fundraisingGoal`**|`float`|The Team's goal||
 |**`isInviteOnly`**|`boolean`|Does this Team restrict registration to invitations-only||
+|`links`|`object`|An object containing related resources|`donate`: The donation URL for this Team<br />`page`: The URL for this Team's Fundraising Page|
 |**`name`**|`string`|The Team's name||
 |**`numDonations`**|`integer`|The number of donations this Team has received||
 |**`sumDonations`**|`float`|The total sum of donations this Team has received||
