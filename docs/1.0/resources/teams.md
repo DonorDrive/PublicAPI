@@ -3,7 +3,7 @@ Teams participating in an active Participant Event
 
 #### Fields
 
-Fields in bold are guaranteed in the response payload.
+Fields in **bold** are guaranteed in the response payload.
 
 |Field|Type|Description|Notes|
 |---|---|---|---|

@@ -3,7 +3,7 @@ Individual fundraisers participating in an active Participant Event or Personal 
 
 #### Fields
 
-Fields in bold are guaranteed in the response payload.
+Fields in **bold** are guaranteed in the response payload.
 
 |Field|Type|Description|Notes|
 |---|---|---|---|

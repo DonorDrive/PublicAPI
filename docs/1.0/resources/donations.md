@@ -3,7 +3,7 @@ Donations associated with a Participant or Team.
 
 #### Fields
 
-Fields in bold are guaranteed in the response payload.
+Fields in **bold** are guaranteed in the response payload.
 
 |Field|Type|Description|Notes|
 |---|---|---|---|
