@@ -15,10 +15,11 @@ Fields in bold are guaranteed in the response payload.
 |**`eventID`**|`integer`|The ID of the Event this Participant is associated with||
 |**`eventName`**|`string`|The name of the Event this Participant is associated with||
 |**`fundraisingGoal`**|`float`|The Participant's individual goal||
-|`isTeamCaptain`|`boolean`|If (true), this Participant is the captain of the team|Team Participants only|
+|`isTeamCaptain`|`boolean`|`true` if this Participant is the captain of a team|Team Participants only|
 |`links`|`object`|An object containing related resources|`donate`: The donation URL for this Participant<br />`page`: The URL for this Participant's Fundraising Page<br />`stream`: The URL for the Live Fundraising(TM) stream associated with this Participant|
 |**`numDonations`**|`integer`|The number of donations this Participant has received||
 |**`participantID`**|`integer`|The unique ID of the Participant||
+|`streamIsLive`|`boolean`|`true` if this Participant is actively streaming on their Fundraising Page||
 |`sumDonations`|`float`|The total sum of donations this Participant has received||
 |`teamID`|`integer`|The ID of the Team this Participant is associated with|Team Participants only|
 |`teamName`|`string`|The name of the Team this Participant is associated with|Team Participants only|

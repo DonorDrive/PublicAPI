@@ -10,6 +10,7 @@ Fields in bold are guaranteed in the response payload.
 |`amount`|`float`|The amount of this Donation Activity|For `donation` type Activity items|
 |**`createdDateUTC`**|`date`|The date (in UTC) this Activity item was created|ISO-8601 format|
 |**`imageURL`**|`string`|The URL for the image associated with the Activity item||
+|`isIncentive`|`boolean`|`true` if this donation claimed a Fundraiser Incentive|For `donation` type Activity items|
 |`message`|`string`|The message associated with the Activity item||
 |`title`|`string`|The title associated with the Activity item||
 |**`type`**|`string`|The type of Activity item|`donation` or `participantBadge` or `teamBadge`||
