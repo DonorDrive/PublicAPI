@@ -3,7 +3,7 @@ Active Events in this instance of DonorDrive.
 
 #### Fields
 
-Fields in bold are guaranteed in the response payload.
+Fields in **bold** are guaranteed in the response payload.
 
 |Field|Type|Description|Notes|
 |---|---|---|---|
