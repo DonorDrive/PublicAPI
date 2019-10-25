@@ -9,8 +9,9 @@ Fields in **bold** are guaranteed in the response payload.
 
 |Field|Type|Description|Notes|
 |---|---|---|---|
-|**`fundraisingGoal`**|`float`|The amount of this Fundraiser Milestone||
 |**`description`**|`string`|A text description of this Fundraiser Milestone||
+|**`fundraisingGoal`**|`float`|The amount of this Fundraiser Milestone||
+|`isComplete`|`boolean`|`true` if this Fundraiser Milestone has been reached||
 |`links`|`object`|An object containing related resources|`donate`: The donation URL for this Fundraiser Milestone|
 |**`milestoneID`**|`string`|The unique ID of this Fundraiser Milestone||
 |`endDateUTC`|`date`|If present, the date (in UTC) this Fundraiser Milestone becomes unavailable|ISO-8601 format|
