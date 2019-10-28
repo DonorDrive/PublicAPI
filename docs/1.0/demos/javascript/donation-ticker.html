@@ -26,7 +26,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr v-for="donation in donations" v-bind:key="donation.donationID" v-bind:class="{ 'table-primary': donation.amount >= 50 }">
+							<tr v-for="donation in donations" v-bind:key="donation.donationID" v-bind:class="{ 'table-primary': donation.amount >= highlightThreshold }">
 								<td>{{ donation.createdDateUTC | formatDate }}</td>
 								<td>{{ donation.amount | formatMoney }}</td>
 								<td>{{ donation.displayName }}</td>
@@ -46,10 +46,11 @@
 		</div>
 	</body>
 	<script>
-		var api = 'https://www.extra-life.org/api/',
-			resource = 'participants',
-			resourceID = 348319,
-			limit = 50;
+		var api = 'https://www.extra-life.org/api/', // the url of the DonorDrive API you wish to poll
+			resource = 'participants', // the resource (events, participants, teams)
+			resourceID = 348319, // the ID of the specific resource to poll
+			donationLimit = 50, // the number of donations to return (1-100)
+			highlightThreshold = 100; // donations over this amount will be highlighted in the list (null to ignore highlighting)
 
 		Vue.filter(
 			'formatDate',
@@ -70,12 +71,13 @@
 				donations: [],
 				entity: {
 					etag: ''
-				}
+				},
+				highlightThreshold: highlightThreshold
 			},
 			el: '#app',
 			methods: {
 				refreshDonations() {
-					axios.get(api + '/' + resource + '/' + resourceID + '/donations' + ( api.indexOf('?') >= 0 ? '&' : '?' ) + 'limit=' + limit)
+					axios.get(api + '/' + resource + '/' + resourceID + '/donations' + ( api.indexOf('?') >= 0 ? '&' : '?' ) + 'limit=' + donationLimit)
 						.then((response) => {
 							this.donations = response.data;
 						});
