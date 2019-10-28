@@ -1,7 +1,7 @@
 ### Incentives
 Fundraiser Incentives associated with a Participant.
 
-**This feature may or may not be available for all instances of DonorDrive.**
+**This feature may not be available for all instances of DonorDrive.**
 
 #### Fields
 

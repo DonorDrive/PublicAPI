@@ -1,7 +1,7 @@
 ### Badges
 Achievement Badges associated with a Participant or Team.
 
-**This feature may or may not be available for all instances of DonorDrive.**
+**This feature may not be available for all instances of DonorDrive.**
 
 #### Fields
 
