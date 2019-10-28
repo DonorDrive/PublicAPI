@@ -27,9 +27,9 @@
 						</thead>
 						<tbody>
 							<tr v-for="donation in donations" v-bind:key="donation.donationID" v-bind:class="{ 'table-primary': donation.amount >= highlightThreshold }">
-								<td>{{ donation.createdDateUTC | formatDate }}</td>
-								<td>{{ donation.amount | formatMoney }}</td>
-								<td>{{ donation.displayName }}</td>
+								<td class="text-nowrap">{{ donation.createdDateUTC | formatDate }}</td>
+								<td class="text-nowrap"><span v-if="donation.amount">{{ donation.amount | formatMoney }}</span><span v-else><i>Amount hidden</i></span></td>
+								<td class="text-nowrap"><span v-if="donation.displayName">{{ donation.displayName }}</span><span v-else>Anonymous</span></td>
 								<td>{{ donation.message }}</td>
 							</tr>
 						</tbody>
