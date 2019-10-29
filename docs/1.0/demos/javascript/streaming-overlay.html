@@ -1,0 +1,85 @@
+<html>
+	<head>
+		<script src="https://cdn.jsdelivr.net/npm/numeral@2.0.6/numeral.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<!--<script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>-->
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+	</head>
+	<body>
+		<div id="app" class="media p-2 bg-dark text-light" style="width: 500px;">
+			<img src="//assets.donordrive.com/extralife/images/$event543$/streamingOverlayLogo.png" class="align-self-center mr-3" style="max-height: 50px; height: auto; width: auto;" />
+			<div class="media-body js-progress" style="height: 100%;">
+				<div class="text-center">
+					<h5>{{ entity.sumDonations | formatMoney }} / {{ entity.fundraisingGoal | formatMoney }}</h5>
+				</div>
+				<div class="progress">
+					<div class="progress-bar bg-warning" role="progressbar" v-bind:style="{ width: ((entity.sumDonations / entity.fundraisingGoal) * 100) + '%' }"></div>
+				</div>
+			</div>
+			<transition name="slide-fade">
+				<div v-if="false" class="media-body js-donor" style="height: 100%; ">
+					<div class="text-center">
+						<h5>{{ entity.fundraisingGoal | formatMoney }}</h5>
+					</div>
+					<div class="text-center">
+						<h6>DONOR NAME</h6>
+					</div>
+				</div>
+			</transition>
+		</div>
+	</body>
+	<script>
+		var api = 'https://extra-life.org/api/', // the url of the DonorDrive API you wish to poll
+			resource = 'participants', // the resource (events, participants, teams)
+			resourceID = 348319, // the ID of the specific resource to poll
+			showcaseDuration = 5000; // the time in millis to show a donor
+
+		Vue.filter(
+			'formatMoney',
+			(value) => {
+				return numeral(value).format('$0,0.00');
+			}
+		);
+
+		var v = new Vue({
+			data: {
+				donations: [],
+				entity: {
+					etag: ''
+				}
+			},
+			el: '#app',
+			methods: {
+				refreshDonations() {
+					axios.get(api + '/' + resource + '/' + resourceID + '/donations' + ( api.indexOf('?') >= 0 ? '&' : '?' ) + 'limit=' + donationLimit)
+						.then((response) => {
+//							this.donations = response.data;
+						});
+				},
+				refreshEntity() {
+					axios.get(api + '/' + resource + '/' + resourceID)
+						.then((response) => {
+							// success
+							if(response.headers.etag != this.entity.etag) {
+								var e = response.data;
+								e.etag = response.headers.etag;
+
+								this.entity = e;
+							}
+						});
+				}
+			}
+		});
+
+		setInterval(
+			() => {
+				v.refreshEntity();
+			},
+			15000
+		);
+
+		v.refreshEntity();
+	</script>
+</html>
