@@ -8,13 +8,13 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 	</head>
 	<body>
-		<div id="app" class="py-3 bg-grad-grey shadow text-light position-relative overflow-hidden rounded-right" style="width: 500px;">
+		<div id="app" class="py-3 bg-grad-grey shadow text-light position-relative overflow-hidden rounded" style="width: 600px;">
 			<section class="container-fluid">
 				<div class="row align-items-center">
-					<div class="col-4">
-						<img src="resources/images/streamingOverlayLogo.png" class="img-fluid" alt="Logo" />
+					<div class="col-3">
+						<img src="https://assets.donordrive.com/helpmakemiracles/images/$cms$/100/2453.png" class="img-fluid" style="max-height: 60px;" alt="Logo" />
 					</div>
-					<div class="col-8 js-progress">
+					<div class="col-9 js-progress">
 						<div class="text-right">
 							<h1 class="h5">{{ entity.sumDonations | formatMoney }} / {{ entity.fundraisingGoal | formatMoney }}</h1>
 						</div>
@@ -25,7 +25,7 @@
 				</div>
 			</section>
 			<transition name="slide">
-				<section v-if="donation" class="container-fluid py-2 bg-grad-blue position-absolute pos-t-0 h-100 w-100 slide-start-right slide-left">
+				<section v-if="donation" class="container-fluid align-items-center py-2 bg-grad-blue position-absolute pos-t-0 h-100 w-100 slide-start-right slide-left">
 					<h1 class="h2 d-block w-100">{{ donation.amount | formatMoney }}</h1>
 					<h2 class="h6 d-block w-100"><span v-if="donation.displayName">{{ donation.displayName }}</span><span v-else>Anonymous</span></h2>
 				</section>
