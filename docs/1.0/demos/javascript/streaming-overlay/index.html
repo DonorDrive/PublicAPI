@@ -27,7 +27,7 @@
 			<transition name="slide">
 				<section v-if="donation" class="row no-gutters align-items-center bg-grad-blue position-absolute pos-t-0 h-100 w-100 slide-start-right slide-left">
 					<div class="col px-3 py-2">
-						<h1 class="h2 d-block w-100">{{ donation.amount | formatMoney }}</h1>
+						<h1 class="h2 d-block w-100"><span v-if="donation.amount">{{ donation.amount | formatMoney }}</span></h1>
 						<h2 class="h6 d-block w-100"><span v-if="donation.displayName">{{ donation.displayName }}</span><span v-else>Anonymous</span></h2>
 					</div>
 				</section>
