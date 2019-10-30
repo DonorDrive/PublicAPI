@@ -46,7 +46,7 @@
 		</div>
 	</body>
 	<script>
-		var api = 'https://www.extra-life.org/api/', // the url of the DonorDrive API you wish to poll
+		var api = 'https://extra-life.org/api/', // the url of the DonorDrive API you wish to poll
 			resource = 'participants', // the resource (events, participants, teams)
 			resourceID = 348319, // the ID of the specific resource to poll
 			donationLimit = 50, // the number of donations to return (1-100)
@@ -77,30 +77,29 @@
 			el: '#app',
 			methods: {
 				refreshDonations() {
-					axios.get(api + '/' + resource + '/' + resourceID + '/donations' + ( api.indexOf('?') >= 0 ? '&' : '?' ) + 'limit=' + donationLimit)
+					axios.get(api + resource + '/' + resourceID + '/donations' + ( api.indexOf('?') >= 0 ? '&' : '?' ) + 'limit=' + donationLimit)
 						.then((response) => {
 							this.donations = response.data;
 						});
 				},
 				refreshEntity() {
-					axios.get(api + '/' + resource + '/' + resourceID)
+					axios.get(api + resource + '/' + resourceID, { headers: { 'if-none-match': this.entity.etag } })
 						.then((response) => {
 							// success
-							if(response.headers.etag != this.entity.etag) {
-								var e = response.data;
-								e.etag = response.headers.etag;
+							var e = response.data;
+							e.etag = response.headers.etag;
 
-								if(!window.localStorage.getItem('startingSumDonations')) {
-									window.localStorage.setItem('startingSumDonations', e.sumDonations);
-								}
-
-								e.sumShiftDonations = ( e.sumDonations - numeral(window.localStorage.getItem('startingSumDonations')).value() );
-
-								this.entity = e;
-
-								v.refreshDonations();
+							if(!window.localStorage.getItem('startingSumDonations')) {
+								window.localStorage.setItem('startingSumDonations', e.sumDonations);
 							}
-						});
+
+							e.sumShiftDonations = ( e.sumDonations - numeral(window.localStorage.getItem('startingSumDonations')).value() );
+
+							this.entity = e;
+
+							v.refreshDonations();
+						})
+						.catch((error) => {});
 				},
 				resetShift() {
 					window.localStorage.removeItem('startingSumDonations');

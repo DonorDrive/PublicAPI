@@ -1,0 +1,112 @@
+<html>
+	<head>
+		<script src="https://cdn.jsdelivr.net/npm/numeral@2.0.6/numeral.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!-- 		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script> -->
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<link rel="stylesheet" href="resources/css/streaming-overlay.css"/>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+	</head>
+	<body>
+		<div id="app" class="py-3 bg-grad-grey shadow text-light position-relative overflow-hidden rounded-right" style="width: 500px;">
+			<section class="container-fluid">
+				<div class="row align-items-center">
+					<div class="col-4">
+						<img src="resources/images/streamingOverlayLogo.png" class="img-fluid" alt="Logo" />
+					</div>
+					<div class="col-8 js-progress">
+						<div class="text-right">
+							<h1 class="h5">{{ entity.sumDonations | formatMoney }} / {{ entity.fundraisingGoal | formatMoney }}</h1>
+						</div>
+						<div class="progress">
+							<div class="progress-bar progress-bar-grow bg-blue" role="progressbar" v-bind:style="{ width: ((entity.sumDonations / entity.fundraisingGoal) * 100) + '%' }"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<transition name="slide">
+				<section v-if="donation" class="container-fluid py-2 bg-grad-blue position-absolute pos-t-0 h-100 w-100 slide-start-right slide-left">
+					<h1 class="h2 d-block w-100">{{ donation.amount | formatMoney }}</h1>
+					<h2 class="h6 d-block w-100"><span v-if="donation.displayName">{{ donation.displayName }}</span><span v-else>Anonymous</span></h2>
+				</section>
+			</transition>
+		</div>
+	</body>
+	<script>
+		var api = 'https://extra-life.org/api/', // the url of the DonorDrive API you wish to poll
+			resource = 'participants', // the resource (events, participants, teams)
+			resourceID = 348319; // the ID of the specific resource to poll
+
+		Vue.filter(
+			'formatMoney',
+			(value) => {
+				return numeral(value).format('$0,0.00');
+			}
+		);
+
+		var v = new Vue({
+			data: {
+				count: 0,
+				donation: null,
+				donations: [],
+				entity: {
+					etag: '',
+					lastDonation: new Date(Date.now()).toISOString()
+				}
+			},
+			el: '#app',
+			methods: {
+				refreshDonations() {
+					var ld = new Date(this.entity.lastDonation);
+
+					axios.get(api + resource + '/' + resourceID + '/donations' + ( api.indexOf('?') >= 0 ? '&' : '?' ) + 'where=' + encodeURIComponent('createdDateUTC >= ' + ld.toISOString()) + '&orderBy=' + encodeURIComponent('createdDateUTC ASC'))
+						.then((response) => {
+							response.data.forEach((dx) => {
+								var createdDate = new Date(dx.createdDateUTC);
+
+								if(createdDate > ld) {
+									this.donations.push(dx);
+									this.entity.lastDonation = dx.createdDateUTC;
+								}
+							});
+						});
+				},
+				refreshEntity() {
+					axios.get(api + resource + '/' + resourceID, { headers: { 'if-none-match': this.entity.etag } })
+						.then((response) => {
+							// success
+							var e = Object.assign({}, this.entity, response.data);
+							e.etag = response.headers.etag;
+
+							this.entity = e;
+
+							this.refreshDonations();
+						})
+						.catch((error) => {});
+				}
+			}
+		});
+
+		setInterval(
+			() => {
+				v.refreshEntity();
+			},
+			15000
+		);
+
+		setInterval(
+			() => {
+				if(v.donations.length) {
+					v.donation = v.donations.shift();
+					setTimeout(
+						() => { v.donation = null; },
+						5000
+					);
+				}
+			},
+			7000
+		);
+
+		v.refreshEntity();
+	</script>
+</html>
