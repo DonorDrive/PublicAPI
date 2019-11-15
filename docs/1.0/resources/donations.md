@@ -13,6 +13,7 @@ Fields in **bold** are guaranteed in the response payload.
 |`displayName`|`string`|The Donor's name|Dependent on privacy settings dictated by the Donor|
 |**`donationID`**|`string`|The unique ID of this Donation||
 |`donorID`|`string`|The unique ID of the Donor|Dependent on privacy settings dictated by the Donor|
+|**`eventID`**|`integer`|The ID of the Event this Donor is associated with||
 |`incentiveID`|`string`|The ID of the Fundraiser Incentive associated to this Donation||
 |`message`|`string`|The message from the Donor|Dependent on privacy settings dictated by the Donor|
 |`participantID`|`integer`|The ID of the Participant associated to this Donation|Participant Donations only|
