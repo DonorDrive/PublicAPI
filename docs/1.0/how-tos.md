@@ -17,5 +17,7 @@ If there's a particular *how-to* you don't see listed below or in the [Demos](/d
 `https://try.donordrive.com/api/teams/8052/participants`
 ### Getting a Participant's Details
 `https://try.donordrive.com/api/participants/15548`
-### Getting a Participants Donation's
+### Getting a Participant's Donations
 `https://try.donordrive.com/api/participants/15548/donations`
+### Getting a Participant's Top Donor using the limit and orderBy clauses
+`https://try.donordrive.com/api/participants/15882/donors&limit=1&orderBy=sumDonations%20DESC`
