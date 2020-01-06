@@ -21,5 +21,5 @@ If there's a particular *how-to* you don't see listed below or in the [Demos](/d
 `https://try.donordrive.com/api/participants/15882/donations`
 ### Getting a Participant's Top Donor using the limit and orderBy clauses
 `https://try.donordrive.com/api/participants/15882/donors?limit=1&orderBy=sumDonations%20DESC`
-### Getting all Participants from an event with 'bob' in their name using the where clause
+### Getting all Participants from an Event with 'bob' in their name using the where clause
 `https://try.donordrive.com/api/events/508/participants?where=displayName%20LIKE%20%27%25bob%25%27`
