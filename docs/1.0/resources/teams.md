@@ -27,17 +27,17 @@ The response from the `teams` endpoint is an array of, or a single team object.
     "fundraisingGoal": 20000,
     "eventName": "Test Participant Event",
     "links": {
-      "donate": "https://ssharma.globalcloud.net/donordrive/index.cfm?fuseaction=donorDrive.team&teamID=5074#donate",
-      "page": "https://ssharma.globalcloud.net/donordrive/index.cfm?fuseaction=donorDrive.team&teamID=5074"
+      "donate": "https://try.donordrive.com/index.cfm?fuseaction=donate.team&teamID=8775",
+      "page": "https://try.donordrive.com/index.cfm?fuseaction=donorDrive.team&teamID=8775"
     },
     "createdDateUTC": "2019-11-02T15:02:38.93+0000",
-    "eventID": 581,
+    "eventID": 508,
     "sumDonations": 9349.5,
     "name": "The Bonhams",
     "isInviteOnly": false,
     "captainDisplayName": "Liam Bonham",
-    "avatarImageURL": "",
-    "teamID": 5074,
+    "avatarImageURL": "//static.donordrive.com/clients/try/img/avatar-team-default.gif",
+    "teamID": 8775,
     "sumPledges": 0,
     "numDonations": 97
   },
@@ -46,17 +46,17 @@ The response from the `teams` endpoint is an array of, or a single team object.
     "fundraisingGoal": 5000,
     "eventName": "Test Participant Event",
     "links": {
-      "donate": "https://ssharma.globalcloud.net/donordrive/index.cfm?fuseaction=donorDrive.team&teamID=5073#donate",
-      "page": "https://ssharma.globalcloud.net/donordrive/index.cfm?fuseaction=donorDrive.team&teamID=5073"
+      "donate": "https://try.donordrive.com/index.cfm?fuseaction=donorDrive.team&teamID=8776",
+      "page": "https://try.donordrive.com/index.cfm?fuseaction=donorDrive.team&teamID=8776"
     },
     "createdDateUTC": "2019-10-24T13:51:25.137+0000",
-    "eventID": 581,
+    "eventID": 508,
     "sumDonations": 2433,
     "name": "#1 Fundraising Team",
     "isInviteOnly": false,
     "captainDisplayName": "Jimbo Nance",
-    "avatarImageURL": "",
-    "teamID": 5073,
+    "avatarImageURL": "//static.donordrive.com/clients/try/img/avatar-team-default.gif",
+    "teamID": 8776,
     "sumPledges": 0,
     "numDonations": 41
   }

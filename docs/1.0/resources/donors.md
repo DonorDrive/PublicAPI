@@ -22,7 +22,7 @@ The response from the `donors` endpoint is an array of donor objects.
   {
     "displayName": "Friendly Donor",
     "donorID": "EB8610A3FC435D58",
-    "avatarImageURL": "",
+    "avatarImageURL": "//static.donordrive.com/clients/try/img/avatar-constituent-default.gif",
     "modifiedDateUTC": "2019-10-30T18:01:18.513+0000",
     "sumDonations": 3500,
     "numDonations": 13
@@ -30,7 +30,7 @@ The response from the `donors` endpoint is an array of donor objects.
   {
     "displayName": "Barnabas Jungleham",
     "donorID": "C650B80FC37D7464",
-    "avatarImageURL": "",
+    "avatarImageURL": "//static.donordrive.com/clients/try/img/avatar-constituent-default.gif",
     "modifiedDateUTC": "2019-10-14T15:35:27.370+0000",
     "sumDonations": 30,
     "numDonations": 1
@@ -38,7 +38,7 @@ The response from the `donors` endpoint is an array of donor objects.
   {
     "displayName": "Kimberly Jalapeno",
     "donorID": "63135F1FCCEABD47",
-    "avatarImageURL": "",
+    "avatarImageURL": "//static.donordrive.com/clients/try/img/avatar-constituent-default.gif",
     "modifiedDateUTC": "2019-10-07T18:36:00.343+0000",
     "sumDonations": 200,
     "numDonations": 4

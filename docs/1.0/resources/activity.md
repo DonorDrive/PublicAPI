@@ -25,35 +25,35 @@ The response from the `activity` endpoint is an array of objects, with a maximum
     "isIncentive": 1,
     "createdDateUTC": "2019-11-10T19:38:51.897+0000",
     "title": "Friendly Donor",
-    "imageURL": "",
+    "imageURL": "//static.donordrive.com/clients/try/img/avatar-constituent-default.gif",
     "type": "donation"
   },
   {
     "amount": 15,
     "createdDateUTC": "2019-11-08T15:22:13.933+0000",
     "title": "Friendly Donor",
-    "imageURL": "",
+    "imageURL": "//static.donordrive.com/clients/try/img/avatar-constituent-default.gif",
     "type": "donation"
   },
   {
     "amount": 10,
     "createdDateUTC": "2019-11-06T16:26:02.487+0000",
     "title": "Friendly Donor",
-    "imageURL": "",
+    "imageURL": "//static.donordrive.com/clients/try/img/avatar-constituent-default.gif",
     "type": "donation"
+  },
+  {
+    "message": "Raised 100 dollars!",
+    "createdDateUTC": "2019-11-06T16:25:01.530+0000",
+    "title": "100 Club Badge",
+    "imageURL": "http://assets.donordrive.com/try/images/$event508$/badge_2F7819D3_C019_3C7D_B9D716687CEEC0A5.png",
+    "type": "participantBadge"
   },
   {
     "message": "Sent 25 donation invite emails!",
     "createdDateUTC": "2019-11-06T16:25:00.530+0000",
     "title": "Enthusiastic Participant Badge",
-    "imageURL": "",
-    "type": "participantBadge"
-  },
-  {
-    "message": "Raised 250 dollars!",
-    "createdDateUTC": "2019-11-06T16:25:01.530+0000",
-    "title": "250 Club Badge",
-    "imageURL": "",
+    "imageURL": "https://assets.donordrive.com/try/images/$event508$/badge_DCB0A883_BC0A_97DB_639B4D7BFDEC638E.png",
     "type": "participantBadge"
   }
 ]

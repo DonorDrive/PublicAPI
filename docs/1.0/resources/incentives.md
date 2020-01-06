@@ -25,9 +25,9 @@ The response from the `incentives` endpoint is an array of incentive objects.
     "description": "I'll give you a personal shoutout on stream!",
     "quantityClaimed": 9,
     "links": {
-      "donate": "https://ssharma.globalcloud.net/donordrive/index.cfm?fuseaction=donorDrive.participant&participantID=4024&incentiveID=99E91F39-991D-423A-9942C6D38B9D040C#donate"
+      "donate": "https://try.donordrive.com/index.cfm?fuseaction=donordrive.participant&participantID=15882&incentiveID=DBAC7F77-D0D0-A244-C3879E9BC1B5AC06#donate"
     },
-    "incentiveID": "99E91F39-991D-423A-9942C6D38B9D040C"
+    "incentiveID": "DBAC7F77-D0D0-A244-C3879E9BC1B5AC06"
   },
   {
     "amount": 10,
@@ -35,17 +35,17 @@ The response from the `incentives` endpoint is an array of incentive objects.
     "quantity": 15,
     "quantityClaimed": 0,
     "links": {
-      "donate": "https://ssharma.globalcloud.net/donordrive/index.cfm?fuseaction=donorDrive.participant&participantID=4024&incentiveID=12E91A3A-991D-F23A-3942C6D3FF93040C#donate"
+      "donate": "https://try.donordrive.com/index.cfm?fuseaction=donordrive.participant&participantID=15882&incentiveID=DBAF0B31-EA46-FC9E-25D0149D89833ACF#donate"
     },
-    "incentiveID": "12E91A3A-991D-F23A-3942C6D3FF93040C"
+    "incentiveID": "DBAF0B31-EA46-FC9E-25D0149D89833ACF"
   },
   {
     "amount": 20,
     "description": "Choose my Mario Kart character!",
     "links": {
-      "donate": "https://ssharma.globalcloud.net/donordrive/index.cfm?fuseaction=donorDrive.participant&participantID=4024&incentiveID=45B91A3A-991D-F23A-3942C6D3FF9304FF#donate"
+      "donate": "https://try.donordrive.com/index.cfm?fuseaction=donordrive.participant&participantID=15882&incentiveID=DBB0826A-F48D-319A-DE3F070C2CC46D7F#donate"
     },
-    "incentiveID": "45B91A3A-991D-F23A-3942C6D3FF9304FF"
+    "incentiveID": "DBB0826A-F48D-319A-DE3F070C2CC46D7F"
   }
 ]
 ```

@@ -22,25 +22,18 @@ The response from the `badges` endpoint is an array of badge objects.
 ```json
 [
   {
-    "description": "Raised 250 dollars!",
-    "title": "250 Club Badge",
+    "description": "Raised 100 dollars!",
+    "title": "100 Club Badge",
     "unlockedDateUTC": "2019-10-30T18:01:23.430+0000",
-    "badgeImageURL": "",
-    "badgeCode": "250-club-badge"
+    "badgeImageURL": "http://assets.donordrive.com/try/images/$event508$/badge_2F7819D3_C019_3C7D_B9D716687CEEC0A5.png",
+    "badgeCode": "100-club-badge"
   },
   {
     "description": "Sent 25 donation invite emails!",
     "title": "Enthusiastic Participant Badge",
     "unlockedDateUTC": "2019-09-18T15:47:39.107+0000",
-    "badgeImageURL": "",
+    "badgeImageURL": "https://assets.donordrive.com/try/images/$event508$/badge_DCB0A883_BC0A_97DB_639B4D7BFDEC638E.png",
     "badgeCode": "enthusiastic-participant-badge"
-  },
-  {
-    "description": "Connect with your Facebook account.",
-    "title": "They're All Watching Me",
-    "unlockedDateUTC": "2019-09-17T16:31:40.840+0000",
-    "badgeImageURL": "",
-    "badgeCode": "they-re-all-watching-me"
   }
 ]
 ```

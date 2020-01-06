@@ -36,7 +36,7 @@ The response from the `milestones` endpoint is an array of milestone objects.
     "fundraisingGoal": 5000,
     "description": "I'll dye my hair!",
     "links": {
-      "donate": "https://ssharma.globalcloud.net/donordrive/index.cfm?fuseaction=donorDrive.participant&participantID=4024&donationAmount=401.50#donate"
+      "donate": "https://try.donordrive.com/index.cfm?fuseaction=donorDrive.participant&participantID=15882&donationAmount=401.50#donate"
     },
     "milestoneID": "22BA1A3A-1234-FF6A-394361D3FF9304FF"
   }
