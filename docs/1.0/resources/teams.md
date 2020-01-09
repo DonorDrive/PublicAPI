@@ -19,6 +19,7 @@ Fields in **bold** are guaranteed in the response payload.
 |**`numDonations`**|`integer`|The number of donations this Team has received||
 |**`numParticipants`**|`integer`|The number of participants associated with this team||
 |**`sumDonations`**|`float`|The total sum of donations this Team has received||
+|**`sumPledges`**|`float`|The total sum of pledges this Team has received||
 |**`teamID`**|`integer`|The unique ID of this Team||
 
 #### Endpoints
