@@ -31,6 +31,7 @@ The following response headers are included to facilitate the handling of data.
   * [Donations](resources/donations.md)
   * [Donors](resources/donors.md)
   * [Events](resources/events.md)
+  * [Impact](resources/impact.md)
   * [Incentives](resources/incentives.md)
   * [Milestones](resources/milestones.md)
   * [Participants](resources/participants.md)
