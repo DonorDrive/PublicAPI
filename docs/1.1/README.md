@@ -2,7 +2,7 @@
 
 ## Array-based Endpoints
 
-The result set returned from endpoints can be further restricted by including the following Query Parameters. Since version 1.1, arrays are 0-based, so the first record is at index 0, second record is at index 1, etc.
+Since version 1.1, arrays are 0-based, so the first record is at index 0, second record is at index 1, etc. The result set returned from endpoints can be further restricted by including the following Query Parameters.
 
 |Query Parameter|Description|Notes|
 |---|---|---|
