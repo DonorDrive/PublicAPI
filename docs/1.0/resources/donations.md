@@ -10,6 +10,7 @@ Default `orderBy`: `createdDateUTC DESC`
 |---|---|---|
 |`/api/participants/{participantID}/donations`|`Array`|To find `{participantID}`, visit your Participant's Fundraising Page. Look for the `&participantID=` URL parameter.|
 |`/api/teams/{teamID}/donations`|`Array`|To find `{teamID}`, visit your Team's Fundraising Page. Look for the `&teamID=` URL parameter.|
+|`/api/events/{eventID}/donations`|`Array`|To find `{eventID}`, visit your Event Landing Page. Look for the `&eventID=` URL parameter.|
 
 ## Response
 
