@@ -2,6 +2,8 @@
 
 Donations associated with a Participant or Team.
 
+**Some endpoints may return no results based on DonorDrive instance configuration.**
+
 ## Endpoints
 
 Default `orderBy`: `createdDateUTC DESC`
