@@ -70,7 +70,6 @@ Fields in **bold** are guaranteed in the response payload.
 |**`donationID`**|`string`|The unique ID of this Donation||`true`|
 |`donorID`|`string`|The unique ID of the Donor|Dependent on privacy settings dictated by the Donor|`true`|
 |**`eventID`**|`integer`|The ID of the Event this Donor is associated with||`true`|
-|`fieldsPrivateToTarget`|`array`|The list of fields that only the recipient of the donation can see|The possible values are:<br />`amount`<br />`displayName`<br />`message`|`false`|
 |`incentiveID`|`string`|The ID of the Fundraiser Incentive associated to this Donation||`true`|
 |`links`|`object`|An object containing related resources|`receipt`: The URL to download the receipt for this donation<br />`recipient`: The URL for the recipient's Fundraising Page|`false`|
 |`message`|`string`|The message from the Donor|Dependent on privacy settings dictated by the Donor|`true`|
