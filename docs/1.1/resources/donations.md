@@ -71,7 +71,6 @@ Fields in **bold** are guaranteed in the response payload.
 |`donorID`|`string`|The unique ID of the Donor|Dependent on privacy settings dictated by the Donor|`true`|
 |**`eventID`**|`integer`|The ID of the Event this Donor is associated with||`true`|
 |`incentiveID`|`string`|The ID of the Fundraiser Incentive associated to this Donation||`true`|
-|`links`|`object`|An object containing related resources|`receipt`: The URL to download the receipt for this donation<br />`recipient`: The URL for the recipient's Fundraising Page|`false`|
 |`message`|`string`|The message from the Donor|Dependent on privacy settings dictated by the Donor|`true`|
 |`participantID`|`integer`|The ID of the Participant associated to this Donation|Participant Donations only|`true`|
 |`teamID`|`integer`|The ID of the Team associated to this Donation|Team Participant Donations and Team Donations only|`true`|
