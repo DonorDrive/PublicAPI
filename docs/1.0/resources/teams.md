@@ -74,10 +74,11 @@ Fields in **bold** are guaranteed in the response payload.
 |**`eventName`**|`string`|The name of the Event this Team is associated with||`false`|
 |**`fundraisingGoal`**|`float`|This Team's goal||`true`|
 |**`isInviteOnly`**|`boolean`|Does this Team restrict registration to invitations-only||`true`|
-|`links`|`object`|An object containing related resources|`donate`: The donation URL for this Team<br />`page`: The URL for this Team's Fundraising Page|`false`|
+|`links`|`object`|An object containing related resources|`donate`: The donation URL for this Team<br />`page`: The URL for this Team's Fundraising Page<br />`stream`: The URL for the Live Fundraising(TM) stream associated with this Team|`false`|
 |**`name`**|`string`|This Team's name||`true`|
 |**`numDonations`**|`integer`|The number of donations this Team has received||`true`|
 |**`numParticipants`**|`integer`|The number of participants associated with this team||`true`|
+|`streamIsLive`|`boolean`|`true` if this Team is actively streaming on their Fundraising Page||`true`|
 |**`sumDonations`**|`float`|The total sum of donations this Team has received||`true`|
 |**`sumPledges`**|`float`|The total sum of pledges this Team has received||`true`|
 |**`teamID`**|`integer`|The unique ID of this Team||`true`|

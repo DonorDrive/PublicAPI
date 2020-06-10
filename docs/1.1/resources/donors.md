@@ -8,6 +8,7 @@ Default `orderBy`: `modifiedDateUTC DESC`
 
 |Path|Return Type|Notes|
 |---|---|---|
+|`/api/events/{eventID}/donors`|`Array`|To find `{eventID}`, visit your Event's Fundraising Page. Look for the `&eventID=` URL parameter.|
 |`/api/participants/{participantID}/donors`|`Array`|To find `{participantID}`, visit your Participant's Fundraising Page. Look for the `&participantID=` URL parameter.|
 |`/api/teams/{teamID}/donors`|`Array`|To find `{teamID}`, visit your Team's Fundraising Page. Look for the `&teamID=` URL parameter.|
 

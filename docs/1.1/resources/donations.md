@@ -8,6 +8,7 @@ Default `orderBy`: `createdDateUTC DESC`
 
 |Path|Return Type|Notes|
 |---|---|---|
+|`/api/events/{eventID}/donations`|`Array`|To find `{eventID}`, visit your Event's Fundraising Page. Look for the `&eventID=` URL parameter.|
 |`/api/participants/{participantID}/donations`|`Array`|To find `{participantID}`, visit your Participant's Fundraising Page. Look for the `&participantID=` URL parameter.|
 |`/api/teams/{teamID}/donations`|`Array`|To find `{teamID}`, visit your Team's Fundraising Page. Look for the `&teamID=` URL parameter.|
 
@@ -68,7 +69,7 @@ Fields in **bold** are guaranteed in the response payload.
 |`displayName`|`string`|The Donor's name|Dependent on privacy settings dictated by the Donor|`true`|
 |**`donationID`**|`string`|The unique ID of this Donation||`true`|
 |`donorID`|`string`|The unique ID of the Donor|Dependent on privacy settings dictated by the Donor|`true`|
-|**`eventID`**|`integer`|The ID of the Event this Donor is associated with||`true`|nio
+|**`eventID`**|`integer`|The ID of the Event this Donor is associated with||`true`|
 |`incentiveID`|`string`|The ID of the Fundraiser Incentive associated to this Donation||`true`|
 |`message`|`string`|The message from the Donor|Dependent on privacy settings dictated by the Donor|`true`|
 |`participantID`|`integer`|The ID of the Participant associated to this Donation|Participant Donations only|`true`|
