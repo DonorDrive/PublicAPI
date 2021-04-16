@@ -59,18 +59,16 @@ The response from the `donations` endpoint is an array of donation objects.
 
 ### Fields
 
-Fields in **bold** are guaranteed in the response payload.
-
-|Field|Type|Description|Notes|Filterable|
-|---|---|---|---|---|
-|`amount`|`float`|The amount of this Donation|Dependent on privacy settings dictated by the Donor|`true`|
-|**`avatarImageURL`**|`string`|The URL for the avatar image associated with the Donor||`true`|
-|**`createdDateUTC`**|`date`|The date (in UTC) this Donation was created|ISO-8601 format|`true`|
-|`displayName`|`string`|The Donor's name|Dependent on privacy settings dictated by the Donor|`true`|
-|**`donationID`**|`string`|The unique ID of this Donation||`true`|
-|`donorID`|`string`|The unique ID of the Donor|Dependent on privacy settings dictated by the Donor|`true`|
-|**`eventID`**|`integer`|The ID of the Event this Donor is associated with||`true`|
-|`incentiveID`|`string`|The ID of the Fundraiser Incentive associated to this Donation||`true`|
-|`message`|`string`|The message from the Donor|Dependent on privacy settings dictated by the Donor|`true`|
-|`participantID`|`integer`|The ID of the Participant associated to this Donation|Participant Donations only|`true`|
-|`teamID`|`integer`|The ID of the Team associated to this Donation|Team Participant Donations and Team Donations only|`true`|
+|Field|Type|Description|Guaranteed|Filterable|Notes|
+|---|---|---|---|---|---|
+|`amount`|`float`|The amount of this Donation||Yes|Dependent on privacy settings dictated by the Donor|
+|`avatarImageURL`|`string`|The URL for the avatar image associated with the Donor|Yes|Yes||
+|`createdDateUTC`|`date`|The date (in UTC) this Donation was created|Yes|Yes|ISO-8601 format|
+|`displayName`|`string`|The Donor's name||Yes|Dependent on privacy settings dictated by the Donor|
+|`donationID`|`string`|The unique ID of this Donation|Yes|Yes||
+|`donorID`|`string`|The unique ID of the Donor||Yes|Dependent on privacy settings dictated by the Donor|
+|`eventID`|`integer`|The ID of the Event this Donor is associated with|Yes|Yes||
+|`incentiveID`|`string`|The ID of the Fundraiser Incentive associated to this Donation||Yes||
+|`message`|`string`|The message from the Donor||Yes|Dependent on privacy settings dictated by the Donor|
+|`participantID`|`integer`|The ID of the Participant associated to this Donation||Yes|Participant Donations only|
+|`teamID`|`integer`|The ID of the Team associated to this Donation||Yes|Team Participant Donations and Team Donations only|

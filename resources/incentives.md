@@ -59,17 +59,15 @@ The response from the `incentives` endpoint is an array of incentive objects.
 
 ### Fields
 
-Fields in **bold** are guaranteed in the response payload.
-
-|Field|Type|Description|Notes|Filterable|
-|---|---|---|---|---|
-|**`amount`**|`float`|The amount of this Fundraiser Incentive||`true`|
-|**`description`**|`string`|A text description of this Fundraiser Incentive||`true`|
-|**`incentiveID`**|`string`|The unique ID of this Fundraiser Incentive||`true`|
-|`endDateUTC`|`date`|If present, the date (in UTC) this Fundraiser Incentive becomes unavailable|ISO-8601 format|`true`|
-|`incentiveImageURL`|`string`|The URL for the image associated with this Fundraiser Incentive||`false`|
-|**`isActive`**|`string`|Added: 1.2<br/>`true` if this Fundraiser Incentive currently accepts donations||`true`|
-|`links`|`object`|An object containing related resources|`donate`: The donation URL for this Fundraiser Incentive|`false`|
-|`startDateUTC`|`date`|If present, the date (in UTC) this Fundraiser Incentive became available|ISO-8601 format|`true`|
-|`quantity`|`integer`|The total number available for this Fundraiser Incentive|If not present, the quantity is unlimited|`true`|
-|`quantityClaimed`|`integer`|The number claimed of this Fundraiser Incentive|If not present, the quantity is unlimited and the quantity claimed is zero|`true`|
+|Field|Type|Description|Guaranteed|Filterable|Notes|
+|---|---|---|---|---|---|
+|`amount`|`float`|The amount of this Fundraiser Incentive|Yes|Yes||
+|`description`|`string`|A text description of this Fundraiser Incentive|Yes|Yes||
+|`incentiveID`|`string`|The unique ID of this Fundraiser Incentive|Yes|Yes||
+|`endDateUTC`|`date`|If present, the date (in UTC) this Fundraiser Incentive becomes unavailable||Yes|ISO-8601 format|
+|`incentiveImageURL`|`string`|The URL for the image associated with this Fundraiser Incentive|||
+|`isActive`|`string`|`true` if this Fundraiser Incentive currently accepts donations|Yes|Yes|Added: 1.2|
+|`links`|`object`|An object containing related resources|||`donate`: The donation URL for this Fundraiser Incentive|
+|`startDateUTC`|`date`|If present, the date (in UTC) this Fundraiser Incentive became available||Yes|ISO-8601 format|
+|`quantity`|`integer`|The total number available for this Fundraiser Incentive||Yes|If not present, the quantity is unlimited|
+|`quantityClaimed`|`integer`|The number claimed of this Fundraiser Incentive||Yes|If not present, the quantity is unlimited and the quantity claimed is zero|

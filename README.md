@@ -9,7 +9,7 @@ For general inquiries and requests for larger volume integrations, please email 
 ## Table of Contents
 * [Overview](overview.md)
 * [How-Tos](how-tos.md)
-* [Demos](demos.md)
+* [Demos](demos/demos.md)
 * Resources
   * [Activity](resources/activity.md)
   * [Badges](resources/badges.md)

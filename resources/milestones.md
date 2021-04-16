@@ -48,15 +48,13 @@ The response from the `milestones` endpoint is an array of milestone objects.
 
 ### Fields
 
-Fields in **bold** are guaranteed in the response payload.
-
-|Field|Type|Description|Notes|Filterable|
-|---|---|---|---|---|
-|**`description`**|`string`|A text description of this Fundraiser Milestone||`true`|
-|**`fundraisingGoal`**|`float`|The amount of this Fundraiser Milestone||`true`|
-|**`isActive`**|`string`|Added: 1.2<br/>`true` if this Fundraiser Milestone is currently active||`true`|
-|`isComplete`|`boolean`|`true` if this Fundraiser Milestone has been reached||`false`|
-|`links`|`object`|An object containing related resources|`donate`: The donation URL for this Fundraiser Milestone|`false`|
-|**`milestoneID`**|`string`|The unique ID of this Fundraiser Milestone||`true`|
-|`endDateUTC`|`date`|If present, the date (in UTC) this Fundraiser Milestone becomes unavailable|ISO-8601 format|`true`|
-|`startDateUTC`|`date`|If present, the date (in UTC) this Fundraiser Milestone became available|ISO-8601 format|`true`|
+|Field|Type|Description|Guaranteed|Filterable|Notes|
+|---|---|---|---|---|---|
+|`description`|`string`|A text description of this Fundraiser Milestone|Yes|Yes||
+|`fundraisingGoal`|`float`|The amount of this Fundraiser Milestone|Yes|Yes||
+|`isActive`|`string`|`true` if this Fundraiser Milestone is currently active|Yes|Yes|Added: 1.2|
+|`isComplete`|`boolean`|`true` if this Fundraiser Milestone has been reached||Yes||
+|`links`|`object`|An object containing related resources||Yes|`donate`: URL to donate the exact amount to reach Fundraiser Milestone|
+|`milestoneID`|`string`|The unique ID of this Fundraiser Milestone|Yes|Yes||
+|`endDateUTC`|`date`|If present, the date (in UTC) this Fundraiser Milestone becomes unavailable||Yes|ISO-8601 format|
+|`startDateUTC`|`date`|If present, the date (in UTC) this Fundraiser Milestone became available||Yes|ISO-8601 format|

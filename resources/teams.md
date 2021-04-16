@@ -63,22 +63,21 @@ The response from the `teams` endpoint is an array of, or a single team object.
 
 ### Fields
 
-Fields in **bold** are guaranteed in the response payload.
-
-|Field|Type|Description|Notes|Filterable|
-|---|---|---|---|---|
-|**`avatarImageURL`**|`string`|The URL for the avatar image associated with this Team||`true`|
-|**`captainDisplayName`**|`string`|The captain Participant's name||`true`|
-|**`createdDateUTC`**|`date`|The date (in UTC) this Team was created|ISO-8601 format|`true`|
-|**`eventID`**|`integer`|The ID of the Event this Team is associated with||`true`|
-|**`eventName`**|`string`|The name of the Event this Team is associated with||`false`|
-|**`fundraisingGoal`**|`float`|This Team's goal||`true`|
-|**`isInviteOnly`**|`boolean`|Does this Team restrict registration to invitations-only||`true`|
-|`links`|`object`|An object containing related resources|`donate`: The donation URL for this Team<br />`page`: The URL for this Team's Fundraising Page<br />`stream`: The URL for the Live Fundraising(TM) stream associated with this Team|`false`|
-|**`name`**|`string`|This Team's name||`true`|
-|**`numDonations`**|`integer`|The number of donations this Team has received||`true`|
-|**`numParticipants`**|`integer`|The number of participants associated with this team||`true`|
-|`streamIsLive`|`boolean`|`true` if this Team is actively streaming on their Fundraising Page||`true`|
-|**`sumDonations`**|`float`|The total sum of donations this Team has received||`true`|
-|**`sumPledges`**|`float`|The total sum of pledges this Team has received||`true`|
-|**`teamID`**|`integer`|The unique ID of this Team||`true`|
+|Field|Type|Description|Guaranteed|Filterable|Notes|
+|---|---|---|---|---|---|
+|`avatarImageURL`|`string`|The URL for the avatar image associated with this Team|Yes|||
+|`captainDisplayName`|`string`|The captain Participant's name|Yes|Yes||
+|`createdDateUTC`|`date`|The date (in UTC) this Team was created|Yes|Yes|ISO-8601 format|
+|`eventID`|`integer`|The ID of the Event this Team is associated with|Yes|Yes||
+|`eventName`|`string`|The name of the Event this Team is associated with|Yes|||
+|`fundraisingGoal`|`float`|This Team's goal|Yes|Yes||
+|`isInviteOnly`|`boolean`|Does this Team restrict registration to invitations-only||Yes||
+|`links`|`object`|An object containing related resources|||`donate`: The donation URL for this Team<br />`page`: The URL for this Team's Fundraising Page<br />`stream`: The URL for the Live Fundraising(TM) stream associated with this Team|
+|`name`|`string`|This Team's name|Yes|Yes||
+|`numAwardedBadges`|`integer`|The number of badges this Team has received||Yes|Added: 1.2|
+|`numDonations`|`integer`|The number of donations this Team has received|Yes|Yes||
+|`numParticipants`|`integer`|The number of participants associated with this team|Yes|Yes||
+|`streamIsLive`|`boolean`|`true` if this Team is actively streaming on their Fundraising Page||Yes||
+|`sumDonations`|`float`|The total sum of donations this Team has received|Yes|Yes||
+|`sumPledges`|`float`|The total sum of pledges this Team has received||Yes||
+|`teamID`|`integer`|The unique ID of this Team|Yes|Yes||

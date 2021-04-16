@@ -49,13 +49,11 @@ The response from the `donors` endpoint is an array of donor objects.
 
 ### Fields
 
-Fields in **bold** are guaranteed in the response payload.
-
-|Field|Type|Description|Notes|Filterable|
-|---|---|---|---|---|
-|**`avatarImageURL`**|`string`|The URL for the avatar image associated with the Donor||`true`|
-|**`displayName`**|`string`|The Donor's name||`true`|
-|**`donorID`**|`string`|The unique ID of the Donor||`true`|
-|**`modifiedDateUTC`**|`date`|The date (in UTC) this Donor last donated|ISO-8601 format|`true`|
-|**`numDonations`**|`integer`|The number of Donations this Donor has made to the Participant or Team||`true`|
-|**`sumDonations`**|`float`|The sum total of Donations this Donor has made to the Participant or Team||`true`|
+|Field|Type|Description|Guaranteed|Filterable|Notes|
+|---|---|---|---|---|---|
+|`avatarImageURL`|`string`|The URL for the avatar image associated with the Donor|Yes|Yes||
+|`displayName`|`string`|The Donor's name|Yes|Yes||
+|`donorID`|`string`|The unique ID of the Donor|Yes|Yes||
+|`modifiedDateUTC`|`date`|The date (in UTC) this Donor last donated|Yes|Yes|ISO-8601 format|
+|`numDonations`|`integer`|The number of Donations this Donor has made to the Participant or Team|Yes|Yes||
+|`sumDonations`|`float`|The sum total of Donations this Donor has made to the Participant or Team|Yes|Yes||

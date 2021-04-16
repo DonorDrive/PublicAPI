@@ -72,24 +72,22 @@ The response from the `events` endpoint is an array of, or a single event object
 
 ### Fields
 
-Fields in **bold** are guaranteed in the response payload.
-
-|Field|Type|Description|Notes|Filterable|
-|---|---|---|---|---|
-|`city`|`string`|The Event's city|Events with location only|`true`|
-|`country`|`string`|The Event's country|Events with location only|`true`|
-|`endDateUTC`|`date`|The end date (in UTC) of this Event|Events with dates only; ISO-8601 format|`true`|
-|**`eventID`**|`integer`|The unique ID of the Event||`true`|
-|`fundraisingGoal`|`float`|This Event's fundraising goal||`true`|
-|**`links`**|`object`|An object containing related resources|`donate`: The donation URL for this Event<br />`page`: The URL for this Event's Fundraising Page<br />`stream`: The URL for the Live Fundraising(TM) stream associated with this Event|`false`|
-|**`name`**|`string`|The Event's name||`true`|
-|`numDonations`|`integer`|The number of donations this Event has received||`true`|
-|`numParticipants`|`integer`|The number of participants associated with this Event||`false`|
-|`numTeams`|`integer`|The number of teams associated with this Event||`false`|
-|`province`|`string`|The Event's province/state|Events with location only|`true`|
-|`startDateUTC`|`date`|The start date (in UTC) of this Event|Events with dates only; ISO-8601 format|`true`|
-|`streamIsLive`|`boolean`|`true` if this Event is actively streaming on it's Fundraising Page||`true`|
-|`sumDonations`|`float`|The total sum of donations this Event has received||`true`|
-|`timezone`|`string`|The Event's timezone|Events with dates only|`false`|
-|**`type`**|`string`|The Event's type|**`C`**: Capital Campaign; **`I`**: Personal Campaign Group; **`P`**: Participant Event; **`T`**: Ticket Event|`true`|
-|`venue`|`string`|The Event's venue|Events with location only|`true`|
+|Field|Type|Description|Guaranteed|Filterable|Notes|
+|---|---|---|---|---|---|
+|`city`|`string`|The Event's city||Yes|Events with location only|
+|`country`|`string`|The Event's country||Yes|Events with location only|
+|`endDateUTC`|`date`|The end date (in UTC) of this Event||Yes|Events with dates only; ISO-8601 format|
+|`eventID`|`integer`|The unique ID of the Event|Yes|Yes||
+|`fundraisingGoal`|`float`|This Event's fundraising goal||Yes||
+|`links`|`object`|An object containing related resources|||`donate`: The donation URL for this Event<br />`page`: The URL for this Event's Fundraising Page<br />`stream`: The URL for the Live Fundraising(TM) stream associated with this Event|
+|`name`|`string`|The Event's name|Yes|Yes||
+|`numDonations`|`integer`|The number of donations this Event has received||Yes||
+|`numParticipants`|`integer`|The number of participants associated with this Event||||
+|`numTeams`|`integer`|The number of teams associated with this Event||||
+|`province`|`string`|The Event's province/state||Yes|Events with location only|
+|`startDateUTC`|`date`|The start date (in UTC) of this Event||Yes|Events with dates only; ISO-8601 format|
+|`streamIsLive`|`boolean`|`true` if this Event is actively streaming on it's Fundraising Page||Yes||
+|`sumDonations`|`float`|The total sum of donations this Event has received||Yes||
+|`timezone`|`string`|The Event's timezone|||Events with dates only|
+|`type`|`string`|The Event's type|Yes|Yes|**`C`**: Capital Campaign; **`I`**: Personal Campaign Group; **`P`**: Participant Event; **`T`**: Ticket Event|
+|`venue`|`string`|The Event's venue||Yes|Events with location only|
