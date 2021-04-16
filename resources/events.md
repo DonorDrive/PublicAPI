@@ -10,6 +10,7 @@ Default `orderBy`: `startDateUTC ASC`
 |---|---|---|
 |`/api/events`|`Array`||
 |`/api/events/{eventID}`|`Object`|To find `{eventID}`, visit your Event's Fundraising Page. Look for the `&eventID=` URL parameter.|
+|`/api/eventgroups/{groupCode}/events`|`Array`|This feature may not be available for all instances of DonorDrive.|
 
 ## Response
 

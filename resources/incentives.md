@@ -21,31 +21,38 @@ The response from the `incentives` endpoint is an array of incentive objects.
 ```json
 [
   {
-    "amount": 5,
+    "amount": 10,
     "description": "I'll give you a personal shoutout on stream!",
-    "quantityClaimed": 9,
+    "incentiveImageURL": "//assets.donordrive.com/extralife/images/$constituents$/98DEB758-C29F-F29A-66B83598945B70D1/deedee.jpg",
+    "quantity": 5,
+    "quantityClaimed": 0,
     "links": {
       "donate": "https://try.donordrive.com/index.cfm?fuseaction=donordrive.participant&participantID=15882&incentiveID=DBAC7F77-D0D0-A244-C3879E9BC1B5AC06#donate"
     },
-    "incentiveID": "DBAC7F77-D0D0-A244-C3879E9BC1B5AC06"
+    "incentiveID": "DBAC7F77-D0D0-A244-C3879E9BC1B5AC06",
+    "isActive": true
   },
   {
-    "amount": 10,
+    "endDateUTC": "2021-04-14T07:00:00.0+0000",
+    "amount": 22,
     "description": "Spin the prize wheel!",
-    "quantity": 15,
+    "quantity": 5,
     "quantityClaimed": 0,
-    "links": {
-      "donate": "https://try.donordrive.com/index.cfm?fuseaction=donordrive.participant&participantID=15882&incentiveID=DBAF0B31-EA46-FC9E-25D0149D89833ACF#donate"
-    },
-    "incentiveID": "DBAF0B31-EA46-FC9E-25D0149D89833ACF"
+    "incentiveID": "74885F1C-0A20-4CA1-011F56911302E557",
+    "isActive": false,
+    "startDateUTC": "2021-04-01T07:00:00.0+0000"
   },
   {
-    "amount": 20,
+    "amount": 50,
     "description": "Choose my Mario Kart character!",
+    "incentiveImageURL": "//assets.donordrive.com/extralife/images/$constituents$/98DEB758-C29F-F29A-66B83598945B70D1/deedee.jpg",
+    "quantity": 1,
+    "quantityClaimed": 0,
     "links": {
       "donate": "https://try.donordrive.com/index.cfm?fuseaction=donordrive.participant&participantID=15882&incentiveID=DBB0826A-F48D-319A-DE3F070C2CC46D7F#donate"
     },
-    "incentiveID": "DBB0826A-F48D-319A-DE3F070C2CC46D7F"
+    "incentiveID": "DBB0826A-F48D-319A-DE3F070C2CC46D7F",
+    "isActive": true
   }
 ]
 ```
@@ -61,6 +68,7 @@ Fields in **bold** are guaranteed in the response payload.
 |**`incentiveID`**|`string`|The unique ID of this Fundraiser Incentive||`true`|
 |`endDateUTC`|`date`|If present, the date (in UTC) this Fundraiser Incentive becomes unavailable|ISO-8601 format|`true`|
 |`incentiveImageURL`|`string`|The URL for the image associated with this Fundraiser Incentive||`false`|
+|**`isActive`**|`string`|Added: 1.2<br/>`true` if this Fundraiser Incentive currently accepts donations||`true`|
 |`links`|`object`|An object containing related resources|`donate`: The donation URL for this Fundraiser Incentive|`false`|
 |`startDateUTC`|`date`|If present, the date (in UTC) this Fundraiser Incentive became available|ISO-8601 format|`true`|
 |`quantity`|`integer`|The total number available for this Fundraiser Incentive|If not present, the quantity is unlimited|`true`|

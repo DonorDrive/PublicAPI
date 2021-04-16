@@ -40,8 +40,8 @@ Since version 1.1, the `offset` parameter is 0-based, so the first record has an
 |---|---|---|
 |`limit`|The result set will be restricted by the value defined. Default and max is set to 100. Any value above 100 will return a 400 error.||
 |`offset`|The result set returned will start at the index furnished by offset (i.e. when working with a working set larger than the limit of 100, offset may be furnished to paginate through results).||
-|`orderBy`|The specified fields will be used to create the sort-order of the response payload.|[SQL Order By](https://www.w3schools.com/sql/sql_orderby.asp)|
-|`where`|Value provided will follow the rules of a SQL-style `where` clause. Note that not all columns are filterable using the `where` clause. For each column in the response field list for an endpoint, the `filterable` column specifies whether or not it can be used within a `where` clause.|[SQL Where](https://www.w3schools.com/sql/sql_where.asp)|
+|`orderBy`|The specified `filterable` (see `where` below) fields will be used to create the sort-order of the response payload.|[SQL Order By](https://www.w3schools.com/sql/sql_orderby.asp)|
+|`where`|Value provided will follow the rules of a SQL-style `where` clause. Note that not all columns are `filterable` using the `where` clause. For each column in the response field list for an endpoint, the `filterable` column specifies whether or not it can be used within a `where` clause.|[SQL Where](https://www.w3schools.com/sql/sql_where.asp)|
 
 ## Response Headers
 

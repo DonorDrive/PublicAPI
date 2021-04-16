@@ -24,12 +24,14 @@ The response from the `milestones` endpoint is an array of milestone objects.
     "fundraisingGoal": 1000,
     "description": "Pie in the face!",
     "milestoneID": "F611075E-B722-E1A7-C91690575DD48210",
+    "isActive": true,
     "isComplete": true
   },
   {
     "fundraisingGoal": 2500,
     "description": "I'll eat a spoonful of hot sauce!",
     "milestoneID": "200F1E52-EDD2-3E85-CD951C029594E855",
+    "isActive": true,
     "isComplete": true
   },
   {
@@ -38,7 +40,8 @@ The response from the `milestones` endpoint is an array of milestone objects.
     "links": {
       "donate": "https://try.donordrive.com/index.cfm?fuseaction=donorDrive.participant&participantID=15882&donationAmount=401.50#donate"
     },
-    "milestoneID": "22BA1A3A-1234-FF6A-394361D3FF9304FF"
+    "milestoneID": "22BA1A3A-1234-FF6A-394361D3FF9304FF",
+    "isActive": true
   }
 ]
 ```
@@ -51,6 +54,7 @@ Fields in **bold** are guaranteed in the response payload.
 |---|---|---|---|---|
 |**`description`**|`string`|A text description of this Fundraiser Milestone||`true`|
 |**`fundraisingGoal`**|`float`|The amount of this Fundraiser Milestone||`true`|
+|**`isActive`**|`string`|Added: 1.2<br/>`true` if this Fundraiser Milestone is currently active||`true`|
 |`isComplete`|`boolean`|`true` if this Fundraiser Milestone has been reached||`false`|
 |`links`|`object`|An object containing related resources|`donate`: The donation URL for this Fundraiser Milestone|`false`|
 |**`milestoneID`**|`string`|The unique ID of this Fundraiser Milestone||`true`|
