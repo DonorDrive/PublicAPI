@@ -62,14 +62,12 @@ The response from the `activity` endpoint is an array of objects, with a maximum
 
 ### Fields
 
-Fields in **bold** are guaranteed in the response payload.
-
-|Field|Type|Description|Notes|Filterable|
-|---|---|---|---|---|
-|`amount`|`float`|The amount of this Donation Activity|For `donation` type Activity items|`true`|
-|**`createdDateUTC`**|`date`|The date (in UTC) this Activity item was created|ISO-8601 format|`true`|
-|**`imageURL`**|`string`|The URL for the image associated with the Activity item||`true`|
-|`isIncentive`|`boolean`|`true` if this donation claimed a Fundraiser Incentive|For `donation` type Activity items|`true`|
-|`message`|`string`|The message associated with the Activity item||`true`|
-|`title`|`string`|The title associated with the Activity item||`true`|
-|**`type`**|`string`|The type of Activity item|`donation` or `participantBadge` or `teamBadge`|`true`|
+|Field|Type|Description|Guaranteed|Filterable|Notes|
+|---|---|---|---|---|---|
+|`amount`|`float`|The amount of this Donation Activity||Yes|For `donation` type Activity items|
+|`createdDateUTC`|`date`|The date (in UTC) this Activity item was created|Yes|Yes|ISO-8601 format|
+|`imageURL`|`string`|The URL for the image associated with the Activity item|Yes|Yes||
+|`isIncentive`|`boolean`|`true` if this donation claimed a Fundraiser Incentive||Yes|For `donation` type Activity items|
+|`message`|`string`|The message associated with the Activity item||Yes||
+|`title`|`string`|The title associated with the Activity item||Yes||
+|`type`|`string`|The type of Activity item|Yes|Yes|`donation` or `participantBadge` or `teamBadge`|

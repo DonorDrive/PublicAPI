@@ -40,12 +40,10 @@ The response from the `badges` endpoint is an array of badge objects.
 
 ### Fields
 
-Fields in **bold** are guaranteed in the response payload.
-
-|Field|Type|Description|Notes|Filterable|
-|---|---|---|---|---|
-|**`badgeCode`**|`string`|The code associated with this Badge||`true`|
-|**`badgeImageURL`**|`string`|The URL for the image associated with this Badge||`false`|
-|**`description`**|`string`|The description of this Badge|Honors `Accept-Language` header|`true`, `LIKE` operator recommended|
-|**`title`**|`string`|The title of this Badge|Honors `Accept-Language` header|`true`, `LIKE` operator recommended|
-|**`unlockedDateUTC`**|`date`|The date this Badge was unlocked by the Participant or Team|ISO-8601 format|`true`|
+|Field|Type|Description|Guaranteed|Filterable|Notes|
+|---|---|---|---|---|---|
+|`badgeCode`|`string`|The code associated with this Badge|Yes|Yes||
+|`badgeImageURL`|`string`|The URL for the image associated with this Badge|Yes|||
+|`description`|`string`|The description of this Badge|Yes|Yes, `LIKE` operator recommended|Honors `Accept-Language` header|
+|`title`|`string`|The title of this Badge|Yes|Yes, `LIKE` operator recommended|Honors `Accept-Language` header|
+|`unlockedDateUTC`|`date`|The date this Badge was unlocked by the Participant or Team|Yes|Yes|ISO-8601 format||

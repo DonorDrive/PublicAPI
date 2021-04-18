@@ -63,23 +63,23 @@ The response from the `participants` endpoint is an array of, or a single fundra
 
 ### Fields
 
-Fields in **bold** are guaranteed in the response payload.
-
-|Field|Type|Description|Notes|Filterable|
-|---|---|---|---|---|
-|**`avatarImageURL`**|`string`|The URL for the avatar image associated with this Participant||`true`|
-|`campaignDate`|`date`|The date of the Personal Campaign|Personal Campaigns only; ISO-8601 format|`true`|
-|`campaignName`|`string`|The name of the Personal Campaign|Personal Campaigns only|`true`|
-|**`createdDateUTC`**|`date`|The date (in UTC) this Participant was created|ISO-8601 format|`true`|
-|**`displayName`**|`string`|This Participant's name||`true`|
-|**`eventID`**|`integer`|The ID of the Event this Participant is associated with||`true`|
-|**`eventName`**|`string`|The name of the Event this Participant is associated with||`false`|
-|**`fundraisingGoal`**|`float`|This Participant's individual goal||`true`|
-|`isTeamCaptain`|`boolean`|`true` if this Participant is the captain of a team|Team Participants only|`true`|
-|`links`|`object`|An object containing related resources|`donate`: The donation URL for this Participant<br />`page`: The URL for this Participant's Fundraising Page<br />`stream`: The URL for the Live Fundraising(TM) stream associated with this Participant|`false`|
-|**`numDonations`**|`integer`|The number of donations this Participant has received||`true`|
-|**`participantID`**|`integer`|The unique ID of this Participant||`true`|
-|`streamIsLive`|`boolean`|`true` if this Participant is actively streaming on their Fundraising Page||`true`|
-|`sumDonations`|`float`|The total sum of donations this Participant has received||`true`|
-|`teamID`|`integer`|The ID of the Team this Participant is associated with|Team Participants only|`true`|
-|`teamName`|`string`|The name of the Team this Participant is associated with|Team Participants only|`false`|
+|Field|Type|Description|Guaranteed|Filterable|Notes|
+|---|---|---|---|---|---|
+|`avatarImageURL`|`string`|The URL for the avatar image associated with this Participant|Yes|Yes||
+|`campaignDate`|`date`|The date of the Personal Campaign|||Personal Campaigns only; ISO-8601 format|
+|`campaignName`|`string`|The name of the Personal Campaign|||Personal Campaigns only|
+|`createdDateUTC`|`date`|The date (in UTC) this Participant was created|Yes|Yes|ISO-8601 format|
+|`displayName`|`string`|This Participant's name|Yes|Yes||
+|`eventID`|`integer`|The ID of the Event this Participant is associated with|Yes|Yes||
+|`eventName`|`string`|The name of the Event this Participant is associated with|Yes|||
+|`fundraisingGoal`|`float`|This Participant's individual goal|Yes|Yes||
+|`isTeamCaptain`|`boolean`|`true` if this Participant is the captain of a team||`true`|Team Participants only|
+|`links`|`object`|An object containing related resources|||`donate`: The donation URL for this Participant<br />`page`: The URL for this Participant's Fundraising Page<br />`stream`: The URL for the Live Fundraising(TM) stream associated with this Participant|
+|`numAwardedBadges`|`integer`|The number of badges this Participant has received||Yes|Added: 1.2|
+|`numDonations`|`integer`|The number of donations this Participant has received|Yes|Yes||
+|`participantID`|`integer`|The unique ID of this Participant|Yes|Yes||
+|`streamIsLive`|`boolean`|`true` if this Participant is actively streaming on their Fundraising Page||Yes||
+|`sumDonations`|`float`|The total sum of donations this Participant has received|Yes|Yes||
+|`sumPledges`|`float`|The total sum of pledges this Team has received||Yes||
+|`teamID`|`integer`|The ID of the Team this Participant is associated with||Yes|Team Participants only|
+|`teamName`|`string`|The name of the Team this Participant is associated with|||Team Participants only|
