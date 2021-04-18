@@ -6,7 +6,8 @@ The DonorDrive Public API will receive updates as the needs within the platform 
 
 Versions may be accessed by Query Parameter: https://try.donordrive.com/api/events?version=1.2
 
-||Supported Version||Default?||
+|Supported Version|Default?|
+|---|---|
 |1.2||
 |1.1||
 |1.0|Yes|
