@@ -10,7 +10,7 @@ Default `orderBy`: `amount ASC`
 
 |Path|Return Type|Notes|
 |---|---|---|
-|`/api/participants/{participantID}/milestones`|`Array`|To find `{participantID}`, visit your Participant's Fundraising Page. Look for the `&participantID=` URL parameter.|
+|`/api/participants/{participantID}/milestones`|`array`|To find `{participantID}`, visit your Participant's Fundraising Page. Look for the `&participantID=` URL parameter.|
 
 ## Response
 

@@ -6,11 +6,11 @@ Default `orderBy`: `createdDateUTC DESC`
 
 |Path|Return Type|Notes|
 |---|---|---|
-|`/api/teams`|`Array`||
-|`/api/teams/{teamID}`|`Object`|To find `{teamID}`, visit your Team's Fundraising Page. Look for the `&teamID=` URL parameter.|
-|`/api/eventgroups/{groupCode}/teams`|`Array`|This feature may not be available for all instances of DonorDrive.|
-|`/api/events/{eventID}/teams`|`Array`|To find `{eventID}`, visit your Event's Fundraising Page. Look for the `&eventID=` URL parameter.|
-|`/api/teamgroups/{groupCode}/teams`|`Array`|This feature may not be available for all instances of DonorDrive|
+|`/api/teams`|`array`||
+|`/api/teams/{teamID}`|`object`|To find `{teamID}`, visit your Team's Fundraising Page. Look for the `&teamID=` URL parameter.|
+|`/api/eventgroups/{groupCode}/teams`|`array`|This feature may not be available for all instances of DonorDrive.|
+|`/api/events/{eventID}/teams`|`array`|To find `{eventID}`, visit your Event's Fundraising Page. Look for the `&eventID=` URL parameter.|
+|`/api/teamgroups/{groupCode}/teams`|`array`|This feature may not be available for all instances of DonorDrive|
 
 ## Response
 
@@ -34,7 +34,7 @@ The response from the `teams` endpoint is an array of, or a single team object.
     "name": "The Bonhams",
     "isInviteOnly": false,
     "captainDisplayName": "Liam Bonham",
-    "avatarImageURL": "//static.donordrive.com/clients/try/img/avatar-team-default.gif",
+    "avatarImageURL": "https://static.donordrive.com/clients/try/img/avatar-team-default.gif",
     "teamID": 8775,
     "sumPledges": 0,
     "numDonations": 97
@@ -53,7 +53,7 @@ The response from the `teams` endpoint is an array of, or a single team object.
     "name": "#1 Fundraising Team",
     "isInviteOnly": false,
     "captainDisplayName": "Jimbo Nance",
-    "avatarImageURL": "//static.donordrive.com/clients/try/img/avatar-team-default.gif",
+    "avatarImageURL": "https://static.donordrive.com/clients/try/img/avatar-team-default.gif",
     "teamID": 8776,
     "sumPledges": 0,
     "numDonations": 41

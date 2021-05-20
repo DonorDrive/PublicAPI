@@ -8,9 +8,9 @@ Default `orderBy`: `createdDateUTC DESC`
 
 |Path|Return Type|Notes|
 |---|---|---|
-|`/api/events/{eventID}/activity`|`Array`|To find `{eventID}`, visit your Event's Fundraising Page. Look for the `&eventID=` URL parameter.|
-|`/api/participants/{participantID}/activity`|`Array`|To find `{participantID}`, visit your Participant's Fundraising Page. Look for the `&participantID=` URL parameter.|
-|`/api/teams/{teamID}/activity`|`Array`|To find `{teamID}`, visit your Team's Fundraising Page. Look for the `&teamID=` URL parameter.|
+|`/api/events/{eventID}/activity`|`array`|To find `{eventID}`, visit your Event's Fundraising Page. Look for the `&eventID=` URL parameter.|
+|`/api/participants/{participantID}/activity`|`array`|To find `{participantID}`, visit your Participant's Fundraising Page. Look for the `&participantID=` URL parameter.|
+|`/api/teams/{teamID}/activity`|`array`|To find `{teamID}`, visit your Team's Fundraising Page. Look for the `&teamID=` URL parameter.|
 
 ## Response
 
@@ -26,21 +26,21 @@ The response from the `activity` endpoint is an array of objects, with a maximum
     "isIncentive": 1,
     "createdDateUTC": "2019-11-10T19:38:51.897+0000",
     "title": "Friendly Donor",
-    "imageURL": "//static.donordrive.com/clients/try/img/avatar-constituent-default.gif",
+    "imageURL": "https://static.donordrive.com/clients/try/img/avatar-constituent-default.gif",
     "type": "donation"
   },
   {
     "amount": 15,
     "createdDateUTC": "2019-11-08T15:22:13.933+0000",
     "title": "Friendly Donor",
-    "imageURL": "//static.donordrive.com/clients/try/img/avatar-constituent-default.gif",
+    "imageURL": "https://static.donordrive.com/clients/try/img/avatar-constituent-default.gif",
     "type": "donation"
   },
   {
     "amount": 10,
     "createdDateUTC": "2019-11-06T16:26:02.487+0000",
     "title": "Friendly Donor",
-    "imageURL": "//static.donordrive.com/clients/try/img/avatar-constituent-default.gif",
+    "imageURL": "https://static.donordrive.com/clients/try/img/avatar-constituent-default.gif",
     "type": "donation"
   },
   {

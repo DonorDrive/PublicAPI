@@ -8,12 +8,12 @@ Default `orderBy`: `createdDateUTC DESC`
 
 |Path|Return Type|Notes|
 |---|---|---|
-|`/api/participants`|`Array`||
-|`/api/participants/{participantID}`|`Object`|To find `{participantID}`, visit your Participant's Fundraising Page. Look for the `&participantID=` URL parameter.|
-|`/api/eventgroups/{groupCode}/participants`|`Array`|This feature may not be available for all instances of DonorDrive.|
-|`/api/events/{eventID}/participants`|`Array`|To find `{eventID}`, visit your Event's Fundraising Page. Look for the `&eventID=` URL parameter.|
-|`/api/teamgroups/{groupCode}/participants`|`Array`|This feature may not be available for all instances of DonorDrive.|
-|`/api/teams/{teamID}/participants`|`Array`|To find `{teamID}`, visit your Team's Fundraising Page. Look for the `&teamID=` URL parameter.|
+|`/api/participants`|`array`||
+|`/api/participants/{participantID}`|`object`|To find `{participantID}`, visit your Participant's Fundraising Page. Look for the `&participantID=` URL parameter.|
+|`/api/eventgroups/{groupCode}/participants`|`array`|This feature may not be available for all instances of DonorDrive.|
+|`/api/events/{eventID}/participants`|`array`|To find `{eventID}`, visit your Event's Fundraising Page. Look for the `&eventID=` URL parameter.|
+|`/api/teamgroups/{groupCode}/participants`|`array`|This feature may not be available for all instances of DonorDrive.|
+|`/api/teams/{teamID}/participants`|`array`|To find `{teamID}`, visit your Team's Fundraising Page. Look for the `&teamID=` URL parameter.|
 
 ## Response
 
@@ -36,7 +36,7 @@ The response from the `participants` endpoint is an array of, or a single fundra
     "sumDonations": 4661,
     "participantID": 19265,
     "teamName": "The Bonhams",
-    "avatarImageURL": "//static.donordrive.com/clients/try/img/avatar-constituent-default.gif",
+    "avatarImageURL": "https://static.donordrive.com/clients/try/img/avatar-constituent-default.gif",
     "teamID": 8775,
     "isTeamCaptain": true,
     "sumPledges": 0,
@@ -54,7 +54,7 @@ The response from the `participants` endpoint is an array of, or a single fundra
     "eventID": 508,
     "sumDonations": 2085,
     "participantID": 15882,
-    "avatarImageURL": "//static.donordrive.com/clients/try/img/avatar-constituent-default.gif",
+    "avatarImageURL": "https://static.donordrive.com/clients/try/img/avatar-constituent-default.gif",
     "sumPledges": 0,
     "numDonations": 28
   }
@@ -76,6 +76,8 @@ The response from the `participants` endpoint is an array of, or a single fundra
 |`isTeamCaptain`|`boolean`|`true` if this Participant is the captain of a team||`true`|Team Participants only|
 |`links`|`object`|An object containing related resources|||`donate`: The donation URL for this Participant<br />`page`: The URL for this Participant's Fundraising Page<br />`stream`: The URL for the Live Fundraising(TM) stream associated with this Participant|
 |`numAwardedBadges`|`integer`|The number of badges this Participant has received||Yes|Added: 1.2|
+|`numIncentives`|`integer`|The number of fundraising incentives this Participant has created||Yes|Added: 1.3|
+|`numMilestones`|`integer`|The number of fundraising milestones this Participant has created||Yes|Added: 1.3|
 |`numDonations`|`integer`|The number of donations this Participant has received|Yes|Yes||
 |`participantID`|`integer`|The unique ID of this Participant|Yes|Yes||
 |`streamIsLive`|`boolean`|`true` if this Participant is actively streaming on their Fundraising Page||Yes||
