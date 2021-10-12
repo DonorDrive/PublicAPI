@@ -24,6 +24,7 @@ A 200 Status Code will return for successful API calls. Meaningful codes + messa
 |400|Bad Request - The request could not be interpreted.|
 |404|Not Found - The request could not be found for the ID or URL provided.|
 |412|Precondition Failed - The version furnished is unsupported.|
+|429|Too Many Requests - You've been rate limited, take a break.|
 |500|Internal Server Error - Technical support has been notified.|
 |503|Service Unavailable - The API is unavailable or undergoing maintenance. Please try again later.|
 
