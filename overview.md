@@ -8,6 +8,7 @@ Versions may be accessed by Query Parameter: https://try.donordrive.com/api/even
 
 |Supported Version|Default?|
 |---|---|
+|1.3||
 |1.2||
 |1.1||
 |1.0|Yes|

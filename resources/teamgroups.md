@@ -8,7 +8,7 @@ Team Groups associated with this instance of DonorDrive
 
 |Path|Return Type|Notes|
 |---|---|---|
-|`/api/teamgroups/{groupCode}`|`Object`|To find `{groupCode}`, contact your DonorDrive Administrator.|
+|`/api/teamgroups/{groupCode}`|`object`|To find `{groupCode}`, contact your DonorDrive Administrator.|
 
 ## Response
 

@@ -10,7 +10,7 @@ Default `orderBy`: `amount ASC`
 
 |Path|Return Type|Notes|
 |---|---|---|
-|`/api/participants/{participantID}/incentives`|`Array`|To find `{participantID}`, visit your Participant's Fundraising Page. Look for the `&participantID=` URL parameter.|
+|`/api/participants/{participantID}/incentives`|`array`|To find `{participantID}`, visit your Participant's Fundraising Page. Look for the `&participantID=` URL parameter.|
 
 ## Response
 
@@ -23,7 +23,7 @@ The response from the `incentives` endpoint is an array of incentive objects.
   {
     "amount": 10,
     "description": "I'll give you a personal shoutout on stream!",
-    "incentiveImageURL": "//assets.donordrive.com/extralife/images/$constituents$/98DEB758-C29F-F29A-66B83598945B70D1/deedee.jpg",
+    "incentiveImageURL": "https://assets.donordrive.com/extralife/images/$constituents$/98DEB758-C29F-F29A-66B83598945B70D1/deedee.jpg",
     "quantity": 5,
     "quantityClaimed": 0,
     "links": {
@@ -45,7 +45,7 @@ The response from the `incentives` endpoint is an array of incentive objects.
   {
     "amount": 50,
     "description": "Choose my Mario Kart character!",
-    "incentiveImageURL": "//assets.donordrive.com/extralife/images/$constituents$/98DEB758-C29F-F29A-66B83598945B70D1/deedee.jpg",
+    "incentiveImageURL": "https://assets.donordrive.com/extralife/images/$constituents$/98DEB758-C29F-F29A-66B83598945B70D1/deedee.jpg",
     "quantity": 1,
     "quantityClaimed": 0,
     "links": {
