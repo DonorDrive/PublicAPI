@@ -2,19 +2,13 @@
 
 #### Endpoints
 
-Default `orderBy`: `createdDateUTC DESC`
-
 |Path|Return Type|Notes|
 |---|---|---|
-|`/api/teams`|`array`||
 |`/api/teams/{teamID}`|`object`|To find `{teamID}`, visit your Team's Fundraising Page. Look for the `&teamID=` URL parameter.|
-|`/api/eventgroups/{groupCode}/teams`|`array`|This feature may not be available for all instances of DonorDrive.|
-|`/api/events/{eventID}/teams`|`array`|To find `{eventID}`, visit your Event's Fundraising Page. Look for the `&eventID=` URL parameter.|
-|`/api/teamgroups/{groupCode}/teams`|`array`|This feature may not be available for all instances of DonorDrive|
 
 ## Response
 
-The response from the `teams` endpoint is an array of, or a single team object.
+The response from the `teams` endpoint is a single team object.
 
 ### Example
 
@@ -38,25 +32,6 @@ The response from the `teams` endpoint is an array of, or a single team object.
     "teamID": 8775,
     "sumPledges": 0,
     "numDonations": 97
-  },
-  {
-    "numParticipants": 11,
-    "fundraisingGoal": 5000,
-    "eventName": "Test Participant Event",
-    "links": {
-      "donate": "https://try.donordrive.com/index.cfm?fuseaction=donorDrive.team&teamID=8776",
-      "page": "https://try.donordrive.com/index.cfm?fuseaction=donorDrive.team&teamID=8776"
-    },
-    "createdDateUTC": "2019-10-24T13:51:25.137+0000",
-    "eventID": 508,
-    "sumDonations": 2433,
-    "name": "#1 Fundraising Team",
-    "isInviteOnly": false,
-    "captainDisplayName": "Jimbo Nance",
-    "avatarImageURL": "https://static.donordrive.com/clients/try/img/avatar-team-default.gif",
-    "teamID": 8776,
-    "sumPledges": 0,
-    "numDonations": 41
   }
 ]
 ```

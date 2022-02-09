@@ -4,20 +4,13 @@ Individual fundraisers participating in an active Participant Event or Personal 
 
 ## Endpoints
 
-Default `orderBy`: `createdDateUTC DESC`
-
 |Path|Return Type|Notes|
 |---|---|---|
-|`/api/participants`|`array`||
 |`/api/participants/{participantID}`|`object`|To find `{participantID}`, visit your Participant's Fundraising Page. Look for the `&participantID=` URL parameter.|
-|`/api/eventgroups/{groupCode}/participants`|`array`|This feature may not be available for all instances of DonorDrive.|
-|`/api/events/{eventID}/participants`|`array`|To find `{eventID}`, visit your Event's Fundraising Page. Look for the `&eventID=` URL parameter.|
-|`/api/teamgroups/{groupCode}/participants`|`array`|This feature may not be available for all instances of DonorDrive.|
-|`/api/teams/{teamID}/participants`|`array`|To find `{teamID}`, visit your Team's Fundraising Page. Look for the `&teamID=` URL parameter.|
 
 ## Response
 
-The response from the `participants` endpoint is an array of, or a single fundraiser object.
+The response from the `participants` endpoint is a single fundraiser object.
 
 ### Example
 
@@ -41,22 +34,6 @@ The response from the `participants` endpoint is an array of, or a single fundra
     "isTeamCaptain": true,
     "sumPledges": 0,
     "numDonations": 51
-  },
-  {
-    "displayName": "Jonathon Tory",
-    "fundraisingGoal": 10000,
-    "eventName": "Test Participant Event",
-    "links": {
-      "donate": "https://try.donordrive.com/index.cfm?fuseaction=donordrive.participant&participantID=15882#donate",
-      "page": "https://try.donordrive.com/index.cfm?fuseaction=donordrive.participant&participantID=15882"
-    },
-    "createdDateUTC": "2019-09-12T13:51:25.137+0000",
-    "eventID": 508,
-    "sumDonations": 2085,
-    "participantID": 15882,
-    "avatarImageURL": "https://static.donordrive.com/clients/try/img/avatar-constituent-default.gif",
-    "sumPledges": 0,
-    "numDonations": 28
   }
 ]
 ```

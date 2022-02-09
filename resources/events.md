@@ -4,32 +4,17 @@ Active Events in this instance of DonorDrive.
 
 ## Endpoints
 
-Default `orderBy`: `startDateUTC ASC`
-
 |Path|Return Type|Notes|
 |---|---|---|
-|`/api/events`|`array`||
 |`/api/events/{eventID}`|`object`|To find `{eventID}`, visit your Event's Fundraising Page. Look for the `&eventID=` URL parameter.|
-|`/api/eventgroups/{groupCode}/events`|`array`|This feature may not be available for all instances of DonorDrive.|
 
 ## Response
 
-The response from the `events` endpoint is an array of, or a single event object.
+The response from the `events` endpoint is a single event object.
 
 ### Example
 
 ```json
-[
-  {
-    "avatarImage": "https://assets.donordrive.com/clients/try/img/badgeLogo.jpg",
-    "eventID": 563,
-    "type": "C",
-    "name": "Test Donation Campaign",
-    "links": {
-      "donate": "https://try.donordrive.com/index.cfm?fuseaction=donate.event&eventID=563",
-      "page": "https://try.donordrive.com/index.cfm?fuseaction=donordrive.event&eventID=563"
-    }
-  },
   {
     "avatarImage": "https://assets.donordrive.com/clients/try/img/badgeLogo.jpg",
     "endDateUTC": "2019-11-03T21:45:00.0+0000",
@@ -55,30 +40,7 @@ The response from the `events` endpoint is an array of, or a single event object
       "donate": "https://try.donordrive.com/index.cfm?fuseaction=donordrive.event&eventID=605#donate",
       "page": "https://try.donordrive.com/index.cfm?fuseaction=donordrive.event&eventID=605"
     }
-  },
-  {
-    "avatarImage": "https://assets.donordrive.com/clients/try/img/badgeLogo.jpg",
-    "eventID": 606,
-    "type": "I",
-    "name": "Test Personal Campaign Type Event",
-    "links": {
-      "page": "https://try.donordrive.com/index.cfm?fuseaction=donordrive.event&eventID=606"
-    }
-  },
-  {
-    "avatarImage": "https://assets.donordrive.com/clients/try/img/badgeLogo.jpg",
-    "endDateUTC": "2020-03-03T18:45:00.0+0000",
-    "eventID": 527,
-    "timezone": "America/New_York",
-    "type": "T",
-    "startDateUTC": "2020-03-03T15:45:00.0+0000",
-    "name": "Test Ticket Event",
-    "links": {
-      "donate": "https://try.donordrive.com/index.cfm?fuseaction=donate.event&eventID=527",
-      "page": "https://try.donordrive.com/index.cfm?fuseaction=donordrive.event&eventID=527"
-    }
   }
-]
 ```
 
 ### Fields
