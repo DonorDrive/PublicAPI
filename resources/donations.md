@@ -8,9 +8,9 @@ Default `orderBy`: `createdDateUTC DESC`
 
 |Path|Return Type|Notes|
 |---|---|---|
-|`/api/events/{eventID}/donations`|`Array`|To find `{eventID}`, visit your Event's Fundraising Page. Look for the `&eventID=` URL parameter.|
-|`/api/participants/{participantID}/donations`|`Array`|To find `{participantID}`, visit your Participant's Fundraising Page. Look for the `&participantID=` URL parameter.|
-|`/api/teams/{teamID}/donations`|`Array`|To find `{teamID}`, visit your Team's Fundraising Page. Look for the `&teamID=` URL parameter.|
+|`/api/events/{eventID}/donations`|`array`|To find `{eventID}`, visit your Event's Fundraising Page. Look for the `&eventID=` URL parameter.|
+|`/api/participants/{participantID}/donations`|`array`|To find `{participantID}`, visit your Participant's Fundraising Page. Look for the `&participantID=` URL parameter.|
+|`/api/teams/{teamID}/donations`|`array`|To find `{teamID}`, visit your Team's Fundraising Page. Look for the `&teamID=` URL parameter.|
 
 ## Response
 
@@ -25,7 +25,7 @@ The response from the `donations` endpoint is an array of donation objects.
     "participantID": 4024,
     "amount": 20,
     "donorID": "EB8610A3FC435D58",
-    "avatarImageURL": "//static.donordrive.com/clients/try/img/avatar-constituent-default.gif",
+    "avatarImageURL": "https://static.donordrive.com/clients/try/img/avatar-constituent-default.gif",
     "createdDateUTC": "2019-10-30T18:01:18.513+0000",
     "eventID": 581,
     "teamID": 5074,
@@ -36,7 +36,7 @@ The response from the `donations` endpoint is an array of donation objects.
     "participantID": 4024,
     "amount": 10,
     "donorID": "DC3A81BE19445E15",
-    "avatarImageURL": "//static.donordrive.com/clients/try/img/avatar-constituent-default.gif",
+    "avatarImageURL": "https://static.donordrive.com/clients/try/img/avatar-constituent-default.gif",
     "createdDateUTC": "2019-10-28T16:02:42.583+0000",
     "eventID": 581,
     "teamID": 5074,
@@ -48,7 +48,7 @@ The response from the `donations` endpoint is an array of donation objects.
     "participantID": 4024,
     "amount": 100,
     "donorID": "03F279F2BF01283D",
-    "avatarImageURL": "//static.donordrive.com/clients/try/img/avatar-constituent-default.gif",
+    "avatarImageURL": "https://static.donordrive.com/clients/try/img/avatar-constituent-default.gif",
     "createdDateUTC": "2019-10-26T15:26:13.290+0000",
     "eventID": 581,
     "teamID": 5074,
