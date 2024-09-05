@@ -11,6 +11,7 @@ Default `orderBy`: `amount ASC`
 |Path|Return Type|Notes|
 |---|---|---|
 |`/api/participants/{participantID}/incentives`|`array`|To find `{participantID}`, visit your Participant's Fundraising Page. Look for the `&participantID=` URL parameter.|
+|`/api/teams/{teamID}/incentives`|`array`|To find `{teamID}`, visit your Team's Fundraising Page. Look for the `&teamID=` URL parameter.|
 
 ## Response
 

@@ -42,7 +42,10 @@ The response from the `badges` endpoint is an array of badge objects.
     "isUnlocked": false,
     "title": "Log 1,000 Activity Units",
     "badgeImageURL": "https://assets.donordrive.com/try/images/$event1444$/badge_420B949E_A0B7_558B_57164EF78EF9992E.png",
-    "badgeCode": "log-1-000-activity-units"
+    "badgeCode": "log-1-000-activity-units",
+	"links": {
+            "page": "https://try.donordrive.com/index.cfm?fuseaction=donorDrive.participant&participantID=130662"
+        }
   }
 ]
 ```
@@ -55,5 +58,6 @@ The response from the `badges` endpoint is an array of badge objects.
 |`badgeImageURL`|`string`|The URL for the image associated with this Badge|Yes|||
 |`description`|`string`|The description of this Badge|Yes|Yes, `LIKE` operator recommended|Honors `Accept-Language` header|
 |`isUnlocked`|`string`|`true` if this Badge has been unlocked by the target|Yes|Yes|Added: 1.3|
+|`links`|`object`|An object containing related resources|Yes|No|`page`: The URL for the Participant's or Team's Fundraising Page|
 |`title`|`string`|The title of this Badge|Yes|Yes, `LIKE` operator recommended|Honors `Accept-Language` header|
 |`unlockedDateUTC`|`date`|The date this Badge was unlocked by the Participant or Team||Yes|ISO-8601 format|Changed: 1.3<br />This field is present if the Badge `isUnlocked`|
