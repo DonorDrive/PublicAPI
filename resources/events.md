@@ -40,13 +40,13 @@ The response from the `events` endpoint is a single event object.
       "donate": "https://try.donordrive.com/index.cfm?fuseaction=donordrive.event&eventID=605#donate",
       "page": "https://try.donordrive.com/index.cfm?fuseaction=donordrive.event&eventID=605"
     },
-	"hasDates": true,
-	"checkInEndDateUTC": "2019-11-01T15:45:00.0+0000",
-	"checkinStartDateUTC": "2019-10-01T15:45:00.0+0000",
-	"publishDateUTC": "2019-02-02T15:45:00.0+0000",
-	"hasLocation": true,
-	"latitude": 0.000,
-	"longitude": 0.000
+    "hasDates": true,
+    "checkInEndDateUTC": "2019-11-01T15:45:00.0+0000",
+    "checkinStartDateUTC": "2019-10-01T15:45:00.0+0000",
+    "publishDateUTC": "2019-02-02T15:45:00.0+0000",
+    "hasLocation": true,
+    "latitude": 0.000,
+    "longitude": 0.000
   }
 ```
 

@@ -27,7 +27,7 @@ The response from the `donors` endpoint is an array of donor objects.
     "modifiedDateUTC": "2019-10-30T18:01:18.513+0000",
     "sumDonations": 3500,
     "numDonations": 13,
-	"recipientImageURL": "https://try.donordrivecontent.com/try/images/$avatars$/constituent_8672DB7B-CE87-F677-6260FF8F15074828.jpg"
+    "recipientImageURL": "https://try.donordrivecontent.com/try/images/$avatars$/constituent_8672DB7B-CE87-F677-6260FF8F15074828.jpg"
   },
   {
     "displayName": "Barnabas Jungleham",
@@ -36,7 +36,7 @@ The response from the `donors` endpoint is an array of donor objects.
     "modifiedDateUTC": "2019-10-14T15:35:27.370+0000",
     "sumDonations": 30,
     "numDonations": 1,
-	"recipientImageURL": "https://try.donordrivecontent.com/try/images/$avatars$/constituent_8672DB7B-CE87-F677-6260FF8F15074828.jpg"
+    "recipientImageURL": "https://try.donordrivecontent.com/try/images/$avatars$/constituent_8672DB7B-CE87-F677-6260FF8F15074828.jpg"
   },
   {
     "displayName": "Kimberly Jalapeno",
@@ -45,7 +45,7 @@ The response from the `donors` endpoint is an array of donor objects.
     "modifiedDateUTC": "2019-10-07T18:36:00.343+0000",
     "sumDonations": 200,
     "numDonations": 4,
-	"recipientImageURL": "https://try.donordrivecontent.com/try/images/$avatars$/constituent_8672DB7B-CE87-F677-6260FF8F15074828.jpg"
+    "recipientImageURL": "https://try.donordrivecontent.com/try/images/$avatars$/constituent_8672DB7B-CE87-F677-6260FF8F15074828.jpg"
   }
 ]
 ```

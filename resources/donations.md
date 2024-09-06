@@ -46,40 +46,40 @@ The response from the `donations` endpoint is an array of donation objects.
     "participantID": 4024,
     "amount": 10,
     "donorID": "DC3A81BE19445E15",
-	"isRegFee": false,
+    "isRegFee": false,
     "avatarImageURL": "https://static.donordrive.com/clients/try/img/avatar-constituent-default.gif",
     "createdDateUTC": "2019-10-28T16:02:42.583+0000",
     "eventID": 581,
     "teamID": 5074,
     "donationID": "F491FB1141299348",
-	"links": {
+    "links": {
             "recipient": "https://try.donordrive.com/index.cfm?fuseaction=donorDrive.participant&participantID=4024",
             "donate": "https://try.donordrive.com/index.cfm?fuseaction=donorDrive.donate&participantID=4024"
         },
     "incentiveID": "213F6CC8-9CFE-C59F-C3FE158798AFA7B1",
-	"recipientName": "Jane Participant",
-	"recipientImageURL": "https://try.donordrivecontent.com/try/images/$avatars$/constituent_8672DB7B-CE87-F677-6260FF8F15074828.jpg",
-	"message": null,
-	"donorIsRecipient": true
+    "recipientName": "Jane Participant",
+    "recipientImageURL": "https://try.donordrivecontent.com/try/images/$avatars$/constituent_8672DB7B-CE87-F677-6260FF8F15074828.jpg",
+    "message": null,
+    "donorIsRecipient": true
   },
   {
     "displayName": "The Donation Foundation",
     "participantID": 4024,
     "amount": 100,
-	"isRegFee": false,
+    "isRegFee": false,
     "donorID": "03F279F2BF01283D",
     "avatarImageURL": "https://static.donordrive.com/clients/try/img/avatar-constituent-default.gif",
     "createdDateUTC": "2019-10-26T15:26:13.290+0000",
     "eventID": 581,
     "teamID": 5074,
     "donationID": "3FF734E8C1657F6C",
-	"links": {
+    "links": {
             "recipient": "https://try.donordrive.com/index.cfm?fuseaction=donorDrive.participant&participantID=4024",
             "donate": "https://try.donordrive.com/index.cfm?fuseaction=donorDrive.donate&participantID=4024"
         },
-	"recipientName": "Jane Participant",
-	"recipientImageURL": "https://try.donordrivecontent.com/try/images/$avatars$/constituent_8672DB7B-CE87-F677-6260FF8F15074828.jpg",
-	"message": null
+    "recipientName": "Jane Participant",
+    "recipientImageURL": "https://try.donordrivecontent.com/try/images/$avatars$/constituent_8672DB7B-CE87-F677-6260FF8F15074828.jpg",
+    "message": null
   }
 ]
 ```

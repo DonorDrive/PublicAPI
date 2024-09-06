@@ -43,7 +43,7 @@ The response from the `badges` endpoint is an array of badge objects.
     "title": "Log 1,000 Activity Units",
     "badgeImageURL": "https://assets.donordrive.com/try/images/$event1444$/badge_420B949E_A0B7_558B_57164EF78EF9992E.png",
     "badgeCode": "log-1-000-activity-units",
-	"links": {
+    "links": {
             "page": "https://try.donordrive.com/index.cfm?fuseaction=donorDrive.participant&participantID=130662"
         }
   }
