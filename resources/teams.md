@@ -40,17 +40,17 @@ The response from the `teams` endpoint is a single team object.
 
 |Field|Type|Description|Guaranteed|Filterable|Notes|
 |---|---|---|---|---|---|
-|`activitygoal`|`float`|The team's activity goal|No|No||
+|`activitygoal`|`float`|The Team's activity goal|No|No||
 |`avatarImageURL`|`string`|The URL for the avatar image associated with this Team|Yes|||
 |`captainDisplayName`|`string`|The captain Participant's name|Yes|Yes||
 |`createdDateUTC`|`date`|The date (in UTC) this Team was created|Yes|Yes|ISO-8601 format|
 |`eventID`|`integer`|The ID of the Event this Team is associated with|Yes|Yes||
 |`eventName`|`string`|The name of the Event this Team is associated with|Yes|||
 |`fundraisingGoal`|`float`|This Team's goal|Yes|Yes||
-|`hasActivityTracking`|`boolean`|`true` if team's type has activity tracking enabled|No|No||
-|`hasExclusiveCode`|`boolean`|`true` if the team's type is configured to allow exclusive teams|No|No||
-|`hasTeamOnlyDonations`|`boolean`|`true` if the team's type has Disabled Personal Fundraising|No|No||
-|`isCustomAvatarImage`|`boolean`|`true` if that team has uploaded an avatar image|No|No||
+|`hasActivityTracking`|`boolean`|`true` if Team's type has activity tracking enabled|No|No||
+|`hasExclusiveCode`|`boolean`|`true` if the Team's type is configured to allow exclusive teams|No|No||
+|`hasTeamOnlyDonations`|`boolean`|`true` if the Team's type has Disabled Personal Fundraising|No|No||
+|`isCustomAvatarImage`|`boolean`|`true` if that Team has uploaded an avatar image|No|No||
 |`isInviteOnly`|`boolean`|Does this Team restrict registration to invitations-only||Yes||
 |`links`|`object`|An object containing related resources|||`donate`: The donation URL for this Team<br />`page`: The URL for this Team's Fundraising Page<br />`stream`: The URL for the Live Fundraising(TM) stream associated with this Team|
 |`name`|`string`|This Team's name|Yes|Yes||
@@ -58,13 +58,13 @@ The response from the `teams` endpoint is a single team object.
 |`numDonations`|`integer`|The number of donations this Team has received|Yes|Yes||
 |`numIncentives`|`integer`|The total number of team incentives configured|No|No||
 |`numMilestones`|`integer`|The total number of team milestones configured|No|No||
-|`numParticipants`|`integer`|The number of participants associated with this team|Yes|Yes||
-|`sourceTeamID`|`integer`|The team's original teamID in the first event it appeared in|Yes|Yes||
-|`streamingChannel`|`string`|The teams's streaming channel name|No|No||
+|`numParticipants`|`integer`|The number of Participants associated with this Team|Yes|Yes||
+|`sourceTeamID`|`integer`|The Team's original teamID in the first event it appeared in|Yes|Yes||
+|`streamingChannel`|`string`|The Teams's streaming channel name|No|No||
 |`streamingPlatform`|`string`|The streaming platform name|No|No||
-|`streamIsEnabled`|`boolean`|`true` if the team has configured streaming|No|Yes||
+|`streamIsEnabled`|`boolean`|`true` if the Team has configured streaming|No|Yes||
 |`streamIsLive`|`boolean`|`true` if this Team is actively streaming on their Fundraising Page||Yes||
-|`sumActivityUnits`|`float`|The total activity logged by this team|No|Yes||
+|`sumActivityUnits`|`float`|The total activity logged by this Team|No|Yes||
 |`sumDonations`|`float`|The total sum of donations this Team has received|Yes|Yes||
 |`sumPledges`|`float`|The total sum of pledges this Team has received||Yes||
 |`teamID`|`integer`|The unique ID of this Team|Yes|Yes||

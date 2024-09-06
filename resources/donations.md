@@ -100,9 +100,9 @@ The response from the `donations` endpoint is an array of donation objects.
 |`eventID`|`integer`|The ID of the Event this Donor is associated with|Yes|Yes||
 |`incentiveID`|`string`|The ID of the Fundraiser Incentive associated to this Donation||Yes||
 |`isRegFee`|`boolean`|`true` if the donation is a registration fee|No|No||
-|`links`|`object`|An object containing related resources|No|No|`recipient`: The URL for this recipient's (evet, participant, team) Fundraising Page<br />`donate`: The donation URL for this Participant|
+|`links`|`object`|An object containing related resources|No|No|`recipient`: The URL for this recipient's (Event, Participant, Team) Fundraising Page<br />`donate`: The donation URL for this Participant|
 |`message`|`string`|The message from the Donor|Yes|No|Dependent on privacy settings dictated by the Donor|
 |`participantID`|`integer`|The ID of the Participant associated to this Donation||Yes|Participant Donations only|
-|`recipientName`|`string`|The name of the event, participant, or team the received the donation|Yes|No||
+|`recipientName`|`string`|The name of the event, Participant, or Team the received the donation|Yes|No||
 |`recipientImageURL`|`string`|The URL for the avatar image associated with this Event, Participant, or Team|Yes|No||
 |`teamID`|`integer`|The ID of the Team associated to this Donation||Yes|Team Participant Donations and Team Donations only|
