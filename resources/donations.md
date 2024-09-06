@@ -30,16 +30,16 @@ The response from the `donations` endpoint is an array of donation objects.
     "eventID": 581,
     "teamID": 5074,
     "donationID": "DF4E676D0828A8D5",
-	"links": {
+    "links": {
             "recipient": "https://try.donordrive.com/index.cfm?fuseaction=donorDrive.participant&participantID=4024",
             "donate": "https://try.donordrive.com/index.cfm?fuseaction=donorDrive.donate&participantID=4024"
         },
-	"isRegFee": false,
-	"recipientName": "Jane Participant",
-	"recipientImageURL": "https://try.donordrivecontent.com/try/images/$avatars$/constituent_8672DB7B-CE87-F677-6260FF8F15074828.jpg",
-	"message": null,
-	"activityPledgeUnitAmount": 10.00,
-	"activityPledgeMaxAmount": 1000.00
+    "isRegFee": false,
+    "recipientName": "Jane Participant",
+    "recipientImageURL": "https://try.donordrivecontent.com/try/images/$avatars$/constituent_8672DB7B-CE87-F677-6260FF8F15074828.jpg",
+    "message": null,
+    "activityPledgeUnitAmount": 10.00,
+    "activityPledgeMaxAmount": 1000.00
   },
   {
     "displayName": "Jane Participant",
