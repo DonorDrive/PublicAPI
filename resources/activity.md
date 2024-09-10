@@ -67,7 +67,7 @@ The response from the `activity` endpoint is an array of objects, with a maximum
 |`amount`|`float`|The amount of this Donation Activity||Yes|For `donation` type Activity items|
 |`createdDateUTC`|`date`|The date (in UTC) this Activity item was created|Yes|Yes|ISO-8601 format|
 |`imageURL`|`string`|The URL for the image associated with the Activity item|Yes|Yes||
-|`isIncentive`|`boolean`|`true` if this donation claimed a Fundraiser Incentive||Yes|For `donation` type Activity items|
+|`isIncentive`|`boolean`|`true` if this donation claimed a Fundraiser or Team Incentive||Yes|For `donation` type Activity items|
 |`message`|`string`|The message associated with the Activity item||Yes||
 |`title`|`string`|The title associated with the Activity item||Yes||
 |`type`|`string`|The type of Activity item|Yes|Yes|`donation` or `participantBadge` or `teamBadge`|
