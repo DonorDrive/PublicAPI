@@ -31,12 +31,12 @@ The response from the `donations` endpoint is an array of donation objects.
     "teamID": 5074,
     "donationID": "DF4E676D0828A8D5",
     "links": {
-            "recipient": "https://try.donordrive.com/index.cfm?fuseaction=donorDrive.participant&participantID=4024",
-            "donate": "https://try.donordrive.com/index.cfm?fuseaction=donorDrive.donate&participantID=4024"
+            "recipient": "https://testdrive.donordrive.com/index.cfm?fuseaction=donorDrive.participant&participantID=4024",
+            "donate": "https://testdrive.donordrive.com/index.cfm?fuseaction=donorDrive.donate&participantID=4024"
         },
     "isRegFee": false,
     "recipientName": "Jane Participant",
-    "recipientImageURL": "https://try.donordrivecontent.com/try/images/$avatars$/constituent_8672DB7B-CE87-F677-6260FF8F15074828.jpg",
+    "recipientImageURL": "https://testdrive.donordrivecontent.com/try/images/$avatars$/constituent_8672DB7B-CE87-F677-6260FF8F15074828.jpg",
     "message": null,
     "activityPledgeUnitAmount": 10.00,
     "activityPledgeMaxAmount": 1000.00
@@ -53,12 +53,12 @@ The response from the `donations` endpoint is an array of donation objects.
     "teamID": 5074,
     "donationID": "F491FB1141299348",
     "links": {
-            "recipient": "https://try.donordrive.com/index.cfm?fuseaction=donorDrive.participant&participantID=4024",
-            "donate": "https://try.donordrive.com/index.cfm?fuseaction=donorDrive.donate&participantID=4024"
+            "recipient": "https://testdrive.donordrive.com/index.cfm?fuseaction=donorDrive.participant&participantID=4024",
+            "donate": "https://testdrive.donordrive.com/index.cfm?fuseaction=donorDrive.donate&participantID=4024"
         },
     "incentiveID": "213F6CC8-9CFE-C59F-C3FE158798AFA7B1",
     "recipientName": "Jane Participant",
-    "recipientImageURL": "https://try.donordrivecontent.com/try/images/$avatars$/constituent_8672DB7B-CE87-F677-6260FF8F15074828.jpg",
+    "recipientImageURL": "https://testdrive.donordrivecontent.com/try/images/$avatars$/constituent_8672DB7B-CE87-F677-6260FF8F15074828.jpg",
     "message": null,
     "donorIsRecipient": true
   },
@@ -74,11 +74,11 @@ The response from the `donations` endpoint is an array of donation objects.
     "teamID": 5074,
     "donationID": "3FF734E8C1657F6C",
     "links": {
-            "recipient": "https://try.donordrive.com/index.cfm?fuseaction=donorDrive.participant&participantID=4024",
-            "donate": "https://try.donordrive.com/index.cfm?fuseaction=donorDrive.donate&participantID=4024"
+            "recipient": "https://testdrive.donordrive.com/index.cfm?fuseaction=donorDrive.participant&participantID=4024",
+            "donate": "https://testdrive.donordrive.com/index.cfm?fuseaction=donorDrive.donate&participantID=4024"
         },
     "recipientName": "Jane Participant",
-    "recipientImageURL": "https://try.donordrivecontent.com/try/images/$avatars$/constituent_8672DB7B-CE87-F677-6260FF8F15074828.jpg",
+    "recipientImageURL": "https://testdrive.donordrivecontent.com/try/images/$avatars$/constituent_8672DB7B-CE87-F677-6260FF8F15074828.jpg",
     "message": null
   }
 ]

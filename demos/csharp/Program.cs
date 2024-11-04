@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 public class Program
 {
-    private const string URL = "https://try.donordrive.com/api/";
-    private static string urlParameters = "participants?version=1.1&orderBy=sumDonations%20DESC&limit=10";
+    private const string URL = "https://testdrive.donordrive.com/api/";
+    private static string urlParameters = "participants?version=1.5&orderBy=sumDonations%20DESC&limit=10";
 
     static void Main(string[] args)
         => new Program().MainAsync().GetAwaiter().GetResult();
