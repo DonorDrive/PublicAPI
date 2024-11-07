@@ -19,8 +19,8 @@ The response from the `teams` endpoint is a single team object.
     "fundraisingGoal": 20000,
     "eventName": "Test Participant Event",
     "links": {
-      "donate": "https://try.donordrive.com/index.cfm?fuseaction=donate.team&teamID=8775",
-      "page": "https://try.donordrive.com/index.cfm?fuseaction=donorDrive.team&teamID=8775"
+      "donate": "https://testdrive.donordrive.com/index.cfm?fuseaction=donate.team&teamID=8775",
+      "page": "https://testdrive.donordrive.com/index.cfm?fuseaction=donorDrive.team&teamID=8775"
     },
     "createdDateUTC": "2019-11-02T15:02:38.93+0000",
     "eventID": 508,

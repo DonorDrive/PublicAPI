@@ -28,7 +28,7 @@ The response from the `incentives` endpoint is an array of incentive objects.
     "quantity": 5,
     "quantityClaimed": 0,
     "links": {
-      "donate": "https://try.donordrive.com/index.cfm?fuseaction=donordrive.participant&participantID=15882&incentiveID=DBAC7F77-D0D0-A244-C3879E9BC1B5AC06#donate"
+      "donate": "https://testdrive.donordrive.com/index.cfm?fuseaction=donordrive.participant&participantID=15882&incentiveID=DBAC7F77-D0D0-A244-C3879E9BC1B5AC06#donate"
     },
     "incentiveID": "DBAC7F77-D0D0-A244-C3879E9BC1B5AC06",
     "isActive": true
@@ -50,7 +50,7 @@ The response from the `incentives` endpoint is an array of incentive objects.
     "quantity": 1,
     "quantityClaimed": 0,
     "links": {
-      "donate": "https://try.donordrive.com/index.cfm?fuseaction=donordrive.participant&participantID=15882&incentiveID=DBB0826A-F48D-319A-DE3F070C2CC46D7F#donate"
+      "donate": "https://testdrive.donordrive.com/index.cfm?fuseaction=donordrive.participant&participantID=15882&incentiveID=DBB0826A-F48D-319A-DE3F070C2CC46D7F#donate"
     },
     "incentiveID": "DBB0826A-F48D-319A-DE3F070C2CC46D7F",
     "isActive": true

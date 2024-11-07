@@ -37,8 +37,8 @@ The response from the `events` endpoint is a single event object.
     "numParticipants": 300,
     "numTeams": 50,
     "links": {
-      "donate": "https://try.donordrive.com/index.cfm?fuseaction=donordrive.event&eventID=605#donate",
-      "page": "https://try.donordrive.com/index.cfm?fuseaction=donordrive.event&eventID=605"
+      "donate": "https://testdrive.donordrive.com/index.cfm?fuseaction=donordrive.event&eventID=605#donate",
+      "page": "https://testdrive.donordrive.com/index.cfm?fuseaction=donordrive.event&eventID=605"
     },
     "hasDates": true,
     "checkInEndDateUTC": "2019-11-01T15:45:00.0+0000",

@@ -21,8 +21,8 @@ The response from the `participants` endpoint is a single fundraiser object.
     "fundraisingGoal": 8000,
     "eventName": "Test Participant Event",
     "links": {
-      "donate": "https://try.donordrive.com/index.cfm?fuseaction=donordrive.participant&participantID=19265#donate",
-      "page": "https://try.donordrive.com/index.cfm?fuseaction=donordrive.participant&participantID=19265"
+      "donate": "https://testdrive.donordrive.com/index.cfm?fuseaction=donordrive.participant&participantID=19265#donate",
+      "page": "https://testdrive.donordrive.com/index.cfm?fuseaction=donordrive.participant&participantID=19265"
     },
     "createdDateUTC": "2019-11-02T15:02:38.93+0000",
     "eventID": 508,

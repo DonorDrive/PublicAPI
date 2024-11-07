@@ -28,7 +28,7 @@ The response from the `about` endpoint is an object.
   "avatarImageURL": "https://assets.donordrive.com/clients/try/img/badgeLogo.jpg",
   "charityName": "Try DonorDrive",
   "links": {
-    "home":"https://try.donordrive.com/"
+    "home":"https://testdrive.donordrive.com/"
   }
 }
 ```

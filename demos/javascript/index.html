@@ -13,7 +13,7 @@
 	</head>
 	<body>
 		<script>
-			$.ajax('https://try.donordrive.com/api/participants?&version=1.1&orderBy=sumDonations%20DESC&offset=1&limit=9', {
+			$.ajax('https://testdrive.donordrive.com/api/participants?&version=1.5&orderBy=sumDonations%20DESC&offset=1&limit=9', {
 				success: function(data) {
 					for(participant in data){
 						progressBarWidth = data[participant].sumDonations / data[participant].fundraisingGoal * 100;

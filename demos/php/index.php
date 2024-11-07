@@ -25,7 +25,7 @@
           curl_setopt_array($curl, array(
               CURLOPT_RETURNTRANSFER => 1,
               // CURLOPT_HEADER => 1,
-              CURLOPT_URL => 'https://try.donordrive.com/api/participants?version=1.1&limit=10&orderBy=sumDonations%20DESC&offset=1&limit=9',
+              CURLOPT_URL => 'https://testdrive.donordrive.com/api/participants?version=1.5&limit=10&orderBy=sumDonations%20DESC&offset=1&limit=9',
               CURLOPT_CONNECTTIMEOUT => $timeout
           ));
 
