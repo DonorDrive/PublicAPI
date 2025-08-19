@@ -12,6 +12,22 @@ Default `orderBy`: `modifiedDateUTC DESC`
 |`/api/participants/{participantID}/donors`|`array`|To find `{participantID}`, visit your Participant's Fundraising Page. Look for the `&participantID=` URL parameter.|
 |`/api/teams/{teamID}/donors`|`array`|To find `{teamID}`, visit your Team's Fundraising Page. Look for the `&teamID=` URL parameter.|
 
+### URL Aliases
+
+You can use URL aliases instead of numeric IDs in any of these endpoints:
+
+```
+# Using numeric IDs
+GET /api/1.3/extra-life-1234/events/605/donors
+GET /api/1.3/extra-life-1234/participants/12345/donors
+GET /api/1.3/extra-life-1234/teams/8775/donors
+
+# Using URL aliases
+GET /api/1.3/extra-life-1234/events/marathon-2024/donors
+GET /api/1.3/extra-life-1234/participants/johns-marathon-2024/donors
+GET /api/1.3/extra-life-1234/teams/awesome-team-2024/donors
+```
+
 ## Response
 
 The response from the `donors` endpoint is an array of donor objects.

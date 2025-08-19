@@ -1,10 +1,27 @@
 # Teams
 
-#### Endpoints
+## Endpoints
 
 |Path|Return Type|Notes|
 |---|---|---|
 |`/api/teams/{teamID}`|`object`|To find `{teamID}`, visit your Team's Fundraising Page. Look for the `&teamID=` URL parameter.|
+
+### URL Aliases
+
+You can use the team's `urlAlias` instead of the numeric `teamID` in any endpoint:
+
+```
+# Using numeric ID
+GET /api/1.3/extra-life-1234/teams/8775
+
+# Using URL alias
+GET /api/1.3/extra-life-1234/teams/awesome-team-2024
+```
+
+Aliases work with all nested resources as well:
+- `/api/teams/{urlAlias}/donations`
+- `/api/teams/{urlAlias}/milestones`
+- `/api/teams/{urlAlias}/participants`
 
 ## Response
 
@@ -68,3 +85,4 @@ The response from the `teams` endpoint is a single team object.
 |`sumDonations`|`float`|The total sum of donations this Team has received|Yes|Yes||
 |`sumPledges`|`float`|The total sum of pledges this Team has received||Yes||
 |`teamID`|`integer`|The unique ID of this Team|Yes|Yes||
+|`urlAlias`|`string`|Human-readable URL alias for this Team|No|Yes|Can be used instead of `teamID` in API calls|

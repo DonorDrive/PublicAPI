@@ -8,6 +8,23 @@ Individual fundraisers participating in an active Participant Event or Personal 
 |---|---|---|
 |`/api/participants/{participantID}`|`object`|To find `{participantID}`, visit your Participant's Fundraising Page. Look for the `&participantID=` URL parameter.|
 
+### URL Aliases
+
+You can use the participant's `urlAlias` instead of the numeric `participantID` in any endpoint:
+
+```
+# Using numeric ID
+GET /api/1.3/extra-life-1234/participants/12345
+
+# Using URL alias
+GET /api/1.3/extra-life-1234/participants/johns-marathon-2024
+```
+
+Aliases work with all nested resources as well:
+- `/api/participants/{urlAlias}/donations`
+- `/api/participants/{urlAlias}/milestones`
+- `/api/participants/{urlAlias}/badges`
+
 ## Response
 
 The response from the `participants` endpoint is a single fundraiser object.
@@ -73,3 +90,4 @@ The response from the `participants` endpoint is a single fundraiser object.
 |`sumPledges`|`float`|The total sum of pledges this Team has received||Yes||
 |`teamID`|`integer`|The ID of the Team this Participant is associated with||Yes|Team Participants only|
 |`teamName`|`string`|The name of the Team this Participant is associated with|||Team Participants only|
+|`urlAlias`|`string`|Human-readable URL alias for this Participant|No|Yes|Can be used instead of `participantID` in API calls|
