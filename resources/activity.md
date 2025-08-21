@@ -12,6 +12,22 @@ Default `orderBy`: `createdDateUTC DESC`
 |`/api/participants/{participantID}/activity`|`array`|To find `{participantID}`, visit your Participant's Fundraising Page. Look for the `&participantID=` URL parameter.|
 |`/api/teams/{teamID}/activity`|`array`|To find `{teamID}`, visit your Team's Fundraising Page. Look for the `&teamID=` URL parameter.|
 
+### URL Aliases
+
+You can use URL aliases instead of numeric IDs in any of these endpoints:
+
+```
+# Using numeric IDs
+GET /api/1.3/extra-life-1234/events/605/activity
+GET /api/1.3/extra-life-1234/participants/12345/activity
+GET /api/1.3/extra-life-1234/teams/8775/activity
+
+# Using URL aliases
+GET /api/1.3/extra-life-1234/events/marathon-2024/activity
+GET /api/1.3/extra-life-1234/participants/johns-marathon-2024/activity
+GET /api/1.3/extra-life-1234/teams/awesome-team-2024/activity
+```
+
 ## Response
 
 The response from the `activity` endpoint is an array of objects, with a maximum of 5, outlining the recent activity around the participant or team.

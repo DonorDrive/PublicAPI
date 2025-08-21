@@ -13,6 +13,20 @@ Default `orderBy`: `unlockedDateUTC DESC`
 |`/api/participants/{participantID}/badges`|`array`|To find `{participantID}`, visit your Participant's Fundraising Page. Look for the `&participantID=` URL parameter.|
 |`/api/teams/{teamID}/badges`|`array`|To find `{teamID}`, visit your Team's Fundraising Page. Look for the `&teamID=` URL parameter.|
 
+### URL Aliases
+
+You can use URL aliases instead of numeric IDs in any of these endpoints:
+
+```
+# Using numeric IDs
+GET /api/1.3/extra-life-1234/participants/12345/badges
+GET /api/1.3/extra-life-1234/teams/8775/badges
+
+# Using URL aliases
+GET /api/1.3/extra-life-1234/participants/johns-marathon-2024/badges
+GET /api/1.3/extra-life-1234/teams/awesome-team-2024/badges
+```
+
 ## Response
 
 The response from the `badges` endpoint is an array of badge objects.

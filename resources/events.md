@@ -8,6 +8,23 @@ Active Events in this instance of DonorDrive.
 |---|---|---|
 |`/api/events/{eventID}`|`object`|To find `{eventID}`, visit your Event's Fundraising Page. Look for the `&eventID=` URL parameter.|
 
+### URL Aliases
+
+You can use the event's `urlAlias` instead of the numeric `eventID` in any endpoint:
+
+```
+# Using numeric ID
+GET /api/1.3/extra-life-1234/events/605
+
+# Using URL alias
+GET /api/1.3/extra-life-1234/events/marathon-2024
+```
+
+Aliases work with all nested resources as well:
+- `/api/events/{urlAlias}/participants`
+- `/api/events/{urlAlias}/teams`
+- `/api/events/{urlAlias}/donations`
+
 ## Response
 
 The response from the `events` endpoint is a single event object.
@@ -84,4 +101,5 @@ The response from the `events` endpoint is a single event object.
 |`sumDonations`|`float`|The total sum of donations this Event has received||Yes||
 |`timezone`|`string`|The Event's timezone|||Events with dates only|
 |`type`|`string`|The Event's type|Yes|Yes|`C`: Capital Campaign; `I`: Personal Campaign Group; `P`: Participant Event; `T`: Ticket Event|
+|`urlAlias`|`string`|Human-readable URL alias for this Event|No|Yes|Can be used instead of `eventID` in API calls|
 |`venue`|`string`|The Event's venue||Yes|Events with location only|
