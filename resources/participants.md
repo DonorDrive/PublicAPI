@@ -7,7 +7,7 @@ Individual fundraisers participating in an active Participant Event or Personal 
 |Path|Return Type|Notes|
 |---|---|---|
 |`/api/participants/{participantID}`|`object`|To find the `{participantID}`, visit your Participant's Fundraising Page. The `participantID` is the numeric value at the end of the URL path.| 
-|`/api/participants/{urlAlias}`|`object`|The participant's `urlAlias` can be instead of the numeric `participantID`. To find the `{participantAlias}`, visit your Participant's Fundraising Page and look for the custom `urlAlias` in the URL path.|
+|`/api/participants/{urlAlias}`|`object`|The participant's `urlAlias` can be used instead of the numeric `participantID`. To find the `{participantAlias}`, visit your Participant's Fundraising Page and look for the custom `urlAlias` in the URL path.|
 
 ### URL Aliases
 
