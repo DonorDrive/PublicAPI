@@ -6,6 +6,7 @@ Active Events in this instance of DonorDrive.
 
 |Path|Return Type|Notes|
 |---|---|---|
+|`/api/events`|`array`|May require additional credentials. We are working on providing access in the future.|
 |`/api/events/{eventID}`|`object`|To find `{eventID}`, visit your Event's Fundraising Page. Look for the `&eventID=` URL parameter.|
 
 ## Filtering Events by Event Group

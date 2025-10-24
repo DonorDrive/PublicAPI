@@ -4,6 +4,7 @@
 
 |Path|Return Type|Notes|
 |---|---|---|
+|`/api/teams`|`array`|May require additional credentials. We are working on providing access in the future.|
 |`/api/teams/{teamID}`|`object`|To find `{teamID}`, visit your Team's Fundraising Page. Look for the `&teamID=` URL parameter.|
 
 ## Filtering Teams by Event Group or Team Group
