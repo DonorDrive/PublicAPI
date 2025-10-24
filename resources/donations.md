@@ -6,11 +6,20 @@ Donations associated with an Event, Participant, or Team.
 
 Default `orderBy`: `createdDateUTC DESC`
 
+### Collection Endpoints
+
 |Path|Return Type|Notes|
 |---|---|---|
 |`/api/events/{eventID}/donations`|`array`|To find `{eventID}`, visit your Event's Fundraising Page. Look for the `&eventID=` URL parameter.|
 |`/api/participants/{participantID}/donations`|`array`|To find `{participantID}`, visit your Participant's Fundraising Page. Look for the `&participantID=` URL parameter.|
 |`/api/teams/{teamID}/donations`|`array`|To find `{teamID}`, visit your Team's Fundraising Page. Look for the `&teamID=` URL parameter.|
+
+### Individual Donation Endpoints
+
+|Path|Return Type|Notes|
+|---|---|---|
+|`/api/participants/{participantID}/donations/{donationID}`|`object`|Retrieve a single donation by ID|
+|`/api/teams/{teamID}/donations/{donationID}`|`object`|Retrieve a single donation by ID|
 
 ### URL Aliases
 
@@ -18,19 +27,25 @@ You can use URL aliases instead of numeric IDs in any of these endpoints:
 
 ```
 # Using numeric IDs
-GET /api/1.3/extra-life-1234/events/605/donations
-GET /api/1.3/extra-life-1234/participants/12345/donations
-GET /api/1.3/extra-life-1234/teams/8775/donations
+GET /api/1.6/events/605/donations
+GET /api/1.6/participants/12345/donations
+GET /api/1.6/teams/8775/donations
 
 # Using URL aliases
-GET /api/1.3/extra-life-1234/events/marathon-2024/donations
-GET /api/1.3/extra-life-1234/participants/johns-marathon-2024/donations
-GET /api/1.3/extra-life-1234/teams/awesome-team-2024/donations
+GET /api/1.6/events/marathon-2024/donations
+GET /api/1.6/participants/johns-page-2024/donations
+GET /api/1.6/teams/awesome-team-2024/donations
 ```
 
 ## Response
 
-The response from the `donations` endpoint is an array of donation objects.
+### Collection Endpoints
+
+The collection endpoints (`/donations`) return an array of donation objects.
+
+### Individual Donation Endpoints
+
+The individual donation endpoints (`/donations/{donationID}`) return a single donation object with the same structure as the objects in the collection response.
 
 ### Example
 
@@ -41,7 +56,7 @@ The response from the `donations` endpoint is an array of donation objects.
     "participantID": 4024,
     "amount": 10,
     "donorID": "EB8610A3FC435D58",
-    "avatarImageURL": "https://static.donordrive.com/clients/try/img/avatar-constituent-default.gif",
+    "avatarImageURL": "https://static.donordrive.com/clients/testdrive/img/avatar-constituent-default.gif",
     "createdDateUTC": "2019-10-30T18:01:18.513+0000",
     "eventID": 581,
     "teamID": 5074,
@@ -63,7 +78,7 @@ The response from the `donations` endpoint is an array of donation objects.
     "amount": 10,
     "donorID": "DC3A81BE19445E15",
     "isRegFee": false,
-    "avatarImageURL": "https://static.donordrive.com/clients/try/img/avatar-constituent-default.gif",
+    "avatarImageURL": "https://static.donordrive.com/clients/testdrive/img/avatar-constituent-default.gif",
     "createdDateUTC": "2019-10-28T16:02:42.583+0000",
     "eventID": 581,
     "teamID": 5074,
@@ -84,7 +99,7 @@ The response from the `donations` endpoint is an array of donation objects.
     "amount": 100,
     "isRegFee": false,
     "donorID": "03F279F2BF01283D",
-    "avatarImageURL": "https://static.donordrive.com/clients/try/img/avatar-constituent-default.gif",
+    "avatarImageURL": "https://static.donordrive.com/clients/testdrive/img/avatar-constituent-default.gif",
     "createdDateUTC": "2019-10-26T15:26:13.290+0000",
     "eventID": 581,
     "teamID": 5074,

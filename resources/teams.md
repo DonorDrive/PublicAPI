@@ -6,16 +6,44 @@
 |---|---|---|
 |`/api/teams/{teamID}`|`object`|To find `{teamID}`, visit your Team's Fundraising Page. Look for the `&teamID=` URL parameter.|
 
+## Filtering Teams by Event Group or Team Group
+
+Teams can be filtered by Event Group or Team Group using the following patterns:
+
+### By Event Group
+
+```
+GET /api/{version}/{programCode}/eventgroups/{groupCode}/teams
+```
+
+This returns an array of teams that are participating in events belonging to the specified Event Group. For example:
+
+```
+GET /api/1.6/eventgroups/spring-2024/teams
+```
+
+### By Team Group
+
+```
+GET /api/{version}/{programCode}/teamgroups/{groupCode}/teams
+```
+
+This returns an array of teams that belong to the specified Team Group. For example:
+
+```
+GET /api/1.6/teamgroups/corporate-teams/teams
+```
+
 ### URL Aliases
 
 You can use the team's `urlAlias` instead of the numeric `teamID` in any endpoint:
 
 ```
 # Using numeric ID
-GET /api/1.3/extra-life-1234/teams/8775
+GET /api/1.6/teams/8775
 
 # Using URL alias
-GET /api/1.3/extra-life-1234/teams/awesome-team-2024
+GET /api/1.6/teams/awesome-team-2024
 ```
 
 Aliases work with all nested resources as well:
@@ -45,7 +73,7 @@ The response from the `teams` endpoint is a single team object.
     "name": "The Bonhams",
     "isInviteOnly": false,
     "captainDisplayName": "Liam Bonham",
-    "avatarImageURL": "https://static.donordrive.com/clients/try/img/avatar-team-default.gif",
+    "avatarImageURL": "https://static.donordrive.com/clients/testdrive/img/avatar-team-default.gif",
     "teamID": 8775,
     "sumPledges": 0,
     "numDonations": 97

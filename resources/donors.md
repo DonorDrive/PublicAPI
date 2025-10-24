@@ -18,14 +18,14 @@ You can use URL aliases instead of numeric IDs in any of these endpoints:
 
 ```
 # Using numeric IDs
-GET /api/1.3/extra-life-1234/events/605/donors
-GET /api/1.3/extra-life-1234/participants/12345/donors
-GET /api/1.3/extra-life-1234/teams/8775/donors
+GET /api/1.6/events/605/donors
+GET /api/1.6/participants/12345/donors
+GET /api/1.6/teams/8775/donors
 
 # Using URL aliases
-GET /api/1.3/extra-life-1234/events/marathon-2024/donors
-GET /api/1.3/extra-life-1234/participants/johns-marathon-2024/donors
-GET /api/1.3/extra-life-1234/teams/awesome-team-2024/donors
+GET /api/1.6/events/marathon-2024/donors
+GET /api/1.6/participants/johns-page-2024/donors
+GET /api/1.6/teams/awesome-team-2024/donors
 ```
 
 ## Response
@@ -39,7 +39,7 @@ The response from the `donors` endpoint is an array of donor objects.
   {
     "displayName": "Friendly Donor",
     "donorID": "EB8610A3FC435D58",
-    "avatarImageURL": "https://static.donordrive.com/clients/try/img/avatar-constituent-default.gif",
+    "avatarImageURL": "https://static.donordrive.com/clients/testdrive/img/avatar-constituent-default.gif",
     "modifiedDateUTC": "2019-10-30T18:01:18.513+0000",
     "sumDonations": 3500,
     "numDonations": 13,
@@ -48,7 +48,7 @@ The response from the `donors` endpoint is an array of donor objects.
   {
     "displayName": "Barnabas Jungleham",
     "donorID": "C650B80FC37D7464",
-    "avatarImageURL": "https://static.donordrive.com/clients/try/img/avatar-constituent-default.gif",
+    "avatarImageURL": "https://static.donordrive.com/clients/testdrive/img/avatar-constituent-default.gif",
     "modifiedDateUTC": "2019-10-14T15:35:27.370+0000",
     "sumDonations": 30,
     "numDonations": 1,
@@ -57,7 +57,7 @@ The response from the `donors` endpoint is an array of donor objects.
   {
     "displayName": "Kimberly Jalapeno",
     "donorID": "63135F1FCCEABD47",
-    "avatarImageURL": "https://static.donordrive.com/clients/try/img/avatar-constituent-default.gif",
+    "avatarImageURL": "https://static.donordrive.com/clients/testdrive/img/avatar-constituent-default.gif",
     "modifiedDateUTC": "2019-10-07T18:36:00.343+0000",
     "sumDonations": 200,
     "numDonations": 4,

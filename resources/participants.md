@@ -6,8 +6,36 @@ Individual fundraisers participating in an active Participant Event or Personal 
 
 |Path|Return Type|Notes|
 |---|---|---|
-|`/api/participants/{participantID}`|`object`|To find the `{participantID}`, visit your Participant's Fundraising Page. The `participantID` is the numeric value at the end of the URL path.| 
+|`/api/participants/{participantID}`|`object`|To find the `{participantID}`, visit your Participant's Fundraising Page. The `participantID` is the numeric value at the end of the URL path.|
 |`/api/participants/{urlAlias}`|`object`|The participant's `urlAlias` can be used instead of the numeric `participantID`. To find the `{participantAlias}`, visit your Participant's Fundraising Page and look for the custom `urlAlias` in the URL path.|
+
+## Filtering Participants by Event Group or Team Group
+
+Participants can be filtered by Event Group or Team Group using the following patterns:
+
+### By Event Group
+
+```
+GET /api/{version}/{programCode}/eventgroups/{groupCode}/participants
+```
+
+This returns an array of participants who are registered in events that belong to the specified Event Group. For example:
+
+```
+GET /api/1.6/eventgroups/spring-2024/participants
+```
+
+### By Team Group
+
+```
+GET /api/{version}/{programCode}/teamgroups/{groupCode}/participants
+```
+
+This returns an array of participants who are on teams that belong to the specified Team Group. For example:
+
+```
+GET /api/1.6/teamgroups/corporate-teams/participants
+```
 
 ### URL Aliases
 
@@ -15,10 +43,10 @@ You can use the participant's `urlAlias` instead of the numeric `participantID` 
 
 ```
 # Using numeric ID
-GET /api/1.3/extra-life-1234/participants/12345
+GET /api/1.6/participants/12345
 
 # Using URL alias
-GET /api/1.3/extra-life-1234/participants/johns-marathon-2024
+GET /api/1.6/participants/johns-page-2024
 ```
 
 Aliases work with all nested resources as well:
@@ -47,7 +75,7 @@ The response from the `participants` endpoint is a single fundraiser object.
     "sumDonations": 4661,
     "participantID": 19265,
     "teamName": "The Bonhams",
-    "avatarImageURL": "https://static.donordrive.com/clients/try/img/avatar-constituent-default.gif",
+    "avatarImageURL": "https://static.donordrive.com/clients/testdrive/img/avatar-constituent-default.gif",
     "teamID": 8775,
     "isTeamCaptain": true,
     "sumPledges": 0,

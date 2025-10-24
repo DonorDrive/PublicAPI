@@ -18,14 +18,14 @@ You can use URL aliases instead of numeric IDs in any of these endpoints:
 
 ```
 # Using numeric IDs
-GET /api/1.3/extra-life-1234/events/605/activity
-GET /api/1.3/extra-life-1234/participants/12345/activity
-GET /api/1.3/extra-life-1234/teams/8775/activity
+GET /api/1.6/events/605/activity
+GET /api/1.6/participants/12345/activity
+GET /api/1.6/teams/8775/activity
 
 # Using URL aliases
-GET /api/1.3/extra-life-1234/events/marathon-2024/activity
-GET /api/1.3/extra-life-1234/participants/johns-marathon-2024/activity
-GET /api/1.3/extra-life-1234/teams/awesome-team-2024/activity
+GET /api/1.6/events/marathon-2024/activity
+GET /api/1.6/participants/johns-page-2024/activity
+GET /api/1.6/teams/awesome-team-2024/activity
 ```
 
 ## Response
@@ -42,21 +42,21 @@ The response from the `activity` endpoint is an array of objects, with a maximum
     "isIncentive": 1,
     "createdDateUTC": "2019-11-10T19:38:51.897+0000",
     "title": "Friendly Donor",
-    "imageURL": "https://static.donordrive.com/clients/try/img/avatar-constituent-default.gif",
+    "imageURL": "https://static.donordrive.com/clients/testdrive/img/avatar-constituent-default.gif",
     "type": "donation"
   },
   {
     "amount": 15,
     "createdDateUTC": "2019-11-08T15:22:13.933+0000",
     "title": "Friendly Donor",
-    "imageURL": "https://static.donordrive.com/clients/try/img/avatar-constituent-default.gif",
+    "imageURL": "https://static.donordrive.com/clients/testdrive/img/avatar-constituent-default.gif",
     "type": "donation"
   },
   {
     "amount": 10,
     "createdDateUTC": "2019-11-06T16:26:02.487+0000",
     "title": "Friendly Donor",
-    "imageURL": "https://static.donordrive.com/clients/try/img/avatar-constituent-default.gif",
+    "imageURL": "https://static.donordrive.com/clients/testdrive/img/avatar-constituent-default.gif",
     "type": "donation"
   },
   {

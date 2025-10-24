@@ -10,6 +10,25 @@ Team Groups associated with this instance of DonorDrive
 |---|---|---|
 |`/api/teamgroups/{groupCode}`|`object`|To find `{groupCode}`, contact your DonorDrive Administrator.|
 
+## Nested Resources
+
+Team Groups support nested resources for accessing associated participants and teams:
+
+|Path|Return Type|Notes|
+|---|---|---|
+|`/api/teamgroups/{groupCode}/participants`|`array`|Returns participants on teams within this Team Group|
+|`/api/teamgroups/{groupCode}/teams`|`array`|Returns teams within this Team Group|
+
+### Examples
+
+```
+# Get all teams in a Team Group
+GET /api/1.6/teamgroups/corporate-teams/teams
+
+# Get all participants on teams within a Team Group
+GET /api/1.6/teamgroups/corporate-teams/participants
+```
+
 ## Response
 
 The response from the `teamgroups` endpoint is a team group object.
