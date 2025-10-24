@@ -6,7 +6,22 @@ Active Events in this instance of DonorDrive.
 
 |Path|Return Type|Notes|
 |---|---|---|
+|`/api/events`|`array`|May require additional credentials. We are working on providing access in the future.|
 |`/api/events/{eventID}`|`object`|To find `{eventID}`, visit your Event's Fundraising Page. Look for the `&eventID=` URL parameter.|
+
+## Filtering Events by Event Group
+
+Events can be filtered by Event Group using the following pattern:
+
+```
+GET /api/{version}/{programCode}/eventgroups/{groupCode}/events
+```
+
+This returns an array of events that belong to the specified Event Group. For example:
+
+```
+GET /api/1.6/eventgroups/spring-2024/events
+```
 
 ### URL Aliases
 
@@ -14,10 +29,10 @@ You can use the event's `urlAlias` instead of the numeric `eventID` in any endpo
 
 ```
 # Using numeric ID
-GET /api/1.3/extra-life-1234/events/605
+GET /api/1.6/events/605
 
 # Using URL alias
-GET /api/1.3/extra-life-1234/events/marathon-2024
+GET /api/1.6/events/marathon-2024
 ```
 
 Aliases work with all nested resources as well:
@@ -33,7 +48,7 @@ The response from the `events` endpoint is a single event object.
 
 ```json
   {
-    "avatarImage": "https://assets.donordrive.com/clients/try/img/badgeLogo.jpg",
+    "avatarImage": "https://assets.donordrive.com/clients/testdrive/img/badgeLogo.jpg",
     "endDateUTC": "2019-11-03T21:45:00.0+0000",
     "venue": "The Venue",
     "city": "The City",

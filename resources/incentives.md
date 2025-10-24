@@ -8,10 +8,19 @@ Fundraiser Incentives associated with a Participant.
 
 Default `orderBy`: `amount ASC`
 
+### Collection Endpoints
+
 |Path|Return Type|Notes|
 |---|---|---|
 |`/api/participants/{participantID}/incentives`|`array`|To find `{participantID}`, visit your Participant's Fundraising Page. Look for the `&participantID=` URL parameter.|
 |`/api/teams/{teamID}/incentives`|`array`|To find `{teamID}`, visit your Team's Fundraising Page. Look for the `&teamID=` URL parameter.|
+
+### Individual Incentive Endpoints
+
+|Path|Return Type|Notes|
+|---|---|---|
+|`/api/participants/{participantID}/incentives/{incentiveID}`|`object`|Retrieve a single incentive by ID|
+|`/api/teams/{teamID}/incentives/{incentiveID}`|`object`|Retrieve a single incentive by ID|
 
 ### URL Aliases
 
@@ -19,17 +28,23 @@ You can use URL aliases instead of numeric IDs in any of these endpoints:
 
 ```
 # Using numeric IDs
-GET /api/1.3/extra-life-1234/participants/12345/incentives
-GET /api/1.3/extra-life-1234/teams/8775/incentives
+GET /api/1.6/participants/12345/incentives
+GET /api/1.6/teams/8775/incentives
 
 # Using URL aliases
-GET /api/1.3/extra-life-1234/participants/johns-marathon-2024/incentives
-GET /api/1.3/extra-life-1234/teams/awesome-team-2024/incentives
+GET /api/1.6/participants/johns-page-2024/incentives
+GET /api/1.6/teams/awesome-team-2024/incentives
 ```
 
 ## Response
 
-The response from the `incentives` endpoint is an array of incentive objects.
+### Collection Endpoints
+
+The collection endpoints (`/incentives`) return an array of incentive objects.
+
+### Individual Incentive Endpoints
+
+The individual incentive endpoints (`/incentives/{incentiveID}`) return a single incentive object with the same structure as the objects in the collection response.
 
 ### Example
 
@@ -38,7 +53,7 @@ The response from the `incentives` endpoint is an array of incentive objects.
   {
     "amount": 10,
     "description": "I'll give you a personal shoutout on stream!",
-    "incentiveImageURL": "https://assets.donordrive.com/extralife/images/$constituents$/98DEB758-C29F-F29A-66B83598945B70D1/deedee.jpg",
+    "incentiveImageURL": "https://assets.donordrive.com/testdrive/images/$constituents$/98DEB758-C29F-F29A-66B83598945B70D1/deedee.jpg",
     "quantity": 5,
     "quantityClaimed": 0,
     "links": {
@@ -60,7 +75,7 @@ The response from the `incentives` endpoint is an array of incentive objects.
   {
     "amount": 50,
     "description": "Choose my Mario Kart character!",
-    "incentiveImageURL": "https://assets.donordrive.com/extralife/images/$constituents$/98DEB758-C29F-F29A-66B83598945B70D1/deedee.jpg",
+    "incentiveImageURL": "https://assets.donordrive.com/testdrive/images/$constituents$/98DEB758-C29F-F29A-66B83598945B70D1/deedee.jpg",
     "quantity": 1,
     "quantityClaimed": 0,
     "links": {
@@ -81,7 +96,7 @@ The response from the `incentives` endpoint is an array of incentive objects.
 |`incentiveID`|`string`|The unique ID of this Fundraiser Incentive|Yes|Yes||
 |`endDateUTC`|`date`|If present, the date (in UTC) this Fundraiser Incentive becomes unavailable||Yes|ISO-8601 format|
 |`incentiveImageURL`|`string`|The URL for the image associated with this Fundraiser Incentive|||
-|`isActive`|`string`|`true` if this Fundraiser Incentive currently accepts donations|Yes|Yes|Added: 1.2|
+|`isActive`|`boolean`|`true` if this Fundraiser Incentive currently accepts donations|Yes|Yes|Added: 1.2|
 |`links`|`object`|An object containing related resources|||`donate`: The donation URL for this Fundraiser Incentive|
 |`startDateUTC`|`date`|If present, the date (in UTC) this Fundraiser Incentive became available||Yes|ISO-8601 format|
 |`quantity`|`integer`|The total number available for this Fundraiser Incentive||Yes|If not present, the quantity is unlimited|

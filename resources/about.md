@@ -22,10 +22,10 @@ The response from the `about` endpoint is an object.
     "symbol":"$",
     "label":"USD"
   },
-  "displayName": "Try",
+  "displayName": "Test Drive",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget velit lectus. Sed at molestie urna. Donec sed purus quis dolor consequat congue mattis non mi.",
   "programID": "1259-100",
-  "avatarImageURL": "https://assets.donordrive.com/clients/try/img/badgeLogo.jpg",
+  "avatarImageURL": "https://assets.donordrive.com/clients/testdrive/img/badgeLogo.jpg",
   "charityName": "Try DonorDrive",
   "links": {
     "home":"https://testdrive.donordrive.com/"
@@ -42,7 +42,6 @@ The response from the `about` endpoint is an object.
 |`currency`|`object`|Default currency details for this programs|Yes||`symbol` and `label` will always be present|
 |`description`|`string`|A brief description of this Program||||
 |`displayName`|`string`|The friendly name for this Program|Yes|||
-|`links`|`object`|An object containing related resources|||`home`: The home page for this Program<br />`register`: The registration form for the single registration event or personal campaign type associated with this Program|
+|`links`|`object`|An object containing related resources|||`home`: The home page for this Program|
 |`numOpenParticipantEvents`|`integer`|The number of participant events (registration events and personal campaign types) that are currently open for registration|Yes|||
 |`programID`|`string`|The unique ID of this Program|Yes|||
-

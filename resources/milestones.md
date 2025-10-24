@@ -8,10 +8,19 @@ Fundraiser Milestones associated with a Participant.
 
 Default `orderBy`: `amount ASC`
 
+### Collection Endpoints
+
 |Path|Return Type|Notes|
 |---|---|---|
 |`/api/participants/{participantID}/milestones`|`array`|To find `{participantID}`, visit your Participant's Fundraising Page. Look for the `&participantID=` URL parameter.|
 |`/api/teams/{teamID}/milestones`|`array`|To find `{teamID}`, visit your Team's Fundraising Page. Look for the `&teamID=` URL parameter.|
+
+### Individual Milestone Endpoints
+
+|Path|Return Type|Notes|
+|---|---|---|
+|`/api/participants/{participantID}/milestones/{milestoneID}`|`object`|Retrieve a single milestone by ID|
+|`/api/teams/{teamID}/milestones/{milestoneID}`|`object`|Retrieve a single milestone by ID|
 
 ### URL Aliases
 
@@ -19,17 +28,23 @@ You can use URL aliases instead of numeric IDs in any of these endpoints:
 
 ```
 # Using numeric IDs
-GET /api/1.3/extra-life-1234/participants/12345/milestones
-GET /api/1.3/extra-life-1234/teams/8775/milestones
+GET /api/1.6/participants/12345/milestones
+GET /api/1.6/teams/8775/milestones
 
 # Using URL aliases
-GET /api/1.3/extra-life-1234/participants/johns-marathon-2024/milestones
-GET /api/1.3/extra-life-1234/teams/awesome-team-2024/milestones
+GET /api/1.6/participants/johns-page-2024/milestones
+GET /api/1.6/teams/awesome-team-2024/milestones
 ```
 
 ## Response
 
-The response from the `milestones` endpoint is an array of milestone objects.
+### Collection Endpoints
+
+The collection endpoints (`/milestones`) return an array of milestone objects.
+
+### Individual Milestone Endpoints
+
+The individual milestone endpoints (`/milestones/{milestoneID}`) return a single milestone object with the same structure as the objects in the collection response.
 
 ### Example
 
@@ -67,7 +82,7 @@ The response from the `milestones` endpoint is an array of milestone objects.
 |---|---|---|---|---|---|
 |`description`|`string`|A text description of this Fundraiser Milestone|Yes|Yes||
 |`fundraisingGoal`|`float`|The amount of this Fundraiser Milestone|Yes|Yes||
-|`isActive`|`string`|`true` if this Fundraiser Milestone is currently active|Yes|Yes|Added: 1.2|
+|`isActive`|`boolean`|`true` if this Fundraiser Milestone is currently active|Yes|Yes|Added: 1.2|
 |`isComplete`|`boolean`|`true` if this Fundraiser Milestone has been reached||Yes||
 |`links`|`object`|An object containing related resources||Yes|`donate`: URL to donate the exact amount to reach Fundraiser Milestone|
 |`milestoneID`|`string`|The unique ID of this Fundraiser Milestone|Yes|Yes||
